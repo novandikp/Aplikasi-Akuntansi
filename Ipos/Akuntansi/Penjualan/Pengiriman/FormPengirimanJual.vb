@@ -15,10 +15,12 @@ Public Class FormPengirimanJual
             Dim dgvRow As DataGridViewRow = dgKeranjang.CurrentRow
             baris = e.RowIndex
             If status And Not IsNothing(dgvRow.Cells(1).Value) Then
-                If e.ColumnIndex = 5 Then
+                Dim subtotal As Double = toDouble(dgvRow.Cells(5).Value.ToString) * toDouble(dgvRow.Cells(3).Value.ToString) * (100 - toDouble(dgvRow.Cells(12).Value.ToString)) / 100
+                Dim subpajak As Double = subtotal * (toDouble(dgvRow.Cells(8).Value.ToString)) / 100
+                If e.ColumnIndex = 5 Or e.ColumnIndex = 12 Then
                     status = False
-                    dgvRow.Cells(6).Value = toDouble(dgvRow.Cells(5).Value.ToString) * toDouble(dgvRow.Cells(3).Value.ToString) * (toDouble(dgvRow.Cells(8).Value.ToString)) / 100
-                    dgvRow.Cells(7).Value = toDouble(dgvRow.Cells(5).Value.ToString) * toDouble(dgvRow.Cells(3).Value.ToString) * (100 + toDouble(dgvRow.Cells(8).Value.ToString)) / 100
+                    dgvRow.Cells(6).Value = subpajak
+                    dgvRow.Cells(7).Value = subtotal + subpajak
                     status = True
                     ubah = 6
                 ElseIf e.ColumnIndex = 3 Then
@@ -27,8 +29,8 @@ Public Class FormPengirimanJual
                     If toDouble(dgvRow.Cells(3).Value.ToString) = 0 Then
                         dgvRow.Cells(3).Value = "1,00"
                     End If
-                    dgvRow.Cells(6).Value = toDouble(dgvRow.Cells(5).Value.ToString) * toDouble(dgvRow.Cells(3).Value.ToString) * (toDouble(dgvRow.Cells(8).Value.ToString)) / 100
-                    dgvRow.Cells(7).Value = toDouble(dgvRow.Cells(5).Value.ToString) * toDouble(dgvRow.Cells(3).Value.ToString) * (100 + toDouble(dgvRow.Cells(8).Value.ToString)) / 100
+                    dgvRow.Cells(6).Value = subpajak
+                    dgvRow.Cells(7).Value = subtotal + subpajak
                     status = True
                     updateBaris()
                     ubah = 7
@@ -147,7 +149,7 @@ Public Class FormPengirimanJual
         Handles dgKeranjang.DataError
         If e.ColumnIndex = 4 Then
             e.Cancel = True
-        ElseIf e.ColumnIndex = 3 Or e.ColumnIndex = 5 Or e.ColumnIndex = 6 Then
+        ElseIf e.ColumnIndex = 3 Or e.ColumnIndex = 5 Or e.ColumnIndex = 6 Or e.ColumnIndex = 12 Then
             e.Cancel = True
             dialogError("Masukkan digit dengan benar")
         End If
@@ -157,7 +159,7 @@ Public Class FormPengirimanJual
         Handles dgKeranjang.EditingControlShowing
         If dgKeranjang.CurrentCell.ColumnIndex = 3 Then
             AddHandler CType(e.Control, TextBox).KeyPress, AddressOf numberWithComma
-        ElseIf dgKeranjang.CurrentCell.ColumnIndex = 5 Or dgKeranjang.CurrentCell.ColumnIndex = 6 Then
+        ElseIf dgKeranjang.CurrentCell.ColumnIndex = 5 Or dgKeranjang.CurrentCell.ColumnIndex = 6 Or dgKeranjang.CurrentCell.ColumnIndex = 12 Then
             AddHandler CType(e.Control, TextBox).KeyPress, AddressOf numberOnly
         Else
             Try
@@ -285,6 +287,7 @@ Public Class FormPengirimanJual
             dgvrow.Cells(7).Value = dataproduk.Rows(0).Item("hargajual") + pajak
             Dim colButtonDelete As DataGridViewButtonCell
             dgvrow.Cells(11).Value = dataproduk.Rows(0).Item("nilaidasar")
+            dgvrow.Cells(12).Value = 0
             colButtonDelete = dgvrow.Cells(10)
             colButtonDelete.Value = "Hapus"
             dgvrow.Cells(10).ReadOnly = True
@@ -350,7 +353,6 @@ Public Class FormPengirimanJual
     End Sub
 
 
-
     Function dontDuplicate(barcode As String, Optional jumlah As Double = 1) As Boolean
         Dim dup = True
         For Each row As DataGridViewRow In dgKeranjang.Rows
@@ -367,9 +369,13 @@ Public Class FormPengirimanJual
                 status = True
                 cari = False
                 ubah = 3
+
+
                 row.Cells(3).Value = toDouble(row.Cells(3).Value) + jumlah
-                row.Cells(6).Value = toDouble(row.Cells(5).Value.ToString) * toDouble(row.Cells(3).Value.ToString) * (toDouble(row.Cells(8).Value.ToString)) / 100
-                row.Cells(7).Value = toDouble(row.Cells(3).Value.ToString) * toDouble(row.Cells(5).Value.ToString) * (100 + toDouble(row.Cells(8).Value.ToString)) / 100
+                Dim subtotal As Double = toDouble(row.Cells(5).Value.ToString) * toDouble(row.Cells(3).Value.ToString) * (100 - toDouble(row.Cells(12).Value.ToString)) / 100
+                Dim subpajak As Double = subtotal * (toDouble(row.Cells(8).Value.ToString)) / 100
+                row.Cells(6).Value = subpajak
+                row.Cells(7).Value = subtotal + subpajak
                 updateBaris()
                 Exit For
             End If
@@ -378,7 +384,6 @@ Public Class FormPengirimanJual
 
         Return dup
     End Function
-
 
 
     'Cari Produk
@@ -414,6 +419,7 @@ Public Class FormPengirimanJual
 
             dgvrow.Cells(8).Value = dataproduk.Rows(0).Item("persenpajak")
             dgvrow.Cells(11).Value = dataproduk.Rows(0).Item("nilaidasar")
+            dgvrow.Cells(12).Value = 0
             Dim pajak As Double = dataproduk.Rows(0).Item("hargajual") * (dataproduk.Rows(0).Item("persenpajak") / 100)
             dgvrow.Cells(6).Value = pajak
             dgvrow.Cells(6).ReadOnly = True
@@ -437,10 +443,12 @@ Public Class FormPengirimanJual
     End Sub
     'SetColumn datagridview
     Sub setTableColumn()
+        dgKeranjang.Columns(12).DisplayIndex = 5
         dgKeranjang.Columns(3).ValueType = GetType(Double)
         dgKeranjang.Columns(5).ValueType = GetType(Double)
         dgKeranjang.Columns(6).ValueType = GetType(Double)
         dgKeranjang.Columns(8).ValueType = GetType(Double)
+        dgKeranjang.Columns(12).ValueType = GetType(Double)
         dgKeranjang.Columns(0).ReadOnly = True
         dgKeranjang.Columns(1).ReadOnly = True
         dgKeranjang.Columns(2).ReadOnly = True
@@ -463,10 +471,6 @@ Public Class FormPengirimanJual
         cbProjek.DisplayMember = "projek"
         cbProjek.ValueMember = "idprojek"
         cbProjek.SelectedIndex = -1
-    End Sub
-
-    Sub setIsiProduk(idharga As String)
-        Dim sql As String = ""
     End Sub
 
     Sub clearRow(row As Integer)
@@ -493,7 +497,7 @@ Public Class FormPengirimanJual
 
     Sub updateBaris()
         cari = True
-        Dim nomer = 1
+
         For Each row As DataGridViewRow In dgKeranjang.Rows
             Try
                 If IsNothing(row.Cells(1).Value) Then
@@ -514,7 +518,8 @@ Public Class FormPengirimanJual
         For Each row As DataGridViewRow In dgKeranjang.Rows
             If Not IsNothing(row.Cells(5).Value) Then
                 If Double.TryParse(row.Cells(5).Value.ToString, 0) Then
-                    total += toDouble(row.Cells(5).Value.ToString) * toDouble(row.Cells(3).Value.ToString) *
+                    total += (toDouble(row.Cells(5).Value.ToString) * toDouble(row.Cells(3).Value.ToString) *
+                             (100 - toDouble(row.Cells(12).Value.ToString)) / 100) *
                              (100 + toDouble(row.Cells(8).Value.ToString)) / 100
                 End If
 
@@ -537,7 +542,7 @@ Public Class FormPengirimanJual
 
     Sub getDataFromPenawaran()
         Dim sqlorder As String = "select kodepesananjual, tglpesananjual, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain, kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang from tblpesananjual where kodepesananjual='" & tbPenawaranJual.Text & "'"
-        Dim sqldetail As String = "select tbldetailpesananjual.idharga,nilaidasar,idproduk,produk, idbarang,jumlahjual, tbldetailpesananjual.hargajual,satuan,jumlahpajak from  tbldetailpesananjual  inner join tblharga on tblharga.idharga = tbldetailpesananjual.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan where kodepesananjual='" & tbPenawaranJual.Text & "'"
+        Dim sqldetail As String = "select tbldetailpesananjual.idharga,diskondetailpersen,nilaidasar,idproduk,produk, idbarang,jumlahjual, tbldetailpesananjual.hargajual,satuan,jumlahpajak from  tbldetailpesananjual  inner join tblharga on tblharga.idharga = tbldetailpesananjual.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan where kodepesananjual='" & tbPenawaranJual.Text & "'"
 
         If String.IsNullOrEmpty(tbPenawaranJual.Text) Then
             Return
@@ -563,13 +568,15 @@ Public Class FormPengirimanJual
             dgKeranjang.Rows(no).Cells(4).Value = row.Item("satuan").ToString
             dgKeranjang.Rows(no).Cells(5).Value = row.Item("hargajual").ToString
             dgKeranjang.Rows(no).Cells(6).Value = row.Item("jumlahpajak").ToString
-
-            dgKeranjang.Rows(no).Cells(7).Value = toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) + toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString)
-            If toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) > 0 Then
-                dgKeranjang.Rows(no).Cells(8).Value = toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString) / toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString)
-            Else
+            dgKeranjang.Rows(no).Cells(12).Value = row.Item("diskondetailpersen").ToString
+            Dim subtotal As Double = toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * (100 - toDouble(dgKeranjang.Rows(no).Cells(12).Value.ToString)) / 100
+            dgKeranjang.Rows(no).Cells(7).Value = subtotal + toDouble(row.Item("jumlahpajak"))
+            If toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) = 0 Then
                 dgKeranjang.Rows(no).Cells(8).Value = 0
+            Else
+                dgKeranjang.Rows(no).Cells(8).Value = subtotal / toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString)
             End If
+
             dgKeranjang.Rows(no).Cells(9).Value = row.Item("idharga").ToString
             dgKeranjang.Rows(no).Cells(10).Value = "Hapus"
             dgKeranjang.Rows(no).Cells(1).ReadOnly = True
@@ -603,7 +610,7 @@ Public Class FormPengirimanJual
 
     Sub continueOrder()
         Dim sqlorder As String = "select kodepengirimanjual,kodepesananjual, tglpengirimanjual, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain, kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang from tblpengirimanjual where kodepengirimanjual='" & TBnotransaksi.Text & "'"
-        Dim sqldetail As String = "select tbldetailpengirimanjual.idharga,idproduk,nilaidasar,produk, idbarang,jumlahjual, tbldetailpengirimanjual.hargajual,satuan,jumlahpajak from  tbldetailpengirimanjual  inner join tblharga on tblharga.idharga = tbldetailpengirimanjual.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan where kodepengirimanjual='" & TBnotransaksi.Text & "'"
+        Dim sqldetail As String = "select tbldetailpengirimanjual.idharga,diskondetailpersen,idproduk,nilaidasar,produk, idbarang,jumlahjual, tbldetailpengirimanjual.hargajual,satuan,jumlahpajak from  tbldetailpengirimanjual  inner join tblharga on tblharga.idharga = tbldetailpengirimanjual.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan where kodepengirimanjual='" & TBnotransaksi.Text & "'"
         saved = True
         dgKeranjang.Rows.Clear()
         CBsupplier.SelectedValue = getValue(sqlorder, "pelanggan")
@@ -625,12 +632,15 @@ Public Class FormPengirimanJual
             dgKeranjang.Rows(no).Cells(4).Value = row.Item("satuan").ToString
             dgKeranjang.Rows(no).Cells(5).Value = row.Item("hargajual").ToString
             dgKeranjang.Rows(no).Cells(6).Value = row.Item("jumlahpajak").ToString
-            dgKeranjang.Rows(no).Cells(7).Value = toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) + toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString)
-            If toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) > 0 Then
-                dgKeranjang.Rows(no).Cells(8).Value = toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString) / toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString)
-            Else
+            dgKeranjang.Rows(no).Cells(12).Value = row.Item("diskondetailpersen").ToString
+            Dim subtotal As Double = toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * (100 - toDouble(dgKeranjang.Rows(no).Cells(12).Value.ToString)) / 100
+            dgKeranjang.Rows(no).Cells(7).Value = subtotal + toDouble(row.Item("jumlahpajak"))
+            If toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) = 0 Then
                 dgKeranjang.Rows(no).Cells(8).Value = 0
+            Else
+                dgKeranjang.Rows(no).Cells(8).Value = subtotal / toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString)
             End If
+
             dgKeranjang.Rows(no).Cells(9).Value = row.Item("idharga").ToString
             dgKeranjang.Rows(no).Cells(10).Value = "Hapus"
             dgKeranjang.Rows(no).Cells(1).ReadOnly = True
@@ -685,7 +695,7 @@ Public Class FormPengirimanJual
             Dim Condition As Boolean = True
             Dim sql = "SELECT sum(tblharga.nilaidasar* COALESCE(stok,0)) as stok,tblharga.idbarang,COALESCE(T.nilaidasar,0) as nilaidasar2,COALESCE(B.nilaidasar ,0) as nilaidasar3, 
 Y.idharga as id1,T.idharga as id2,B.idharga as id3
-from tblharga left join tblstokgudang on tblstokgudang.idharga = tblharga.idharga  and (idgudang='Cabang' OR idgudang is NULL)  
+from tblharga left join tblstokgudang on tblstokgudang.idharga = tblharga.idharga  and (idgudang='" & cbGudang.SelectedValue & "' OR idgudang is NULL)  
 left join tblharga Y on Y.idbarang  = tblharga.idbarang and Y.level =1
 left join tblharga T on T.idbarang  = tblharga.idbarang and T.level =2
 left join tblharga B on B.idbarang  = tblharga.idbarang and B.level =3
@@ -709,10 +719,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
             'Kurangi Stok
             If stokis And Condition Then
                 'Hapus Stok yang telah ada
-
-
-
-
                 For Each rowStok As DataRow In dt.Rows
                     If IsDBNull(rowStok.Item("id2")) Then
                         'Cuman satu
@@ -738,8 +744,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
             Return Condition
         End If
     End Function
-
-
 
 
     Private Sub Button9_Click(sender As Object, e As EventArgs)
@@ -772,20 +776,20 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         Next
         If cekKeranjang(True) Then
             If Not edited Then
-                Dim isidata As String() = {TBnotransaksi.Text, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), ComboBox1.SelectedValue, kodeprojek, t.ToString, bayar.diskonRupiah.ToString, bayar.diskonPersen.ToString, bayar.totalpajak.ToString, bayar.biayaLain.ToString, bayar.kasBiayaLain.ToString, bayar.kasDiskon.ToString, bayar.nomerDokumen, bayar.tglDokumen, CBsupplier.SelectedValue, cbGudang.SelectedValue, "0", kodepesanan}
+                Dim isidata As String() = {TBnotransaksi.Text, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), ComboBox1.SelectedValue, kodeprojek, bayar.total.ToString, bayar.diskonRupiah.ToString, bayar.diskonPersen.ToString, bayar.totalpajak.ToString, bayar.biayaLain.ToString, bayar.kasBiayaLain.ToString, bayar.kasDiskon.ToString, bayar.nomerDokumen, bayar.tglDokumen, CBsupplier.SelectedValue, cbGudang.SelectedValue, "0", kodepesanan}
                 Dim sql As String = "INSERT INTO public.tblpengirimanjual(kodepengirimanjual, tglpengirimanjual, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain, kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang, statuspengiriman,kodepesananjual) 	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);"
                 If operationQuery(sql, isidata) Then
                     'Input kan kedalam tabel jurnal
-                    Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+                    'Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
 
-                    Dim akunPersediaan = "110004"
-                    Dim akunPersediaanBelumDitagihkan = "230001"
-
-                    Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), t.ToString(), "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-                    Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", t.ToString(), "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-
-                    operationQuery(sqlJurnal, dataDebit)
-                    operationQuery(sqlJurnal, dataKredit)
+                    'Dim akunPersediaan = "110004"
+                    ' Dim akunPersediaanBelumDitagihkan = "230001"
+                    '
+                    '  Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), t.ToString(), "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
+                    ' Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", t.ToString(), "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
+                    '
+                    '  operationQuery(sqlJurnal, dataDebit)
+                    ' operationQuery(sqlJurnal, dataKredit)
 
                     isidetail(TBnotransaksi.Text)
                     dialogSukses("Berhasil")
@@ -793,22 +797,22 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
 
                 End If
             Else
-                Dim isidata As String() = {TBnotransaksi.Text, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), ComboBox1.SelectedValue, kodeprojek, t.ToString, bayar.diskonRupiah.ToString, bayar.diskonPersen.ToString, bayar.totalpajak.ToString, bayar.biayaLain.ToString, bayar.kasBiayaLain.ToString, bayar.kasDiskon.ToString, bayar.nomerDokumen, bayar.tglDokumen, CBsupplier.SelectedValue, cbGudang.SelectedValue, kodepesanan, TBnotransaksi.Text, TBnotransaksi.Text, TBnotransaksi.Text, TBnotransaksi.Text}
-                Dim sql As String = "UPDATE public.tblpengirimanjual SET kodepengirimanjual=?, tglpengirimanjual=?, kodedepartemen=?, kodeprojek=?, total=?, diskonrupiah=?, diskonpersen=?, totalpajak=?, biayalain=?, kasbiayalain=?, kasdiskon=?, nomerdokumen=?, tgldokumen=?, pelanggan=?, kodegudang=?,kodepesananjual=? where kodepengirimanjual=?;DELETE FROM tbldetailpengirimanjual where kodepengirimanjual=?;DELETE FROM tblhistoristok where refrensi=?;DELETE FROM tbljurnal WHERE koderefrensi=?;"
+                Dim isidata As String() = {TBnotransaksi.Text, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), ComboBox1.SelectedValue, kodeprojek, bayar.total.ToString, bayar.diskonRupiah.ToString, bayar.diskonPersen.ToString, bayar.totalpajak.ToString, bayar.biayaLain.ToString, bayar.kasBiayaLain.ToString, bayar.kasDiskon.ToString, bayar.nomerDokumen, bayar.tglDokumen, CBsupplier.SelectedValue, cbGudang.SelectedValue, kodepesanan, TBnotransaksi.Text, TBnotransaksi.Text, TBnotransaksi.Text, TBnotransaksi.Text}
+                Dim sql As String = "UPDATE public.tblpengirimanjual SET  kodepengirimanjual=?, tglpengirimanjual=?, kodedepartemen=?, kodeprojek=?, total=?, diskonrupiah=?, diskonpersen=?, totalpajak=?, biayalain=?, kasbiayalain=?, kasdiskon=?, nomerdokumen=?, tgldokumen=?, pelanggan=?, kodegudang=?,kodepesananjual=? where kodepengirimanjual=?;DELETE FROM tbldetailpengirimanjual where kodepengirimanjual=?;DELETE FROM tblhistoristok where refrensi=?;DELETE FROM tbljurnal WHERE koderefrensi=?;"
                 exc("update tblstokgudang set stok = stok + sub.jumlahjual from ( SELECT tbldetailpengirimanjual.idharga, tbldetailpengirimanjual.jumlahjual,tblpengirimanjual.kodegudang, tbldetailpengirimanjual.kodepengirimanjual from tbldetailpengirimanjual  inner join tblpengirimanjual on tbldetailpengirimanjual.kodepengirimanjual = tblpengirimanjual.kodepengirimanjual ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodepengirimanjual='" & TBnotransaksi.Text & "'")
                 If operationQuery(sql, isidata) Then
 
                     'Input kan kedalam tabel jurnal
-                    Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+                    '    Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
 
-                    Dim akunPersediaan = "110004"
-                    Dim akunPersediaanBelumDitagihkan = "230001"
+                    '   Dim akunPersediaan = "110004"
+                    '   Dim akunPersediaanBelumDitagihkan = "230001"
 
-                    Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), t.ToString(), "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-                    Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", t.ToString(), "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
+                    '  Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), t.ToString(), "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
+                    ' Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", t.ToString(), "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
 
-                    operationQuery(sqlJurnal, dataDebit)
-                    operationQuery(sqlJurnal, dataKredit)
+                    ' operationQuery(sqlJurnal, dataDebit)
+                    'operationQuery(sqlJurnal, dataKredit)
                     isidetail(TBnotransaksi.Text)
                     dialogSukses("Berhasil")
                     edited = False
@@ -830,13 +834,13 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
     End Sub
 
     Sub isidetail(refrensi As String)
-
+        Dim Totalhpp As Double = 0
         For Each row As DataGridViewRow In dgKeranjang.Rows
             If Not IsNothing(row.Cells(1).Value) Then
                 'Ambil hpp
                 Dim sqlhpp As String = "SELECT hpp from tblharga where idharga=" & row.Cells(9).Value
                 Dim hpp As Double = getValue(sqlhpp, "hpp")
-
+                Totalhpp = Totalhpp + hpp
                 Dim sqldetail As String = "INSERT INTO public.tbldetailpengirimanjual(kodepengirimanjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga)	VALUES ( ?, ?, ?, ?, ?, ?);"
                 Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString}
                 If operationQuery(sqldetail, data) Then
@@ -873,7 +877,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         For Each row As DataGridViewRow In dgKeranjang.Rows
             If Not IsNothing(row.Cells(5).Value) Then
                 If Double.TryParse(row.Cells(5).Value.ToString, 0) Then
-                    t += toDouble(row.Cells(5).Value.ToString) * toDouble(row.Cells(3).Value.ToString)
+                    t += toDouble(row.Cells(5).Value.ToString) * toDouble(row.Cells(3).Value.ToString) * (100 - toDouble(row.Cells(12).Value.ToString)) / 100
                     totalPajak += toDouble(row.Cells(6).Value.ToString)
                 End If
             End If

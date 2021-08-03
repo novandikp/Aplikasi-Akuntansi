@@ -105,7 +105,7 @@ Public Class DialogTransaksiTanpaBayar
                 TBDiskon.Text = "0"
             Else
                 Dim potongan As Double = toDouble(unnumberFormat(TBPotongan.Text)) / total * 100
-                TBDiskon.Text = Math.Floor(potongan).ToString
+                TBDiskon.Text = Math.Round(potongan).ToString
             End If
             setGrandTotal()
             onEdited = False

@@ -552,7 +552,11 @@ Public Class FormPenawaranJual
             Dim subtotal As Double = toDouble(dgKeranjang.Rows(no).Cells(5).Value.ToString) * toDouble(dgKeranjang.Rows(no).Cells(3).Value.ToString) * (100 - toDouble(dgKeranjang.Rows(no).Cells(11).Value.ToString)) / 100
 
             dgKeranjang.Rows(no).Cells(7).Value = subtotal + toDouble(row.Item("jumlahpajak"))
-            dgKeranjang.Rows(no).Cells(8).Value = subtotal / toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString)
+            If toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString) = 0 Then
+                dgKeranjang.Rows(no).Cells(8).Value = 0
+            Else
+                dgKeranjang.Rows(no).Cells(8).Value = subtotal / toDouble(dgKeranjang.Rows(no).Cells(6).Value.ToString)
+            End If
             dgKeranjang.Rows(no).Cells(9).Value = row.Item("idharga").ToString
             dgKeranjang.Rows(no).Cells(10).Value = "Hapus"
             dgKeranjang.Rows(no).Cells(1).ReadOnly = True

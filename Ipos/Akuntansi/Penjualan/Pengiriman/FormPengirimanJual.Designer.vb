@@ -22,8 +22,8 @@ Partial Class FormPengirimanJual
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dtTanggal = New System.Windows.Forms.DateTimePicker()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
@@ -35,18 +35,6 @@ Partial Class FormPengirimanJual
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblGrandTotal = New System.Windows.Forms.Label()
         Me.dgKeranjang = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idsatuan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.deleteDetail = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.nilaidasar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TBdept = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TBuser = New System.Windows.Forms.TextBox()
@@ -74,6 +62,19 @@ Partial Class FormPengirimanJual
         Me.btnCariPenawaran = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbPenawaranJual = New System.Windows.Forms.TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idsatuan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.deleteDetail = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.nilaidasar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diskon = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.dgKeranjang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -175,104 +176,22 @@ Partial Class FormPengirimanJual
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgKeranjang.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft PhagsPa", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgKeranjang.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft PhagsPa", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgKeranjang.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgKeranjang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgKeranjang.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column7, Me.Column8, Me.Column4, Me.Column10, Me.Column5, Me.idsatuan, Me.deleteDetail, Me.nilaidasar})
+        Me.dgKeranjang.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column7, Me.Column8, Me.Column4, Me.Column10, Me.Column5, Me.idsatuan, Me.deleteDetail, Me.nilaidasar, Me.diskon})
         Me.dgKeranjang.GridColor = System.Drawing.SystemColors.Control
         Me.dgKeranjang.Location = New System.Drawing.Point(6, 214)
         Me.dgKeranjang.MultiSelect = False
         Me.dgKeranjang.Name = "dgKeranjang"
         Me.dgKeranjang.Size = New System.Drawing.Size(1116, 214)
         Me.dgKeranjang.TabIndex = 138
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "No"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Kode item"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "Produk"
-        Me.Column3.Name = "Column3"
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = "1,00"
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column6.HeaderText = "Jumlah"
-        Me.Column6.MaxInputLength = 5
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 64
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column7.HeaderText = "Satuan"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column7.Width = 64
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column8.HeaderText = "Harga"
-        Me.Column8.MaxInputLength = 12
-        Me.Column8.Name = "Column8"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Pajak"
-        Me.Column4.MaxInputLength = 3
-        Me.Column4.Name = "Column4"
-        '
-        'Column10
-        '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column10.HeaderText = "Subtotal"
-        Me.Column10.Name = "Column10"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "pajakpersen"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Visible = False
-        '
-        'idsatuan
-        '
-        Me.idsatuan.HeaderText = "idsatuan"
-        Me.idsatuan.Name = "idsatuan"
-        Me.idsatuan.Visible = False
-        '
-        'deleteDetail
-        '
-        Me.deleteDetail.HeaderText = "Aksi"
-        Me.deleteDetail.Name = "deleteDetail"
-        Me.deleteDetail.Text = "Hapus"
-        '
-        'nilaidasar
-        '
-        Me.nilaidasar.HeaderText = "nilaidasar"
-        Me.nilaidasar.Name = "nilaidasar"
-        Me.nilaidasar.Visible = False
         '
         'TBdept
         '
@@ -575,6 +494,94 @@ Partial Class FormPengirimanJual
         Me.tbPenawaranJual.Size = New System.Drawing.Size(263, 22)
         Me.tbPenawaranJual.TabIndex = 166
         '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "No"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        Me.Column1.Width = 44
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Kode item"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "Produk"
+        Me.Column3.Name = "Column3"
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Format = "N2"
+        DataGridViewCellStyle2.NullValue = "1,00"
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column6.HeaderText = "Jumlah"
+        Me.Column6.MaxInputLength = 5
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 64
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column7.HeaderText = "Satuan"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column7.Width = 64
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column8.HeaderText = "Harga"
+        Me.Column8.MaxInputLength = 12
+        Me.Column8.Name = "Column8"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Pajak"
+        Me.Column4.MaxInputLength = 3
+        Me.Column4.Name = "Column4"
+        '
+        'Column10
+        '
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column10.HeaderText = "Subtotal"
+        Me.Column10.Name = "Column10"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "pajakpersen"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
+        '
+        'idsatuan
+        '
+        Me.idsatuan.HeaderText = "idsatuan"
+        Me.idsatuan.Name = "idsatuan"
+        Me.idsatuan.Visible = False
+        '
+        'deleteDetail
+        '
+        Me.deleteDetail.HeaderText = "Aksi"
+        Me.deleteDetail.Name = "deleteDetail"
+        Me.deleteDetail.Text = "Hapus"
+        '
+        'nilaidasar
+        '
+        Me.nilaidasar.HeaderText = "nilaidasar"
+        Me.nilaidasar.Name = "nilaidasar"
+        Me.nilaidasar.Visible = False
+        '
+        'diskon
+        '
+        Me.diskon.HeaderText = "Diskon(%)"
+        Me.diskon.Name = "diskon"
+        '
         'FormPengirimanJual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -677,4 +684,5 @@ Partial Class FormPengirimanJual
     Friend WithEvents idsatuan As DataGridViewTextBoxColumn
     Friend WithEvents deleteDetail As DataGridViewButtonColumn
     Friend WithEvents nilaidasar As DataGridViewTextBoxColumn
+    Friend WithEvents diskon As DataGridViewTextBoxColumn
 End Class
