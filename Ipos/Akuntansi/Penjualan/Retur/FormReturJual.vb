@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports Npgsql
 
-Public Class FormFakturJual
+Public Class FormReturJual
     Public edited As Boolean = False
     Dim cari As Boolean = False
     Dim status As Boolean = True
@@ -694,7 +694,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
             For Each rowStok As DataRow In dt.Rows
                 For Each rowKeranjang As DataGridViewRow In dgKeranjang.Rows
                     If rowKeranjang.Cells(1).Value = rowStok.Item("idbarang") Then
-                        rowStok.Item("stok") = rowStok.Item("stok") - rowKeranjang.Cells(3).Value * rowKeranjang.Cells(11).Value
+                        rowStok.Item("stok") = rowStok.Item("stok") + rowKeranjang.Cells(3).Value * rowKeranjang.Cells(11).Value
                     End If
                 Next
 
@@ -838,7 +838,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         Dim akunPiutangUsaha As String = "130001"
         Dim akunPenjualanProduk As String = "410001"
         Dim akunUtangPajak As String = "230001"
-        Dim akunLaba As String = "320001"
 
         'Penjualan Produk
         Dim dataPenjualanProduk As String() = {akunPenjualanProduk, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", totalPenjualan.ToString, "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}
@@ -891,7 +890,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         operationQuery(sqlJurnal, dataDebit)
         operationQuery(sqlJurnal, dataKredit)
 
-
+        'Hapus semua yang bernilai debit dan kredit 0
         exc("delete from tbljurnal where debit = 0 and kredit=0 and koderefrensi='" & TBnotransaksi.Text & "'")
     End Sub
 
