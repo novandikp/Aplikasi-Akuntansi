@@ -206,7 +206,6 @@ Public Class FormPengirimanJual
 
     '======================= END EVENT
 
-
     Sub cariPenawaranJual()
         If Not edited Then
             Dim dialog As New DialogPesananJual
@@ -341,9 +340,7 @@ Public Class FormPengirimanJual
         cbGudang.SelectedIndex = 0
     End Sub
 
-
     'isi Departemen
-
     Sub setDepartemen()
         Dim sqldepartemen As String = "select iddepartemen, departemen from tbldepartemen order by departemen"
         ComboBox1.DataSource = getData(sqldepartemen)
@@ -351,8 +348,6 @@ Public Class FormPengirimanJual
         ComboBox1.DisplayMember = "departemen"
         ComboBox1.SelectedIndex = 0
     End Sub
-
-
     Function dontDuplicate(barcode As String, Optional jumlah As Double = 1) As Boolean
         Dim dup = True
         For Each row As DataGridViewRow In dgKeranjang.Rows
@@ -384,7 +379,6 @@ Public Class FormPengirimanJual
 
         Return dup
     End Function
-
 
     'Cari Produk
     Sub cariProduk()
@@ -497,7 +491,6 @@ Public Class FormPengirimanJual
 
     Sub updateBaris()
         cari = True
-
         For Each row As DataGridViewRow In dgKeranjang.Rows
             Try
                 If IsNothing(row.Cells(1).Value) Then
@@ -530,7 +523,6 @@ Public Class FormPengirimanJual
     End Sub
 
     Sub closeTab()
-
         Me.Close()
     End Sub
 
@@ -602,7 +594,6 @@ Public Class FormPengirimanJual
         dgKeranjang.Columns(7).DefaultCellStyle.Format = "C2"
         getTotal()
         idor = ""
-
         updateBaris()
         dgKeranjang.ClearSelection()
         Me.ActiveControl = tbKodeProduk
@@ -649,16 +640,12 @@ Public Class FormPengirimanJual
             dgKeranjang.Rows(no).Cells(10).ReadOnly = True
             If True Then
                 cari = True
-
             Else
                 clearRow(no)
             End If
             cari = False
             no += 1
-
         Next
-
-
         dgKeranjang.Columns(3).ValueType = GetType(Double)
         dgKeranjang.Columns(0).ReadOnly = True
         dgKeranjang.Columns(2).ReadOnly = True
@@ -710,7 +697,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                     End If
                 Next
 
-                If rowStok.Item("stok") <= 0 Then
+                If rowStok.Item("stok") < 0 Then
                     dialogError("Stok dari " & rowStok.Item("idbarang") & " tidak mencukupi")
                     Condition = False
                     Exit For
@@ -779,17 +766,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                 Dim isidata As String() = {TBnotransaksi.Text, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), ComboBox1.SelectedValue, kodeprojek, bayar.total.ToString, bayar.diskonRupiah.ToString, bayar.diskonPersen.ToString, bayar.totalpajak.ToString, bayar.biayaLain.ToString, bayar.kasBiayaLain.ToString, bayar.kasDiskon.ToString, bayar.nomerDokumen, bayar.tglDokumen, CBsupplier.SelectedValue, cbGudang.SelectedValue, "0", kodepesanan}
                 Dim sql As String = "INSERT INTO public.tblpengirimanjual(kodepengirimanjual, tglpengirimanjual, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain, kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang, statuspengiriman,kodepesananjual) 	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);"
                 If operationQuery(sql, isidata) Then
-                    'Input kan kedalam tabel jurnal
-                    'Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
-
-                    'Dim akunPersediaan = "110004"
-                    ' Dim akunPersediaanBelumDitagihkan = "230001"
-                    '
-                    '  Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), t.ToString(), "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-                    ' Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", t.ToString(), "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-                    '
-                    '  operationQuery(sqlJurnal, dataDebit)
-                    ' operationQuery(sqlJurnal, dataKredit)
 
                     isidetail(TBnotransaksi.Text)
                     dialogSukses("Berhasil")
@@ -802,17 +778,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                 exc("update tblstokgudang set stok = stok + sub.jumlahjual from ( SELECT tbldetailpengirimanjual.idharga, tbldetailpengirimanjual.jumlahjual,tblpengirimanjual.kodegudang, tbldetailpengirimanjual.kodepengirimanjual from tbldetailpengirimanjual  inner join tblpengirimanjual on tbldetailpengirimanjual.kodepengirimanjual = tblpengirimanjual.kodepengirimanjual ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodepengirimanjual='" & TBnotransaksi.Text & "'")
                 If operationQuery(sql, isidata) Then
 
-                    'Input kan kedalam tabel jurnal
-                    '    Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
 
-                    '   Dim akunPersediaan = "110004"
-                    '   Dim akunPersediaanBelumDitagihkan = "230001"
-
-                    '  Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), t.ToString(), "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-                    ' Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", t.ToString(), "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
-
-                    ' operationQuery(sqlJurnal, dataDebit)
-                    'operationQuery(sqlJurnal, dataKredit)
                     isidetail(TBnotransaksi.Text)
                     dialogSukses("Berhasil")
                     edited = False
@@ -824,8 +790,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         End If
 
     End Sub
-
-
 
     Sub restartControl()
         Me.Controls.Clear()
@@ -840,9 +804,9 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                 'Ambil hpp
                 Dim sqlhpp As String = "SELECT hpp from tblharga where idharga=" & row.Cells(9).Value
                 Dim hpp As Double = getValue(sqlhpp, "hpp")
-                Totalhpp = Totalhpp + hpp
-                Dim sqldetail As String = "INSERT INTO public.tbldetailpengirimanjual(kodepengirimanjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga)	VALUES ( ?, ?, ?, ?, ?, ?);"
-                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString}
+                Totalhpp = Totalhpp + (hpp * row.Cells(3).Value())
+                Dim sqldetail As String = "INSERT INTO public.tbldetailpengirimanjual(kodepengirimanjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga,diskondetailpersen)	VALUES ( ?, ?, ?, ?, ?, ?,?);"
+                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(11).Value.ToString}
                 If operationQuery(sqldetail, data) Then
                     Dim sqlHistoriStok As String = "INSERT INTO public.tblhistoristok(masuk, keluar, harga, tglhistori, idharga, refrensi, hpp) VALUES ( ?, ?, ?, ?, ?, ?, ?);"
                     Dim dataHistori As String() = {"0", row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, dtTanggal.Value.ToString("yyyy-MM-dd"), row.Cells(9).Value, TBnotransaksi.Text, hpp.ToString}
@@ -851,8 +815,24 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                 End If
             End If
         Next
+        Dim kodeprojek As String
+        If cbProjek.SelectedIndex < 0 Then
+            kodeprojek = "NULL"
+        Else
+            kodeprojek = cbProjek.SelectedValue
+        End If
 
 
+        Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+
+        Dim akunPersediaan = "110004"
+        Dim akunPersediaanBelumDitagihkan = "230001"
+
+        Dim dataDebit As String() = {akunPersediaanBelumDitagihkan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), Totalhpp, "0", "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
+        Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", Totalhpp, "PD", TBnotransaksi.Text, "Pengiriman Penjualan, " & CBsupplier.Text}
+
+        operationQuery(sqlJurnal, dataDebit)
+        operationQuery(sqlJurnal, dataKredit)
 
     End Sub
 
@@ -869,7 +849,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
             dialogError("Keranjang masih kosong")
         End If
     End Sub
-
 
     Sub tampilkanDialogPembayaran()
         Dim t As Double = 0
@@ -903,7 +882,6 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         dialog.Dispose()
     End Sub
 
-
     Private Sub FormPenjualan_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         If Not IsNothing(dgKeranjang.Rows(0).Cells(9).Value) Then
             e.Cancel = True
@@ -916,6 +894,5 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         closeTab()
     End Sub
-
 
 End Class

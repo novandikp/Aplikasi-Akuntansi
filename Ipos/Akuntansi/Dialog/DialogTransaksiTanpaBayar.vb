@@ -37,7 +37,10 @@ Public Class DialogTransaksiTanpaBayar
                 TBNoDokumen.Text = getValue(sqlorder, "nomerdokumen")
                 tbBiayaLain.Text = numberFormat(getValue(sqlorder, "biayalain"))
                 TBDiskon.Text = getValue(sqlorder, "diskonpersen")
-                TBPotongan.Text = numberFormat(getValue(sqlorder, "diskonrupiah"))
+
+                Dim potongan As Double = total * (toDouble(unnumberFormat(TBDiskon.Text))) / 100
+                TBPotongan.Text = numberFormat(potongan)
+                '  TBPotongan.Text = numberFormat(getValue(sqlorder, "diskonrupiah"))
                 TBNoDokumen.Text = getValue(sqlorder, "nomerdokumen")
                 dtDokumen.Value = getValue(sqlorder, "tgldokumen")
                 cbAkunDiskon.SelectedValue = getValue(sqlorder, "kasdiskon")
@@ -159,9 +162,9 @@ Public Class DialogTransaksiTanpaBayar
             Return
         End If
         If dialog("Apakah anda yakin untuk menyimpan data ini ?") Then
-            grandtotalResult = total + totalpajak + toDouble(unnumberFormat(tbBiayaLain.Text)) - toDouble(unnumberFormat(TBPotongan.Text))
+            grandtotalResult = toDouble(unnumberFormat(tbGrand.Text))
             diskonPersen = toDouble(TBDiskon.Text)
-            diskonRupiah = toDouble(TBPotongan.Text)
+            diskonRupiah = toDouble(unnumberFormat(TBPotongan.Text))
             biayaLain = toDouble(unnumberFormat(tbBiayaLain.Text))
             kasBiayaLain = cbKasBiayaLain.SelectedValue
             kasDiskon = cbAkunDiskon.SelectedValue

@@ -709,9 +709,9 @@ Public Class FormPesananJual
     Sub isidetail(refrensi As String)
         For Each row As DataGridViewRow In dgKeranjang.Rows
             If Not IsNothing(row.Cells(1).Value) Then
-                Dim sqldetail As String = "INSERT INTO public.tbldetailpesananjual(kodepesananjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga,diskondetailpersen)	VALUES ( ? , ?, ?, ?, ?, ?, ?);"
-                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(11).Value.ToString}
-                operationQuery(sqldetail, data)
+                Dim sqldetail As String = "INSERT INTO public.tbldetailpesananjual(kodepesananjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga,diskondetailpersen)	VALUES ( ?, ?, ?, ?, ?, ?,?);"
+                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(12).Value.ToString}
+                operationQuery(sqldetail, Data)
             End If
         Next
         End Sub

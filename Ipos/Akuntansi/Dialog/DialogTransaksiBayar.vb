@@ -15,8 +15,9 @@ Public Class DialogTransaksiBayar
     Public tableRefrensi As String = ""
     Public keyRefrensi As String = ""
     Public kasDiskon As String
+
     Public bayar As Double
-    Public akunBayar As String
+    Public kasPenerimaaan As String = ""
     Dim onEdited As Boolean = False
 
     Dim onEditCurrency As Boolean = False
@@ -31,16 +32,18 @@ Public Class DialogTransaksiBayar
         diskonNominal.Checked = True
         panelDokumen.Enabled = checkDokumen.Checked
         setAkun()
-        setAkunPenerimaan()
         setAkunDiskon()
         setGrandTotal()
+        setAkunPenerimaan()
+
         If Not String.IsNullOrEmpty(refrensi) Then
             Dim sqlorder As String = "select nomerdokumen, biayalain, diskonpersen, diskonrupiah, nomerdokumen, tgldokumen, kasdiskon, kasbiayalain from " & tableRefrensi & " where " & keyRefrensi & "='" & refrensi & "'"
             If getCount(sqlorder) > 0 Then
                 TBNoDokumen.Text = getValue(sqlorder, "nomerdokumen")
                 tbBiayaLain.Text = numberFormat(getValue(sqlorder, "biayalain"))
                 TBDiskon.Text = getValue(sqlorder, "diskonpersen")
-                TBPotongan.Text = numberFormat(getValue(sqlorder, "diskonrupiah"))
+                Dim potongan As Double = total * (toDouble(unnumberFormat(TBDiskon.Text))) / 100
+                TBPotongan.Text = numberFormat(potongan)
                 TBNoDokumen.Text = getValue(sqlorder, "nomerdokumen")
                 dtDokumen.Value = getValue(sqlorder, "tgldokumen")
                 cbAkunDiskon.SelectedValue = getValue(sqlorder, "kasdiskon")
@@ -50,12 +53,13 @@ Public Class DialogTransaksiBayar
     End Sub
 
     Sub setGrandTotal()
-        Dim grandTotal As Double = total + totalpajak - toDouble(unnumberFormat(TBPotongan.Text)) + toDouble(tbBiayaLain.Text)
+        Dim grandTotal As Double = ((total + totalpajak) * (100 - toDouble(TBDiskon.Text)) / 100) + toDouble(unnumberFormat(tbBiayaLain.Text))
+        tbTotal.Text = numberFormat((total * (100 - toDouble(TBDiskon.Text)) / 100).ToString)
+        tbPajak.Text = numberFormat((totalpajak * (100 - toDouble(TBDiskon.Text)) / 100).ToString)
         tbGrand.Text = numberFormat(grandTotal.ToString)
         If cbLunas.Checked Then
-            tbBayar.Text = numberFormat(grandTotal.ToString)
+            tbBayar.Text = tbGrand.Text
         End If
-
     End Sub
 
     Private Sub DialogTransaksiTanpaBayar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -84,6 +88,7 @@ Public Class DialogTransaksiBayar
         cbAkunTerima.SelectedIndex = 0
     End Sub
 
+
     Private Sub checkDokumen_CheckedChanged(sender As Object, e As EventArgs) Handles checkDokumen.CheckedChanged
         TBNoDokumen.Text = ""
         panelDokumen.Enabled = checkDokumen.Checked
@@ -102,7 +107,8 @@ Public Class DialogTransaksiBayar
     Private Sub TBDiskon_TextChanged(sender As Object, e As EventArgs) Handles TBDiskon.TextChanged
         If Not onEdited And Not diskonNominal.Checked Then
             onEdited = True
-            Dim potongan As Double = Math.Floor(total + totalpajak + toDouble(unnumberFormat(tbBiayaLain.Text))) * (toDouble(TBDiskon.Text) / 100)
+
+            Dim potongan As Double = total * (toDouble(unnumberFormat(TBDiskon.Text))) / 100
             TBPotongan.Text = potongan.ToString
             setGrandTotal()
             onEdited = False
@@ -115,8 +121,8 @@ Public Class DialogTransaksiBayar
             If toDouble(unnumberFormat(TBPotongan.Text)) = 0 Then
                 TBDiskon.Text = "0"
             Else
-                Dim potongan As Double = toDouble(unnumberFormat(TBPotongan.Text) / (total + totalpajak + toDouble(unnumberFormat(tbBiayaLain.Text)))) * 100
-                TBDiskon.Text = Math.Floor(potongan).ToString
+                Dim potongan As Double = toDouble(unnumberFormat(TBPotongan.Text)) / total * 100
+                TBDiskon.Text = Math.Round(potongan).ToString
             End If
             setGrandTotal()
             onEdited = False
@@ -146,6 +152,7 @@ Public Class DialogTransaksiBayar
             onEditCurrency = False
         End If
     End Sub
+
     Private Sub tbBayar_TextChanged(sender As Object, e As EventArgs) Handles tbBayar.TextChanged
         If Not onEditCurrency Then
             onEditCurrency = True
@@ -174,17 +181,23 @@ Public Class DialogTransaksiBayar
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        If toDouble(TBDiskon.Text) < 0 Or toDouble(TBDiskon.Text) > 100 Then
+            dialogError("Masukkan jumlah diskon dengan benar")
+            Return
+        End If
         If dialog("Apakah anda yakin untuk menyimpan data ini ?") Then
-            grandtotalResult = total + totalpajak + toDouble(unnumberFormat(tbBiayaLain.Text)) - toDouble(unnumberFormat(TBPotongan.Text))
+            grandtotalResult = toDouble(unnumberFormat(tbGrand.Text))
             diskonPersen = toDouble(TBDiskon.Text)
-            diskonRupiah = toDouble(TBPotongan.Text)
+            diskonRupiah = toDouble(unnumberFormat(TBPotongan.Text))
             biayaLain = toDouble(unnumberFormat(tbBiayaLain.Text))
             kasBiayaLain = cbKasBiayaLain.SelectedValue
             kasDiskon = cbAkunDiskon.SelectedValue
             nomerDokumen = TBNoDokumen.Text
             tglDokumen = dtDokumen.Value.ToString("yyyy-MM-dd")
+            totalpajak = toDouble(unnumberFormat(tbPajak.Text.ToString))
+            total = toDouble(unnumberFormat(tbTotal.Text.ToString))
             bayar = toDouble(unnumberFormat(tbBayar.Text))
-            akunBayar = cbAkunTerima.SelectedValue
+            kasPenerimaaan = cbAkunTerima.SelectedValue
             Me.DialogResult = DialogResult.OK
             Me.Close()
         End If
@@ -198,10 +211,12 @@ Public Class DialogTransaksiBayar
         dialog.Dispose()
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles cbLunas.CheckedChanged
-        tbBayar.ReadOnly = cbLunas.Checked
+    Private Sub cbLunas_CheckedChanged(sender As Object, e As EventArgs) Handles cbLunas.CheckedChanged
+        tbBayar.Enabled = Not cbLunas.Checked
         If cbLunas.Checked Then
             tbBayar.Text = tbGrand.Text
+        Else
+            tbBayar.Text = "0"
         End If
     End Sub
 

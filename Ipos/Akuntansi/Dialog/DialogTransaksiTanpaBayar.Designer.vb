@@ -58,10 +58,12 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label9 = New System.Windows.Forms.Label()
         Me.tbTotal = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.panelDokumen.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cbKasBiayaLain
@@ -70,7 +72,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.cbKasBiayaLain.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbKasBiayaLain.FormattingEnabled = True
         Me.cbKasBiayaLain.Items.AddRange(New Object() {"Cash", "E-Money", "Debit"})
-        Me.cbKasBiayaLain.Location = New System.Drawing.Point(150, 368)
+        Me.cbKasBiayaLain.Location = New System.Drawing.Point(140, 362)
         Me.cbKasBiayaLain.Name = "cbKasBiayaLain"
         Me.cbKasBiayaLain.Size = New System.Drawing.Size(453, 28)
         Me.cbKasBiayaLain.TabIndex = 9
@@ -81,15 +83,15 @@ Partial Class DialogTransaksiTanpaBayar
         Me.panelDokumen.Controls.Add(Me.Label6)
         Me.panelDokumen.Controls.Add(Me.TBNoDokumen)
         Me.panelDokumen.Controls.Add(Me.Label4)
-        Me.panelDokumen.Location = New System.Drawing.Point(-1, 486)
+        Me.panelDokumen.Location = New System.Drawing.Point(9, 436)
         Me.panelDokumen.Name = "panelDokumen"
-        Me.panelDokumen.Size = New System.Drawing.Size(740, 88)
+        Me.panelDokumen.Size = New System.Drawing.Size(692, 88)
         Me.panelDokumen.TabIndex = 38
         '
         'dtDokumen
         '
-        Me.dtDokumen.Location = New System.Drawing.Point(189, 10)
-        Me.dtDokumen.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtDokumen.Location = New System.Drawing.Point(182, 10)
+        Me.dtDokumen.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtDokumen.Name = "dtDokumen"
         Me.dtDokumen.Size = New System.Drawing.Size(487, 29)
         Me.dtDokumen.TabIndex = 21
@@ -99,7 +101,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(33, 14)
+        Me.Label6.Location = New System.Drawing.Point(26, 14)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(147, 20)
         Me.Label6.TabIndex = 20
@@ -108,7 +110,7 @@ Partial Class DialogTransaksiTanpaBayar
         'TBNoDokumen
         '
         Me.TBNoDokumen.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBNoDokumen.Location = New System.Drawing.Point(189, 54)
+        Me.TBNoDokumen.Location = New System.Drawing.Point(182, 54)
         Me.TBNoDokumen.Name = "TBNoDokumen"
         Me.TBNoDokumen.Size = New System.Drawing.Size(487, 26)
         Me.TBNoDokumen.TabIndex = 11
@@ -118,7 +120,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(43, 54)
+        Me.Label4.Location = New System.Drawing.Point(36, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(137, 20)
         Me.Label4.TabIndex = 13
@@ -126,10 +128,10 @@ Partial Class DialogTransaksiTanpaBayar
         '
         'tbBiayaLain
         '
-        Me.tbBiayaLain.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.tbBiayaLain.Location = New System.Drawing.Point(150, 309)
+        Me.tbBiayaLain.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.tbBiayaLain.Location = New System.Drawing.Point(140, 304)
         Me.tbBiayaLain.Name = "tbBiayaLain"
-        Me.tbBiayaLain.Size = New System.Drawing.Size(545, 44)
+        Me.tbBiayaLain.Size = New System.Drawing.Size(545, 38)
         Me.tbBiayaLain.TabIndex = 8
         Me.tbBiayaLain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -138,7 +140,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(59, 319)
+        Me.Label5.Location = New System.Drawing.Point(47, 313)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(90, 20)
         Me.Label5.TabIndex = 36
@@ -161,7 +163,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(19, 372)
+        Me.Label3.Location = New System.Drawing.Point(6, 366)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(131, 20)
         Me.Label3.TabIndex = 40
@@ -181,10 +183,10 @@ Partial Class DialogTransaksiTanpaBayar
         '
         'TBDiskon
         '
-        Me.TBDiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.TBDiskon.Location = New System.Drawing.Point(150, 213)
+        Me.TBDiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.TBDiskon.Location = New System.Drawing.Point(140, 201)
         Me.TBDiskon.Name = "TBDiskon"
-        Me.TBDiskon.Size = New System.Drawing.Size(117, 44)
+        Me.TBDiskon.Size = New System.Drawing.Size(98, 38)
         Me.TBDiskon.TabIndex = 7
         Me.TBDiskon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -193,7 +195,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label7.Location = New System.Drawing.Point(83, 229)
+        Me.Label7.Location = New System.Drawing.Point(71, 210)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(66, 20)
         Me.Label7.TabIndex = 41
@@ -202,11 +204,11 @@ Partial Class DialogTransaksiTanpaBayar
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label8.Location = New System.Drawing.Point(267, 216)
+        Me.Label8.Location = New System.Drawing.Point(239, 205)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 46)
+        Me.Label8.Size = New System.Drawing.Size(38, 31)
         Me.Label8.TabIndex = 43
         Me.Label8.Text = "%"
         '
@@ -246,10 +248,10 @@ Partial Class DialogTransaksiTanpaBayar
         '
         'TBPotongan
         '
-        Me.TBPotongan.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.TBPotongan.Location = New System.Drawing.Point(321, 213)
+        Me.TBPotongan.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.TBPotongan.Location = New System.Drawing.Point(278, 201)
         Me.TBPotongan.Name = "TBPotongan"
-        Me.TBPotongan.Size = New System.Drawing.Size(368, 44)
+        Me.TBPotongan.Size = New System.Drawing.Size(406, 38)
         Me.TBPotongan.TabIndex = 45
         Me.TBPotongan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -267,27 +269,8 @@ Partial Class DialogTransaksiTanpaBayar
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.cbAkunDiskon)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.btnCariAkun)
-        Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.tbPajak)
-        Me.Panel1.Controls.Add(Me.checkDokumen)
-        Me.Panel1.Controls.Add(Me.diskonNominal)
-        Me.Panel1.Controls.Add(Me.tbGrand)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.TBPotongan)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.TBDiskon)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.cbKasBiayaLain)
-        Me.Panel1.Controls.Add(Me.panelDokumen)
-        Me.Panel1.Controls.Add(Me.tbBiayaLain)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.tbTotal)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(740, 575)
@@ -295,7 +278,7 @@ Partial Class DialogTransaksiTanpaBayar
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(609, 414)
+        Me.Button1.Location = New System.Drawing.Point(599, 256)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(86, 28)
         Me.Button1.TabIndex = 64
@@ -308,7 +291,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.cbAkunDiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbAkunDiskon.FormattingEnabled = True
         Me.cbAkunDiskon.Items.AddRange(New Object() {"Cash", "E-Money", "Debit"})
-        Me.cbAkunDiskon.Location = New System.Drawing.Point(150, 414)
+        Me.cbAkunDiskon.Location = New System.Drawing.Point(140, 258)
         Me.cbAkunDiskon.Name = "cbAkunDiskon"
         Me.cbAkunDiskon.Size = New System.Drawing.Size(453, 28)
         Me.cbAkunDiskon.TabIndex = 62
@@ -318,7 +301,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label11.Location = New System.Drawing.Point(43, 418)
+        Me.Label11.Location = New System.Drawing.Point(30, 262)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(107, 20)
         Me.Label11.TabIndex = 63
@@ -327,7 +310,7 @@ Partial Class DialogTransaksiTanpaBayar
         '
         'btnCariAkun
         '
-        Me.btnCariAkun.Location = New System.Drawing.Point(609, 368)
+        Me.btnCariAkun.Location = New System.Drawing.Point(599, 360)
         Me.btnCariAkun.Name = "btnCariAkun"
         Me.btnCariAkun.Size = New System.Drawing.Size(86, 28)
         Me.btnCariAkun.TabIndex = 61
@@ -337,11 +320,11 @@ Partial Class DialogTransaksiTanpaBayar
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label10.Location = New System.Drawing.Point(22, 157)
+        Me.Label10.Location = New System.Drawing.Point(433, 93)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(127, 28)
+        Me.Label10.Size = New System.Drawing.Size(95, 20)
         Me.Label10.TabIndex = 60
         Me.Label10.Text = "Total Pajak :"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -349,11 +332,11 @@ Partial Class DialogTransaksiTanpaBayar
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(78, 96)
+        Me.Label2.Location = New System.Drawing.Point(145, 93)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 28)
+        Me.Label2.Size = New System.Drawing.Size(52, 20)
         Me.Label2.TabIndex = 59
         Me.Label2.Text = "Total :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -364,9 +347,9 @@ Partial Class DialogTransaksiTanpaBayar
         Me.tbPajak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbPajak.Enabled = False
         Me.tbPajak.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbPajak.Location = New System.Drawing.Point(150, 150)
+        Me.tbPajak.Location = New System.Drawing.Point(437, 116)
         Me.tbPajak.Name = "tbPajak"
-        Me.tbPajak.Size = New System.Drawing.Size(545, 44)
+        Me.tbPajak.Size = New System.Drawing.Size(250, 44)
         Me.tbPajak.TabIndex = 58
         Me.tbPajak.Text = "50.000"
         Me.tbPajak.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -374,11 +357,11 @@ Partial Class DialogTransaksiTanpaBayar
         'checkDokumen
         '
         Me.checkDokumen.AutoSize = True
-        Me.checkDokumen.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkDokumen.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkDokumen.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.checkDokumen.Location = New System.Drawing.Point(23, 458)
+        Me.checkDokumen.Location = New System.Drawing.Point(9, 406)
         Me.checkDokumen.Name = "checkDokumen"
-        Me.checkDokumen.Size = New System.Drawing.Size(133, 22)
+        Me.checkDokumen.Size = New System.Drawing.Size(140, 24)
         Me.checkDokumen.TabIndex = 57
         Me.checkDokumen.Text = "Pakai Dokumen"
         Me.checkDokumen.UseVisualStyleBackColor = True
@@ -388,7 +371,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.diskonNominal.AutoSize = True
         Me.diskonNominal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.diskonNominal.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.diskonNominal.Location = New System.Drawing.Point(150, 271)
+        Me.diskonNominal.Location = New System.Drawing.Point(282, 176)
         Me.diskonNominal.Name = "diskonNominal"
         Me.diskonNominal.Size = New System.Drawing.Size(240, 22)
         Me.diskonNominal.TabIndex = 56
@@ -401,9 +384,9 @@ Partial Class DialogTransaksiTanpaBayar
         Me.tbGrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbGrand.Enabled = False
         Me.tbGrand.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbGrand.Location = New System.Drawing.Point(150, 25)
+        Me.tbGrand.Location = New System.Drawing.Point(140, 29)
         Me.tbGrand.Name = "tbGrand"
-        Me.tbGrand.Size = New System.Drawing.Size(545, 53)
+        Me.tbGrand.Size = New System.Drawing.Size(556, 53)
         Me.tbGrand.TabIndex = 46
         Me.tbGrand.Text = "50.000"
         Me.tbGrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -411,11 +394,11 @@ Partial Class DialogTransaksiTanpaBayar
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label9.Location = New System.Drawing.Point(13, 35)
+        Me.Label9.Location = New System.Drawing.Point(36, 42)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(136, 28)
+        Me.Label9.Size = New System.Drawing.Size(101, 20)
         Me.Label9.TabIndex = 47
         Me.Label9.Text = "Grand Total :"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -426,9 +409,9 @@ Partial Class DialogTransaksiTanpaBayar
         Me.tbTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbTotal.Enabled = False
         Me.tbTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbTotal.Location = New System.Drawing.Point(150, 89)
+        Me.tbTotal.Location = New System.Drawing.Point(140, 116)
         Me.tbTotal.Name = "tbTotal"
-        Me.tbTotal.Size = New System.Drawing.Size(545, 44)
+        Me.tbTotal.Size = New System.Drawing.Size(281, 44)
         Me.tbTotal.TabIndex = 1
         Me.tbTotal.Text = "50.000"
         Me.tbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -447,11 +430,40 @@ Partial Class DialogTransaksiTanpaBayar
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(709, 38)
         Me.TableLayoutPanel1.TabIndex = 56
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.cbAkunDiskon)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.btnCariAkun)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.tbPajak)
+        Me.GroupBox1.Controls.Add(Me.checkDokumen)
+        Me.GroupBox1.Controls.Add(Me.diskonNominal)
+        Me.GroupBox1.Controls.Add(Me.tbGrand)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.TBPotongan)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.TBDiskon)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.cbKasBiayaLain)
+        Me.GroupBox1.Controls.Add(Me.panelDokumen)
+        Me.GroupBox1.Controls.Add(Me.tbBiayaLain)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.tbTotal)
+        Me.GroupBox1.Location = New System.Drawing.Point(14, 11)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(709, 547)
+        Me.GroupBox1.TabIndex = 65
+        Me.GroupBox1.TabStop = False
+        '
         'DialogTransaksiTanpaBayar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(740, 652)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
@@ -470,8 +482,9 @@ Partial Class DialogTransaksiTanpaBayar
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -512,4 +525,5 @@ Partial Class DialogTransaksiTanpaBayar
     Friend WithEvents Button1 As Button
     Friend WithEvents cbAkunDiskon As ComboBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

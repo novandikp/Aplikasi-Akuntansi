@@ -617,12 +617,6 @@
     <Compile Include="Akuntansi\Dialog\DialogPenawaranJual.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\Penjualan\Faktur\FormFakturJualPengiriman.Designer.vb">
-      <DependentUpon>FormFakturJualPengiriman.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\Penjualan\Faktur\FormFakturJualPengiriman.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Akuntansi\Penjualan\Faktur\FormFakturJual.Designer.vb">
       <DependentUpon>FormFakturJual.vb</DependentUpon>
     </Compile>
@@ -1687,9 +1681,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\DialogPenawaranJual.resx">
       <DependentUpon>DialogPenawaranJual.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Penjualan\Faktur\FormFakturJualPengiriman.resx">
-      <DependentUpon>FormFakturJualPengiriman.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Faktur\FormFakturJual.resx">
       <DependentUpon>FormFakturJual.vb</DependentUpon>

@@ -57,7 +57,7 @@ Partial Class DialogTransaksiBayar
         Me.cbAkunTerima = New System.Windows.Forms.ComboBox()
         Me.tbBayar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblAkunTerima = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbPajak = New System.Windows.Forms.TextBox()
@@ -363,7 +363,7 @@ Partial Class DialogTransaksiBayar
         Me.GroupBox1.Controls.Add(Me.cbAkunTerima)
         Me.GroupBox1.Controls.Add(Me.tbBayar)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.lblAkunTerima)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.tbPajak)
@@ -386,7 +386,7 @@ Partial Class DialogTransaksiBayar
         Me.cbLunas.AutoSize = True
         Me.cbLunas.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbLunas.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.cbLunas.Location = New System.Drawing.Point(501, 265)
+        Me.cbLunas.Location = New System.Drawing.Point(502, 268)
         Me.cbLunas.Name = "cbLunas"
         Me.cbLunas.Size = New System.Drawing.Size(66, 21)
         Me.cbLunas.TabIndex = 70
@@ -434,17 +434,17 @@ Partial Class DialogTransaksiBayar
         Me.Label12.TabIndex = 67
         Me.Label12.Text = "Pembayaran :"
         '
-        'Label13
+        'lblAkunTerima
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label13.Location = New System.Drawing.Point(16, 344)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(143, 20)
-        Me.Label13.TabIndex = 68
-        Me.Label13.Text = "Akun Penerimaan :"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lblAkunTerima.AutoSize = True
+        Me.lblAkunTerima.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAkunTerima.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAkunTerima.Location = New System.Drawing.Point(16, 344)
+        Me.lblAkunTerima.Name = "lblAkunTerima"
+        Me.lblAkunTerima.Size = New System.Drawing.Size(143, 20)
+        Me.lblAkunTerima.TabIndex = 68
+        Me.lblAkunTerima.Text = "Akun Penerimaan :"
+        Me.lblAkunTerima.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label10
         '
@@ -620,7 +620,7 @@ Partial Class DialogTransaksiBayar
     Friend WithEvents cbAkunTerima As ComboBox
     Friend WithEvents tbBayar As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lblAkunTerima As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
 End Class

@@ -47,6 +47,7 @@ Partial Class FormFakturJual
         Me.idsatuan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.deleteDetail = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.nilaidasar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diskon = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TBdept = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TBuser = New System.Windows.Forms.TextBox()
@@ -184,7 +185,7 @@ Partial Class FormFakturJual
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgKeranjang.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgKeranjang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgKeranjang.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column7, Me.Column8, Me.Column4, Me.Column10, Me.Column5, Me.idsatuan, Me.deleteDetail, Me.nilaidasar})
+        Me.dgKeranjang.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column7, Me.Column8, Me.Column4, Me.Column10, Me.Column5, Me.idsatuan, Me.deleteDetail, Me.nilaidasar, Me.diskon})
         Me.dgKeranjang.GridColor = System.Drawing.SystemColors.Control
         Me.dgKeranjang.Location = New System.Drawing.Point(6, 214)
         Me.dgKeranjang.MultiSelect = False
@@ -273,6 +274,11 @@ Partial Class FormFakturJual
         Me.nilaidasar.HeaderText = "nilaidasar"
         Me.nilaidasar.Name = "nilaidasar"
         Me.nilaidasar.Visible = False
+        '
+        'diskon
+        '
+        Me.diskon.HeaderText = "Diskon(%)"
+        Me.diskon.Name = "diskon"
         '
         'TBdept
         '
@@ -677,4 +683,5 @@ Partial Class FormFakturJual
     Friend WithEvents idsatuan As DataGridViewTextBoxColumn
     Friend WithEvents deleteDetail As DataGridViewButtonColumn
     Friend WithEvents nilaidasar As DataGridViewTextBoxColumn
+    Friend WithEvents diskon As DataGridViewTextBoxColumn
 End Class
