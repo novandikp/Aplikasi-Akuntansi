@@ -640,7 +640,7 @@ Public Class FormPenawaranJual
             If Not IsNothing(row.Cells(1).Value) Then
 
                 Dim sqldetail As String = "INSERT INTO public.tbldetailpenawaranjual(kodepenawaranjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga,diskondetailpersen)	VALUES ( ?, ?, ?, ?, ?, ?,?);"
-                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(12).Value.ToString}
+                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(11).Value.ToString}
                 operationQuery(sqldetail, data)
             End If
         Next

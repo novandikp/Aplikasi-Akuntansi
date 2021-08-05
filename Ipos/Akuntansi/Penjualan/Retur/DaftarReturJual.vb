@@ -36,7 +36,7 @@
             Dim diskon = row.Cells(4).Value
             Dim biayalain = row.Cells(5).Value
             Dim pajak = row.Cells(6).Value
-            row.Cells(3).Value = total - diskon + biayalain + pajak
+            row.Cells(3).Value = total + biayalain + pajak
         Next
         ListSat.Columns(3).DefaultCellStyle.Format = "n0"
     End Sub
@@ -47,11 +47,11 @@
         Dim tglAkhir As String = dtAkhir.Value.ToString("yyyy-MM-dd")
 
 
-        Dim sql As String = "SELECT tgljual,kodejual, tblkontak.pelanggan, total,diskonrupiah,biayalain,totalpajak,cast(statusjual as varchar) from tbljual inner join tblkontak on tblkontak.idpelanggan = tbljual.pelanggan "
-        Dim filter As String = "WHERE (kodejual ilike '%" & cari & "%' or tblkontak.pelanggan ilike '%" & cari & "%') AND tgljual BETWEEN '" & tglAwal & "' AND '" & tglAkhir & "' order by tgljual,kodejual"
+        Dim sql As String = "SELECT tglreturjual,kodereturjual, tblkontak.pelanggan, total,diskonrupiah,biayalain,totalpajak,cast(statusreturjual as varchar) from tblreturjual inner join tblkontak on tblkontak.idpelanggan = tblreturjual.pelanggan "
+        Dim filter As String = "WHERE (kodereturjual ilike '%" & cari & "%' or tblkontak.pelanggan ilike '%" & cari & "%') AND tglreturjual BETWEEN '" & tglAwal & "' AND '" & tglAkhir & "' order by tglreturjual,kodereturjual"
         ListSat.DataSource = getData(sql & filter)
         ListSat.Columns(0).HeaderText = "Tanggal"
-        ListSat.Columns(1).HeaderText = "Faktur Penjualan"
+        ListSat.Columns(1).HeaderText = "Retur Penjualan"
         ListSat.Columns(2).HeaderText = "Pelanggan"
 
         ListSat.Columns(3).HeaderText = "Nilai"
@@ -83,19 +83,19 @@
 
 
     Sub tambahData()
-        Dim ds As DialogResult = FormFakturJual.ShowDialog()
+        Dim ds As DialogResult = FormReturJual.ShowDialog()
         If ds = DialogResult.OK Then
 
         End If
         fillData()
-        FormFakturJual.Dispose()
+        FormReturJual.Dispose()
     End Sub
 
     Sub editData()
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
 
-            Dim pesanan As New FormFakturJual
+            Dim pesanan As New FormReturJual
             pesanan.TBnotransaksi.Text = idselected
             pesanan.edited = True
             Dim ds As DialogResult = pesanan.ShowDialog()
@@ -112,11 +112,11 @@
     Sub hapusData()
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
-            Dim sqlparent As String = "SELECT kodejual from tblreturjual where kodejual='" & idselected & "'"
+            Dim sqlparent As String = "SELECT kodereturjual from tblreturjual where kodereturjual='" & idselected & "'"
             If getCount(sqlparent) = 0 Then
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
-                    Dim sqlhapus = "DELETE FROM tbljual where kodejual = '" & idselected & "';"
-                    Dim sqlhapusdetail = "DELETE FROM tbldetailjual where kodejual = '" & idselected & "';"
+                    Dim sqlhapus = "DELETE FROM tblreturjual where kodereturjual = '" & idselected & "';"
+                    Dim sqlhapusdetail = "DELETE FROM tbldetailreturjual where kodereturjual = '" & idselected & "';"
                     If exc(sqlhapusdetail & sqlhapus) Then
                         fillData()
                     Else

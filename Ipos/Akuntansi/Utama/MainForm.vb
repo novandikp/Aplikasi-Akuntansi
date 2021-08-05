@@ -178,6 +178,18 @@
         DaftarFakturJual.Dispose()
     End Sub
 
+
+    Sub showReturJual()
+        DaftarReturJual.ShowDialog()
+        DaftarReturJual.Dispose()
+    End Sub
+
+
+    Sub showPiutangUsaha()
+        DaftarPiutangUsaha.ShowDialog()
+        DaftarPiutangUsaha.Dispose()
+    End Sub
+
     Private Sub MetroTile14_Click(sender As Object, e As EventArgs) Handles MetroTile14.Click
         showPenawaranJual()
     End Sub
@@ -192,5 +204,13 @@
 
     Private Sub MetroTile11_Click(sender As Object, e As EventArgs) Handles MetroTile11.Click
         showFakturJual()
+    End Sub
+
+    Private Sub MetroTile3_Click(sender As Object, e As EventArgs) Handles MetroTile3.Click
+        showReturJual()
+    End Sub
+
+    Private Sub MetroTile10_Click(sender As Object, e As EventArgs) Handles MetroTile10.Click
+        showPiutangUsaha()
     End Sub
 End Class

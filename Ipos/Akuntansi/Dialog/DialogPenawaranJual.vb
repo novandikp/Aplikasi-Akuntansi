@@ -29,7 +29,7 @@
             Dim diskon = row.Cells(4).Value
             Dim biayalain = row.Cells(5).Value
             Dim pajak = row.Cells(6).Value
-            row.Cells(3).Value = total - diskon + biayalain + pajak
+            row.Cells(3).Value = total + biayalain + pajak
         Next
         ListSat.Columns(3).DefaultCellStyle.Format = "n0"
     End Sub
@@ -85,5 +85,9 @@
             Me.DialogResult = DialogResult.OK
             Me.Close()
         End If
+    End Sub
+
+    Private Sub ListSat_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles ListSat.CellContentClick
+
     End Sub
 End Class

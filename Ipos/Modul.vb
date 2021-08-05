@@ -724,6 +724,9 @@ Module Modul
             Case "PJ"
                 table = "tbljual"
                 key = "kodejual"
+            Case "RJ"
+                table = "tblreturjual"
+                key = "kodereturjual"
         End Select
         Dim lastId As String
         If getCount("select " & key & " from " & table & " order by " & key & " desc LIMIT 1") > 0 Then

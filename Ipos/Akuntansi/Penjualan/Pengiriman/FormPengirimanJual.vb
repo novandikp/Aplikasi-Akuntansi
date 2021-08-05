@@ -697,7 +697,14 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                     End If
                 Next
 
-                If rowStok.Item("stok") < 0 Then
+                If edited And rowStok.Item("stok") < 0 Then
+                    Dim sqlCheckOldDetail = "SELECT COALESCE(sum(jumlahjual*nilaidasar),0) as total FROM tbldetailpengirimanjual inner join tblharga on tblharga.idharga = tbldetailpengirimanjual.idharga WHERE tbldetailpengirimanjual.kodepengirimanjual = '" & TBnotransaksi.Text & "' and idbarang ='" & rowStok.Item("idbarang") & "'"
+                    If rowStok.Item("stok") + toDouble(getValue(sqlCheckOldDetail, "total")) < 0 Then
+                        dialogError("Stok dari " & rowStok.Item("idbarang") & " tidak mencukupi")
+                        Condition = False
+                        Exit For
+                    End If
+                ElseIf rowStok.Item("stok") < 0 Then
                     dialogError("Stok dari " & rowStok.Item("idbarang") & " tidak mencukupi")
                     Condition = False
                     Exit For
@@ -806,7 +813,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                 Dim hpp As Double = getValue(sqlhpp, "hpp")
                 Totalhpp = Totalhpp + (hpp * row.Cells(3).Value())
                 Dim sqldetail As String = "INSERT INTO public.tbldetailpengirimanjual(kodepengirimanjual, jumlahjual, hargajual, jumlahpajak, catatandetail, idharga,diskondetailpersen)	VALUES ( ?, ?, ?, ?, ?, ?,?);"
-                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(11).Value.ToString}
+                Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(12).Value.ToString}
                 If operationQuery(sqldetail, data) Then
                     Dim sqlHistoriStok As String = "INSERT INTO public.tblhistoristok(masuk, keluar, harga, tglhistori, idharga, refrensi, hpp) VALUES ( ?, ?, ?, ?, ?, ?, ?);"
                     Dim dataHistori As String() = {"0", row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, dtTanggal.Value.ToString("yyyy-MM-dd"), row.Cells(9).Value, TBnotransaksi.Text, hpp.ToString}

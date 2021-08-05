@@ -42,6 +42,7 @@ Partial Class MainForm
         Me.MetroTile33 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile5 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile9 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile10 = New MetroFramework.Controls.MetroTile()
@@ -76,7 +77,6 @@ Partial Class MainForm
         Me.MetroTile29 = New MetroFramework.Controls.MetroTile()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -380,6 +380,17 @@ Partial Class MainForm
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1128, 381)
         Me.TableLayoutPanel2.TabIndex = 3
+        '
+        'MetroTile3
+        '
+        Me.MetroTile3.ActiveControl = Nothing
+        Me.MetroTile3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile3.Location = New System.Drawing.Point(3, 193)
+        Me.MetroTile3.Name = "MetroTile3"
+        Me.MetroTile3.Size = New System.Drawing.Size(276, 185)
+        Me.MetroTile3.TabIndex = 8
+        Me.MetroTile3.Text = "Retur Penjualan"
+        Me.MetroTile3.UseSelectable = True
         '
         'MetroTile5
         '
@@ -811,17 +822,6 @@ Partial Class MainForm
         Me.MetroLabel1.Size = New System.Drawing.Size(170, 25)
         Me.MetroLabel1.TabIndex = 1
         Me.MetroLabel1.Text = "Aplikasi Akuntansi"
-        '
-        'MetroTile3
-        '
-        Me.MetroTile3.ActiveControl = Nothing
-        Me.MetroTile3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile3.Location = New System.Drawing.Point(3, 193)
-        Me.MetroTile3.Name = "MetroTile3"
-        Me.MetroTile3.Size = New System.Drawing.Size(276, 185)
-        Me.MetroTile3.TabIndex = 8
-        Me.MetroTile3.Text = "Retur Penjualan"
-        Me.MetroTile3.UseSelectable = True
         '
         'MainForm
         '

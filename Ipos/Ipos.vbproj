@@ -227,6 +227,12 @@
     <Compile Include="Akuntansi\Dataset\Akuntansi.vb">
       <DependentUpon>Akuntansi.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Akuntansi\Dialog\DialogFakturJual.Designer.vb">
+      <DependentUpon>DialogFakturJual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\DialogFakturJual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\Dialog\DialogKontak.Designer.vb">
       <DependentUpon>DialogKontak.vb</DependentUpon>
     </Compile>
@@ -615,6 +621,24 @@
       <DependentUpon>DialogPenawaranJual.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\Dialog\DialogPenawaranJual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Piutang\DaftarPiutangUsaha.Designer.vb">
+      <DependentUpon>DaftarPiutangUsaha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Piutang\DaftarPiutangUsaha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Piutang\DetailPiutangUsaha.Designer.vb">
+      <DependentUpon>DetailPiutangUsaha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Piutang\DetailPiutangUsaha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Piutang\DialogPenghapusanPiutang.Designer.vb">
+      <DependentUpon>DialogPenghapusanPiutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Piutang\DialogPenghapusanPiutang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Penjualan\Retur\FormReturJual.Designer.vb">
@@ -1486,6 +1510,9 @@
     <EmbeddedResource Include="Aktivasi.resx">
       <DependentUpon>Aktivasi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\DialogFakturJual.resx">
+      <DependentUpon>DialogFakturJual.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\DialogKontak.resx">
       <DependentUpon>DialogKontak.vb</DependentUpon>
     </EmbeddedResource>
@@ -1693,6 +1720,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\DialogPenawaranJual.resx">
       <DependentUpon>DialogPenawaranJual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Piutang\DaftarPiutangUsaha.resx">
+      <DependentUpon>DaftarPiutangUsaha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Piutang\DetailPiutangUsaha.resx">
+      <DependentUpon>DetailPiutangUsaha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Piutang\DialogPenghapusanPiutang.resx">
+      <DependentUpon>DialogPenghapusanPiutang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Retur\FormReturJual.resx">
       <DependentUpon>FormReturJual.vb</DependentUpon>
@@ -2401,6 +2437,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Akuntansi\Laporan\Penjualan\Faktur\Report\" />
+    <Folder Include="Akuntansi\Penjualan\Kelebihan\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,5 +1,5 @@
-﻿Public Class DaftarFakturJual
-
+﻿Public Class DialogFakturJual
+    Public kodejual As String
     Sub addhandlertoAllComponent()
         For Each komponen As Control In Me.Controls
             AddHandler komponen.KeyDown, AddressOf eventKeydown
@@ -16,15 +16,8 @@
         Next
     End Sub
 
-    Private Sub eventKeydown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-
-        If e.KeyCode = Keys.F1 Then
-            tambahData()
-        ElseIf e.KeyCode = Keys.Delete Then
-            hapusData()
-        ElseIf e.KeyCode = Keys.F2 Then
-            editData()
-        ElseIf e.Control AndAlso e.KeyCode = Keys.End Then
+    Private Sub eventKeydown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control AndAlso e.KeyCode = Keys.End Then
             Me.Close()
         End If
     End Sub
@@ -82,68 +75,15 @@
     End Sub
 
 
-    Sub tambahData()
-        Dim ds As DialogResult = FormFakturJual.ShowDialog()
-        If ds = DialogResult.OK Then
-
-        End If
-        fillData()
-        FormFakturJual.Dispose()
-    End Sub
-
-    Sub editData()
-        If ListSat.SelectedRows.Count = 1 Then
-            Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
-
-            Dim pesanan As New FormFakturJual
-            pesanan.TBnotransaksi.Text = idselected
-            pesanan.edited = True
-            Dim ds As DialogResult = pesanan.ShowDialog()
-            If ds = DialogResult.OK Then
-
-            End If
-            fillData()
-            pesanan.Dispose()
-        Else
-            dialogError("Pilih item terlebih dahulu")
-        End If
-    End Sub
-
-    Sub hapusData()
-        If ListSat.SelectedRows.Count = 1 Then
-            Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
-            Dim sqlparent As String = "SELECT kodejual from tblreturjual where kodejual='" & idselected & "'"
-            If getCount(sqlparent) = 0 Then
-                If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
-                    Dim sqlhapus = "DELETE FROM tbljual where kodejual = '" & idselected & "';"
-                    Dim sqlhapusdetail = "DELETE FROM tbldetailjual where kodejual = '" & idselected & "';"
-                    If exc(sqlhapusdetail & sqlhapus) Then
-                        fillData()
-                    Else
-                        dialogError("Data tidak bisa dihapus karena data telah digunakan")
-                    End If
-                End If
-            Else
-                dialogError("Transaksi telah dipakai")
-            End If
-
-        Else
-            dialogError("Pilih item terlebih dahulu")
-        End If
-    End Sub
-    Private Sub btnTmbh_Click(sender As Object, e As EventArgs) Handles btnTmbh.Click
-        tambahData()
-    End Sub
-
-    Private Sub btnEdt_Click(sender As Object, e As EventArgs) Handles btnEdt.Click
-        editData()
-    End Sub
-
-    Private Sub BtnHps_Click(sender As Object, e As EventArgs) Handles BtnHps.Click
-        hapusData()
-    End Sub
-
-    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
+    Private Sub btnKeluar_Click(sender As Object, e As EventArgs)
         Me.Close()
+    End Sub
+
+    Private Sub ListSat_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListSat.CellClick
+        If e.RowIndex >= 0 Then
+            kodejual = ListSat.Rows(e.RowIndex).Cells(1).Value
+            Me.DialogResult = DialogResult.OK
+            Me.Close()
+        End If
     End Sub
 End Class

@@ -698,7 +698,15 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                     End If
                 Next
 
-                If rowStok.Item("stok") < 0 Then
+                If edited And rowStok.Item("stok") < 0 Then
+                    Dim sqlCheckOldDetail = "SELECT COALESCE(sum(jumlahjual*nilaidasar),0) as total FROM tbldetailjual inner join tblharga on tblharga.idharga = tbldetailjual.idharga WHERE tbldetailjual.kodejual = '" & TBnotransaksi.Text & "' and idbarang ='" & rowStok.Item("idbarang") & "'"
+                    If rowStok.Item("stok") + toDouble(getValue(sqlCheckOldDetail, "total")) < 0 Then
+                        dialogError("Stok dari " & rowStok.Item("idbarang") & " tidak mencukupi")
+                        Condition = False
+                        Exit For
+                    End If
+
+                ElseIf rowStok.Item("stok") < 0 Then
                     dialogError("Stok dari " & rowStok.Item("idbarang") & " tidak mencukupi")
                     Condition = False
                     Exit For
@@ -850,6 +858,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
 
             Dim dataPiutangUsaha As String() = {akunPiutangUsaha, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), (kembali * -1).ToString, "0", "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}
             operationQuery(sqlJurnal, dataPiutangUsaha)
+            exc("INSERT into tblhistoripiutang (idjurnal) select idjurnal from tbljurnal where koderefrensi='" & TBnotransaksi.Text & "' AND kodeakun='" & akunPiutangUsaha & "'")
         End If
 
         'Uang Muka 
