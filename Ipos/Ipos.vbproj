@@ -623,6 +623,30 @@
     <Compile Include="Akuntansi\Dialog\DialogPenawaranJual.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayar.Designer.vb">
+      <DependentUpon>DaftarKelebihanBayar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\DaftarHistoriBayarPiutang.Designer.vb">
+      <DependentUpon>DaftarHistoriBayarPiutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\DaftarHistoriBayarPiutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayar.Designer.vb">
+      <DependentUpon>FormKelebihanBayar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\FormBayarPiutang.Designer.vb">
+      <DependentUpon>FormBayarPiutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\FormBayarPiutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\Penjualan\Piutang\DaftarPiutangUsaha.Designer.vb">
       <DependentUpon>DaftarPiutangUsaha.vb</DependentUpon>
     </Compile>
@@ -633,12 +657,6 @@
       <DependentUpon>DetailPiutangUsaha.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\Penjualan\Piutang\DetailPiutangUsaha.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Akuntansi\Penjualan\Piutang\DialogPenghapusanPiutang.Designer.vb">
-      <DependentUpon>DialogPenghapusanPiutang.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\Penjualan\Piutang\DialogPenghapusanPiutang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Penjualan\Retur\FormReturJual.Designer.vb">
@@ -1721,14 +1739,23 @@
     <EmbeddedResource Include="Akuntansi\Dialog\DialogPenawaranJual.resx">
       <DependentUpon>DialogPenawaranJual.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayar.resx">
+      <DependentUpon>DaftarKelebihanBayar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Pembayaran Piutang\DaftarHistoriBayarPiutang.resx">
+      <DependentUpon>DaftarHistoriBayarPiutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayar.resx">
+      <DependentUpon>FormKelebihanBayar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Pembayaran Piutang\FormBayarPiutang.resx">
+      <DependentUpon>FormBayarPiutang.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Piutang\DaftarPiutangUsaha.resx">
       <DependentUpon>DaftarPiutangUsaha.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Piutang\DetailPiutangUsaha.resx">
       <DependentUpon>DetailPiutangUsaha.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Penjualan\Piutang\DialogPenghapusanPiutang.resx">
-      <DependentUpon>DialogPenghapusanPiutang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Retur\FormReturJual.resx">
       <DependentUpon>FormReturJual.vb</DependentUpon>
@@ -2437,7 +2464,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Akuntansi\Laporan\Penjualan\Faktur\Report\" />
-    <Folder Include="Akuntansi\Penjualan\Kelebihan\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

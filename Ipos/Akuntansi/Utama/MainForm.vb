@@ -190,6 +190,16 @@
         DaftarPiutangUsaha.Dispose()
     End Sub
 
+    Sub showBayarPiutangUsaha()
+        DaftarHistoriBayarPiutang.ShowDialog()
+        DaftarHistoriBayarPiutang.Dispose()
+    End Sub
+
+    Sub shoKelebihanBayar()
+        DaftarKelebihanBayar.ShowDialog()
+        DaftarKelebihanBayar.Dispose()
+    End Sub
+
     Private Sub MetroTile14_Click(sender As Object, e As EventArgs) Handles MetroTile14.Click
         showPenawaranJual()
     End Sub
@@ -212,5 +222,13 @@
 
     Private Sub MetroTile10_Click(sender As Object, e As EventArgs) Handles MetroTile10.Click
         showPiutangUsaha()
+    End Sub
+
+    Private Sub MetroTile9_Click(sender As Object, e As EventArgs) Handles MetroTile9.Click
+        showBayarPiutangUsaha()
+    End Sub
+
+    Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
+        shoKelebihanBayar()
     End Sub
 End Class

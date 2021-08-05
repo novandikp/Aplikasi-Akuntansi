@@ -727,6 +727,16 @@ Module Modul
             Case "RJ"
                 table = "tblreturjual"
                 key = "kodereturjual"
+            Case "DP"
+                table = "tblhapuspiutang"
+                key = "kodehapuspiutang"
+            Case "BP"
+                table = "tblbayarpiutang"
+                key = "kodebayarpiutang"
+            Case "LP"
+                table = "tblkelebihanbayarjual"
+                key = "kodekelebihanbayarjual"
+
         End Select
         Dim lastId As String
         If getCount("select " & key & " from " & table & " order by " & key & " desc LIMIT 1") > 0 Then

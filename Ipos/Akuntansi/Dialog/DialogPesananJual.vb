@@ -45,7 +45,7 @@
         Dim filter As String = "WHERE (kodepesananjual ilike '%" & cari & "%' or tblkontak.pelanggan ilike '%" & cari & "%') AND tglpesananjual BETWEEN '" & tglAwal & "' AND '" & tglAkhir & "' order by tglpesananjual,kodepesananjual"
         ListSat.DataSource = getData(sql & filter)
         ListSat.Columns(0).HeaderText = "Tanggal"
-        ListSat.Columns(1).HeaderText = "Kode Penawaran"
+        ListSat.Columns(1).HeaderText = "Kode Pesanan"
         ListSat.Columns(2).HeaderText = "Pelanggan"
 
         ListSat.Columns(3).HeaderText = "Nilai"

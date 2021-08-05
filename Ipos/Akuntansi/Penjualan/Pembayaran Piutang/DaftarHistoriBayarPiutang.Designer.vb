@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class DialogPesananJual
+Partial Class DaftarHistoriBayarPiutang
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,37 +25,24 @@ Partial Class DialogPesananJual
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbData = New System.Windows.Forms.GroupBox()
         Me.dtAwal = New MetroFramework.Controls.MetroDateTime()
         Me.dtAkhir = New MetroFramework.Controls.MetroDateTime()
         Me.eCari = New MetroFramework.Controls.MetroTextBox()
         Me.ListSat = New MetroFramework.Controls.MetroGrid()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.StatusStrip1.SuspendLayout()
+        Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.panelAksi = New System.Windows.Forms.Panel()
+        Me.btnTmbh = New System.Windows.Forms.Button()
+        Me.btnKeluar = New System.Windows.Forms.Button()
+        Me.BtnHps = New System.Windows.Forms.Button()
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
+        Me.panelAksi.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ToolStripStatusLabel6
-        '
-        Me.ToolStripStatusLabel6.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ToolStripStatusLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ToolStripStatusLabel6.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
-        Me.ToolStripStatusLabel6.Name = "ToolStripStatusLabel6"
-        Me.ToolStripStatusLabel6.Size = New System.Drawing.Size(115, 17)
-        Me.ToolStripStatusLabel6.Text = "[CTRL+END] : Keluar"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel6})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 457)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(835, 22)
-        Me.StatusStrip1.TabIndex = 92
-        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'gbData
         '
@@ -66,8 +53,8 @@ Partial Class DialogPesananJual
         Me.gbData.Controls.Add(Me.Label1)
         Me.gbData.Location = New System.Drawing.Point(12, 0)
         Me.gbData.Name = "gbData"
-        Me.gbData.Size = New System.Drawing.Size(811, 442)
-        Me.gbData.TabIndex = 94
+        Me.gbData.Size = New System.Drawing.Size(811, 431)
+        Me.gbData.TabIndex = 97
         Me.gbData.TabStop = False
         '
         'dtAwal
@@ -163,7 +150,7 @@ Partial Class DialogPesananJual
         Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListSat.Size = New System.Drawing.Size(777, 316)
+        Me.ListSat.Size = New System.Drawing.Size(777, 305)
         Me.ListSat.TabIndex = 65
         '
         'Label1
@@ -178,32 +165,125 @@ Partial Class DialogPesananJual
         Me.Label1.TabIndex = 69
         Me.Label1.Text = "Kata Kunci : "
         '
-        'DialogPesananJual
+        'ToolStripStatusLabel6
+        '
+        Me.ToolStripStatusLabel6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripStatusLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripStatusLabel6.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
+        Me.ToolStripStatusLabel6.Name = "ToolStripStatusLabel6"
+        Me.ToolStripStatusLabel6.Size = New System.Drawing.Size(115, 17)
+        Me.ToolStripStatusLabel6.Text = "[CTRL+END] : Keluar"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel6})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 440)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(835, 22)
+        Me.StatusStrip1.TabIndex = 95
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripStatusLabel1.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(91, 17)
+        Me.ToolStripStatusLabel1.Text = "[F1] : Cari Akun,"
+        '
+        'panelAksi
+        '
+        Me.panelAksi.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.panelAksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelAksi.Controls.Add(Me.btnTmbh)
+        Me.panelAksi.Controls.Add(Me.btnKeluar)
+        Me.panelAksi.Controls.Add(Me.BtnHps)
+        Me.panelAksi.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.panelAksi.Location = New System.Drawing.Point(0, 462)
+        Me.panelAksi.Name = "panelAksi"
+        Me.panelAksi.Size = New System.Drawing.Size(835, 50)
+        Me.panelAksi.TabIndex = 96
+        '
+        'btnTmbh
+        '
+        Me.btnTmbh.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnTmbh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnTmbh.Image = Global.Ipos.My.Resources.Resources.plus__2_
+        Me.btnTmbh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTmbh.Location = New System.Drawing.Point(17, 6)
+        Me.btnTmbh.Name = "btnTmbh"
+        Me.btnTmbh.Size = New System.Drawing.Size(72, 36)
+        Me.btnTmbh.TabIndex = 90
+        Me.btnTmbh.Text = "Tambah"
+        Me.btnTmbh.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnTmbh.UseVisualStyleBackColor = False
+        '
+        'btnKeluar
+        '
+        Me.btnKeluar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnKeluar.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnKeluar.Image = Global.Ipos.My.Resources.Resources.logout
+        Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnKeluar.Location = New System.Drawing.Point(746, 6)
+        Me.btnKeluar.Name = "btnKeluar"
+        Me.btnKeluar.Size = New System.Drawing.Size(79, 36)
+        Me.btnKeluar.TabIndex = 88
+        Me.btnKeluar.Text = "Keluar"
+        Me.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnKeluar.UseVisualStyleBackColor = False
+        '
+        'BtnHps
+        '
+        Me.BtnHps.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnHps.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtnHps.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnHps.Image = Global.Ipos.My.Resources.Resources.no_entry__2_
+        Me.BtnHps.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnHps.Location = New System.Drawing.Point(95, 6)
+        Me.BtnHps.Name = "BtnHps"
+        Me.BtnHps.Size = New System.Drawing.Size(79, 36)
+        Me.BtnHps.TabIndex = 87
+        Me.BtnHps.Text = "Hapus"
+        Me.BtnHps.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnHps.UseVisualStyleBackColor = False
+        '
+        'DaftarHistoriBayarPiutang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(835, 479)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.ClientSize = New System.Drawing.Size(835, 512)
         Me.Controls.Add(Me.gbData)
-        Me.Name = "DialogPesananJual"
+        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.panelAksi)
+        Me.Name = "DaftarHistoriBayarPiutang"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Daftar Pesanan Penjualan"
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        Me.Text = "Daftar Histori Bayar Piutang"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
+        Me.panelAksi.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
-    Friend WithEvents StatusStrip1 As StatusStrip
+
     Friend WithEvents gbData As GroupBox
     Friend WithEvents dtAwal As MetroFramework.Controls.MetroDateTime
     Friend WithEvents dtAkhir As MetroFramework.Controls.MetroDateTime
     Friend WithEvents eCari As MetroFramework.Controls.MetroTextBox
     Friend WithEvents ListSat As MetroFramework.Controls.MetroGrid
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents panelAksi As Panel
+    Friend WithEvents btnTmbh As Button
+    Friend WithEvents btnKeluar As Button
+    Friend WithEvents BtnHps As Button
 End Class
