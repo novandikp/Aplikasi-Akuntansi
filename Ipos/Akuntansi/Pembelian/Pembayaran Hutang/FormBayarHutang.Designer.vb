@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormKelebihanByr
+Partial Class FormBayarHutang
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,9 +22,9 @@ Partial Class FormKelebihanByr
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbData = New System.Windows.Forms.GroupBox()
         Me.dtAwal = New MetroFramework.Controls.MetroDateTime()
         Me.dtAkhir = New MetroFramework.Controls.MetroDateTime()
@@ -34,9 +34,12 @@ Partial Class FormKelebihanByr
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.panelAksi = New System.Windows.Forms.Panel()
-        Me.btnKeluar = New System.Windows.Forms.Button()
         Me.gbForm = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbBiayaLain = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cbBiayaLain = New MetroFramework.Controls.MetroComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbBayar = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -51,7 +54,6 @@ Partial Class FormKelebihanByr
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
-        Me.panelAksi.SuspendLayout()
         Me.gbForm.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -126,23 +128,23 @@ Partial Class FormKelebihanByr
         Me.ListSat.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListSat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.ListSat.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft PhagsPa", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListSat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft PhagsPa", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListSat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.ListSat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ListSat.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ListSat.DefaultCellStyle = DataGridViewCellStyle5
         Me.ListSat.EnableHeadersVisualStyles = False
         Me.ListSat.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.ListSat.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -151,14 +153,14 @@ Partial Class FormKelebihanByr
         Me.ListSat.Name = "ListSat"
         Me.ListSat.ReadOnly = True
         Me.ListSat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ListSat.Size = New System.Drawing.Size(588, 344)
@@ -189,7 +191,7 @@ Partial Class FormKelebihanByr
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel6})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 473)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 486)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(967, 22)
         Me.StatusStrip1.TabIndex = 98
@@ -204,34 +206,13 @@ Partial Class FormKelebihanByr
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(91, 17)
         Me.ToolStripStatusLabel1.Text = "[F1] : Cari Akun,"
         '
-        'panelAksi
-        '
-        Me.panelAksi.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(184, Byte), Integer))
-        Me.panelAksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panelAksi.Controls.Add(Me.btnKeluar)
-        Me.panelAksi.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelAksi.Location = New System.Drawing.Point(0, 495)
-        Me.panelAksi.Name = "panelAksi"
-        Me.panelAksi.Size = New System.Drawing.Size(967, 50)
-        Me.panelAksi.TabIndex = 99
-        '
-        'btnKeluar
-        '
-        Me.btnKeluar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnKeluar.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnKeluar.Image = Global.Ipos.My.Resources.Resources.logout
-        Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnKeluar.Location = New System.Drawing.Point(875, 6)
-        Me.btnKeluar.Name = "btnKeluar"
-        Me.btnKeluar.Size = New System.Drawing.Size(79, 36)
-        Me.btnKeluar.TabIndex = 88
-        Me.btnKeluar.Text = "Keluar"
-        Me.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnKeluar.UseVisualStyleBackColor = False
-        '
         'gbForm
         '
+        Me.gbForm.Controls.Add(Me.Label3)
+        Me.gbForm.Controls.Add(Me.tbBiayaLain)
+        Me.gbForm.Controls.Add(Me.Button2)
+        Me.gbForm.Controls.Add(Me.Label6)
+        Me.gbForm.Controls.Add(Me.cbBiayaLain)
         Me.gbForm.Controls.Add(Me.Label2)
         Me.gbForm.Controls.Add(Me.tbBayar)
         Me.gbForm.Controls.Add(Me.Button4)
@@ -249,21 +230,75 @@ Partial Class FormKelebihanByr
         Me.gbForm.TabIndex = 101
         Me.gbForm.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label3.Location = New System.Drawing.Point(10, 259)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(74, 17)
+        Me.Label3.TabIndex = 50
+        Me.Label3.Text = "Biaya Lain"
+        '
+        'tbBiayaLain
+        '
+        Me.tbBiayaLain.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbBiayaLain.Location = New System.Drawing.Point(10, 282)
+        Me.tbBiayaLain.Name = "tbBiayaLain"
+        Me.tbBiayaLain.Size = New System.Drawing.Size(291, 29)
+        Me.tbBiayaLain.TabIndex = 49
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Button2.Location = New System.Drawing.Point(233, 343)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 29)
+        Me.Button2.TabIndex = 48
+        Me.Button2.Text = "Cari"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label6.Location = New System.Drawing.Point(10, 323)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(110, 17)
+        Me.Label6.TabIndex = 47
+        Me.Label6.Text = "Akun Biaya Lain"
+        '
+        'cbBiayaLain
+        '
+        Me.cbBiayaLain.FormattingEnabled = True
+        Me.cbBiayaLain.ItemHeight = 23
+        Me.cbBiayaLain.Location = New System.Drawing.Point(10, 343)
+        Me.cbBiayaLain.Name = "cbBiayaLain"
+        Me.cbBiayaLain.Size = New System.Drawing.Size(217, 29)
+        Me.cbBiayaLain.TabIndex = 46
+        Me.cbBiayaLain.UseSelectable = True
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(13, 197)
+        Me.Label2.Location = New System.Drawing.Point(10, 143)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(147, 17)
+        Me.Label2.Size = New System.Drawing.Size(94, 17)
         Me.Label2.TabIndex = 45
-        Me.Label2.Text = "Jumlah Pengembalian"
+        Me.Label2.Text = "Jumlah Bayar"
         '
         'tbBayar
         '
         Me.tbBayar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbBayar.Location = New System.Drawing.Point(13, 220)
+        Me.tbBayar.Location = New System.Drawing.Point(10, 166)
         Me.tbBayar.Name = "tbBayar"
         Me.tbBayar.Size = New System.Drawing.Size(291, 29)
         Me.tbBayar.TabIndex = 44
@@ -275,7 +310,7 @@ Partial Class FormKelebihanByr
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Button4.Location = New System.Drawing.Point(236, 277)
+        Me.Button4.Location = New System.Drawing.Point(233, 223)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(68, 29)
         Me.Button4.TabIndex = 43
@@ -290,7 +325,7 @@ Partial Class FormKelebihanByr
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button1.Image = Global.Ipos.My.Resources.Resources.no_entry__2_
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(224, 349)
+        Me.Button1.Location = New System.Drawing.Point(220, 418)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(79, 36)
         Me.Button1.TabIndex = 41
@@ -306,7 +341,7 @@ Partial Class FormKelebihanByr
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnSimpan.Image = Global.Ipos.My.Resources.Resources.diskette
         Me.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSimpan.Location = New System.Drawing.Point(17, 348)
+        Me.btnSimpan.Location = New System.Drawing.Point(13, 418)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(79, 36)
         Me.btnSimpan.TabIndex = 42
@@ -319,7 +354,7 @@ Partial Class FormKelebihanByr
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label8.Location = New System.Drawing.Point(15, 252)
+        Me.Label8.Location = New System.Drawing.Point(10, 203)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 17)
         Me.Label8.TabIndex = 40
@@ -329,7 +364,7 @@ Partial Class FormKelebihanByr
         '
         Me.cbAkun.FormattingEnabled = True
         Me.cbAkun.ItemHeight = 23
-        Me.cbAkun.Location = New System.Drawing.Point(13, 277)
+        Me.cbAkun.Location = New System.Drawing.Point(10, 223)
         Me.cbAkun.Name = "cbAkun"
         Me.cbAkun.Size = New System.Drawing.Size(217, 29)
         Me.cbAkun.TabIndex = 39
@@ -340,16 +375,16 @@ Partial Class FormKelebihanByr
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(13, 135)
+        Me.Label5.Location = New System.Drawing.Point(10, 81)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(161, 17)
+        Me.Label5.Size = New System.Drawing.Size(105, 17)
         Me.Label5.TabIndex = 38
-        Me.Label5.Text = "Jumlah Kelebihan Bayar"
+        Me.Label5.Text = "Jumlah Piutang"
         '
         'jumlahPiutang
         '
         Me.jumlahPiutang.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jumlahPiutang.Location = New System.Drawing.Point(13, 158)
+        Me.jumlahPiutang.Location = New System.Drawing.Point(10, 104)
         Me.jumlahPiutang.Name = "jumlahPiutang"
         Me.jumlahPiutang.ReadOnly = True
         Me.jumlahPiutang.Size = New System.Drawing.Size(291, 29)
@@ -360,7 +395,7 @@ Partial Class FormKelebihanByr
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(13, 76)
+        Me.Label4.Location = New System.Drawing.Point(10, 22)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 17)
         Me.Label4.TabIndex = 36
@@ -368,23 +403,22 @@ Partial Class FormKelebihanByr
         '
         'dtpBayar
         '
-        Me.dtpBayar.Location = New System.Drawing.Point(12, 97)
+        Me.dtpBayar.Location = New System.Drawing.Point(9, 43)
         Me.dtpBayar.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpBayar.Name = "dtpBayar"
         Me.dtpBayar.Size = New System.Drawing.Size(292, 29)
         Me.dtpBayar.TabIndex = 35
         '
-        'FormKelebihanByr
+        'FormBayarPiutang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(967, 545)
+        Me.ClientSize = New System.Drawing.Size(967, 508)
         Me.Controls.Add(Me.gbForm)
         Me.Controls.Add(Me.gbData)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.panelAksi)
-        Me.Name = "FormKelebihanByr"
+        Me.Name = "FormBayarPiutang"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Bayar Piutang"
         Me.gbData.ResumeLayout(False)
@@ -392,7 +426,6 @@ Partial Class FormKelebihanByr
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        Me.panelAksi.ResumeLayout(False)
         Me.gbForm.ResumeLayout(False)
         Me.gbForm.PerformLayout()
         Me.ResumeLayout(False)
@@ -409,8 +442,6 @@ Partial Class FormKelebihanByr
     Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents panelAksi As Panel
-    Friend WithEvents btnKeluar As Button
     Friend WithEvents gbForm As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents tbBayar As TextBox
@@ -423,4 +454,9 @@ Partial Class FormKelebihanByr
     Friend WithEvents jumlahPiutang As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpBayar As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents Label3 As Label
+    Friend WithEvents tbBiayaLain As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cbBiayaLain As MetroFramework.Controls.MetroComboBox
 End Class

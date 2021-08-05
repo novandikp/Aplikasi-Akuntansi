@@ -37,8 +37,6 @@ Partial Class DetailPiutangUsaha
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.panelAksi = New System.Windows.Forms.Panel()
-        Me.btnKeluar = New System.Windows.Forms.Button()
         Me.gbForm = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -59,7 +57,6 @@ Partial Class DetailPiutangUsaha
         CType(Me.ListDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
-        Me.panelAksi.SuspendLayout()
         Me.gbForm.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -243,7 +240,7 @@ Partial Class DetailPiutangUsaha
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel6})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 521)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 522)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1115, 22)
         Me.StatusStrip1.TabIndex = 98
@@ -257,32 +254,6 @@ Partial Class DetailPiutangUsaha
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(102, 17)
         Me.ToolStripStatusLabel1.Text = "[F1] : Cari Refrensi"
-        '
-        'panelAksi
-        '
-        Me.panelAksi.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(184, Byte), Integer))
-        Me.panelAksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panelAksi.Controls.Add(Me.btnKeluar)
-        Me.panelAksi.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelAksi.Location = New System.Drawing.Point(0, 543)
-        Me.panelAksi.Name = "panelAksi"
-        Me.panelAksi.Size = New System.Drawing.Size(1115, 50)
-        Me.panelAksi.TabIndex = 99
-        '
-        'btnKeluar
-        '
-        Me.btnKeluar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnKeluar.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnKeluar.Image = Global.Ipos.My.Resources.Resources.logout
-        Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnKeluar.Location = New System.Drawing.Point(1021, 6)
-        Me.btnKeluar.Name = "btnKeluar"
-        Me.btnKeluar.Size = New System.Drawing.Size(79, 36)
-        Me.btnKeluar.TabIndex = 88
-        Me.btnKeluar.Text = "Keluar"
-        Me.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnKeluar.UseVisualStyleBackColor = False
         '
         'gbForm
         '
@@ -447,7 +418,7 @@ Partial Class DetailPiutangUsaha
         'dtpPenghapusan
         '
         Me.dtpPenghapusan.Location = New System.Drawing.Point(20, 110)
-        Me.dtpPenghapusan.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpPenghapusan.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpPenghapusan.Name = "dtpPenghapusan"
         Me.dtpPenghapusan.Size = New System.Drawing.Size(292, 29)
         Me.dtpPenghapusan.TabIndex = 10
@@ -476,21 +447,19 @@ Partial Class DetailPiutangUsaha
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1115, 593)
+        Me.ClientSize = New System.Drawing.Size(1115, 544)
         Me.Controls.Add(Me.gbForm)
         Me.Controls.Add(Me.gbData)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.panelAksi)
         Me.Name = "DetailPiutangUsaha"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DetailPiutangUsaha"
+        Me.Text = "Detail Piutang Usaha"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
         CType(Me.ListDetail, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        Me.panelAksi.ResumeLayout(False)
         Me.gbForm.ResumeLayout(False)
         Me.gbForm.PerformLayout()
         Me.ResumeLayout(False)
@@ -505,8 +474,6 @@ Partial Class DetailPiutangUsaha
     Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents panelAksi As Panel
-    Friend WithEvents btnKeluar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents ListDetail As MetroFramework.Controls.MetroGrid
     Friend WithEvents gbForm As GroupBox

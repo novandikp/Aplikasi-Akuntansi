@@ -196,8 +196,8 @@
     End Sub
 
     Sub shoKelebihanBayar()
-        DaftarKelebihanBayar.ShowDialog()
-        DaftarKelebihanBayar.Dispose()
+        DaftarKelebihanBayarJual.ShowDialog()
+        DaftarKelebihanBayarJual.Dispose()
     End Sub
 
     Private Sub MetroTile14_Click(sender As Object, e As EventArgs) Handles MetroTile14.Click

@@ -39,6 +39,8 @@ Partial Class DaftarPenawaranJual
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.BtnHps = New System.Windows.Forms.Button()
         Me.btnEdt = New System.Windows.Forms.Button()
+        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1.SuspendLayout()
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +59,7 @@ Partial Class DaftarPenawaranJual
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel6})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel6})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 490)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(835, 22)
@@ -70,8 +72,8 @@ Partial Class DaftarPenawaranJual
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripStatusLabel1.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(91, 17)
-        Me.ToolStripStatusLabel1.Text = "[F1] : Cari Akun,"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(81, 17)
+        Me.ToolStripStatusLabel1.Text = "[F1] : Tambah,"
         '
         'gbData
         '
@@ -267,6 +269,18 @@ Partial Class DaftarPenawaranJual
         Me.btnEdt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEdt.UseVisualStyleBackColor = False
         '
+        'ToolStripStatusLabel2
+        '
+        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(53, 17)
+        Me.ToolStripStatusLabel2.Text = "[F2] Edit,"
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(88, 17)
+        Me.ToolStripStatusLabel3.Text = "[Delete] Hapus,"
+        '
         'DaftarPenawaranJual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -303,4 +317,6 @@ Partial Class DaftarPenawaranJual
     Friend WithEvents btnKeluar As Button
     Friend WithEvents BtnHps As Button
     Friend WithEvents btnEdt As Button
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
 End Class

@@ -1,4 +1,5 @@
-﻿Public Class DaftarKelebihanBayar
+﻿Public Class DaftarHistoriBayarHutang
+
 
     Sub addhandlertoAllComponent()
         For Each komponen As Control In Me.Controls
@@ -35,8 +36,8 @@
         Dim tglAkhir As String = dtAkhir.Value.ToString("yyyy-MM-dd")
 
 
-        Dim sql As String = "select tglkelebihanjual,kodekelebihanbayarjual,tblkontak.pelanggan, tblkelebihanbayarjual.kodejual,tblkelebihanbayarjual.jumlah as nilai from tblkelebihanbayarjual inner join tbljual on tbljual.kodejual = tblkelebihanbayarjual.kodejual inner join tblkontak on tblkontak.idpelanggan = tbljual.pelanggan "
-        Dim filter As String = "WHERE (kodekelebihanbayarjual ilike '%" & cari & "%' or tblkontak.pelanggan ilike '%" & cari & "%') AND tglkelebihanjual BETWEEN '" & tglAwal & "' AND '" & tglAkhir & "' order by tglkelebihanjual,kodekelebihanbayarjual"
+        Dim sql As String = "select tglbayarhutang,kodebayarhutang,tblkontak.pelanggan, tblbayarhutang.kodebeli,tblbayarhutang.bayarhutang+tblbayarhutang.biayalain as nilai from tblbayarhutang inner join tblbeli on tblbeli.kodebeli = tblbayarhutang.kodebeli inner join tblkontak on tblkontak.idpelanggan = tblbeli.pelanggan "
+        Dim filter As String = "WHERE (kodebayarhutang ilike '%" & cari & "%' or tblkontak.pelanggan ilike '%" & cari & "%') AND tglbayarhutang BETWEEN '" & tglAwal & "' AND '" & tglAkhir & "' order by tglbayarhutang,kodebayarhutang"
         ListSat.DataSource = getData(sql & filter)
         ListSat.Columns(0).HeaderText = "Tanggal"
         ListSat.Columns(1).HeaderText = "Kode Refrensi"
@@ -64,12 +65,12 @@
 
 
     Sub tambahData()
-        Dim ds As DialogResult = FormKelebihanByr.ShowDialog()
+        Dim ds As DialogResult = FormBayarPiutang.ShowDialog()
         If ds = DialogResult.OK Then
 
         End If
         fillData()
-        FormKelebihanByr.Dispose()
+        FormBayarPiutang.Dispose()
     End Sub
 
 
@@ -78,7 +79,7 @@
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
             If True Then
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
-                    Dim sqlhapus = "DELETE FROM tblkelebihanbayarjual where kodekelebihanbayarjual = '" & idselected & "';"
+                    Dim sqlhapus = "DELETE FROM tblbayarhutang where kodebayarhutang = '" & idselected & "';"
                     If exc(sqlhapus) Then
                         exc("DELETE FROM tbljurnal WHERE koderefrensi='" & idselected & "';")
                         fillData()

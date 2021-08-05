@@ -3,6 +3,10 @@
     Public idakun As String
     Public akun As String
 
+    Public selectedKlasifikasi As String = ""
+    Public isLocked As Boolean = False
+
+
     Private Sub DialogSubklasifikasi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         getKlasifikasi()
         fillData()
@@ -19,6 +23,11 @@
         cbSub.DataSource = dt
         cbSub.DisplayMember = "subklasifikasi"
         cbSub.ValueMember = "idsubklasifikasi"
+        If Not String.IsNullOrEmpty(selectedKlasifikasi) Then
+            cbSub.SelectedValue = selectedKlasifikasi
+        End If
+        cbSub.Enabled = Not isLocked
+
     End Sub
 
 

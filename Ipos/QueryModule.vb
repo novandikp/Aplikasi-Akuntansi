@@ -3,7 +3,8 @@ Module QueryModule
     Function operationQuery(query As String, value As String()) As Boolean
         Dim newquery As String = ""
         Dim array As String() = query.Split("?")
-
+        MsgBox(array.Length)
+        MsgBox(value.Length)
         If array.Count = value.Count + 1 Then
             For a As Integer = 0 To value.Count - 1
                 If value(a) = "NULL" Then

@@ -113,7 +113,7 @@
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
             Dim sqlparent As String = "SELECT kodereturjual from tblreturjual where kodereturjual='" & idselected & "'"
-            If getCount(sqlparent) = 0 Then
+            If True Then
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
                     Dim sqlhapus = "DELETE FROM tblreturjual where kodereturjual = '" & idselected & "';"
                     Dim sqlhapusdetail = "DELETE FROM tbldetailreturjual where kodereturjual = '" & idselected & "';"

@@ -27,7 +27,6 @@ Partial Class DaftarPengirimanJual
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.gbData = New System.Windows.Forms.GroupBox()
         Me.dtAwal = New MetroFramework.Controls.MetroDateTime()
         Me.dtAkhir = New MetroFramework.Controls.MetroDateTime()
@@ -39,6 +38,9 @@ Partial Class DaftarPengirimanJual
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.BtnHps = New System.Windows.Forms.Button()
         Me.btnEdt = New System.Windows.Forms.Button()
+        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1.SuspendLayout()
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,21 +59,12 @@ Partial Class DaftarPengirimanJual
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel6})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel6})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 490)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(835, 22)
         Me.StatusStrip1.TabIndex = 92
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ToolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ToolStripStatusLabel1.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(91, 17)
-        Me.ToolStripStatusLabel1.Text = "[F1] : Cari Akun,"
         '
         'gbData
         '
@@ -267,6 +260,27 @@ Partial Class DaftarPengirimanJual
         Me.btnEdt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEdt.UseVisualStyleBackColor = False
         '
+        'ToolStripStatusLabel2
+        '
+        Me.ToolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripStatusLabel2.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
+        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(81, 17)
+        Me.ToolStripStatusLabel2.Text = "[F1] : Tambah,"
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(53, 17)
+        Me.ToolStripStatusLabel3.Text = "[F2] Edit,"
+        '
+        'ToolStripStatusLabel4
+        '
+        Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(88, 17)
+        Me.ToolStripStatusLabel4.Text = "[Delete] Hapus,"
+        '
         'DaftarPengirimanJual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,7 +305,6 @@ Partial Class DaftarPengirimanJual
     End Sub
     Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents gbData As GroupBox
     Friend WithEvents dtAwal As MetroFramework.Controls.MetroDateTime
     Friend WithEvents dtAkhir As MetroFramework.Controls.MetroDateTime
@@ -303,4 +316,7 @@ Partial Class DaftarPengirimanJual
     Friend WithEvents btnKeluar As Button
     Friend WithEvents BtnHps As Button
     Friend WithEvents btnEdt As Button
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
 End Class

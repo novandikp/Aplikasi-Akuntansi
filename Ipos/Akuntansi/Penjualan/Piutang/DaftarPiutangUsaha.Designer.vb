@@ -225,7 +225,7 @@ Partial Class DaftarPiutangUsaha
         Me.Controls.Add(Me.panelAksi)
         Me.Name = "DaftarPiutangUsaha"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DaftarPiutangUsaha"
+        Me.Text = "Daftar Piutang Usaha"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()
@@ -243,8 +243,8 @@ Partial Class DaftarPiutangUsaha
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents panelAksi As Panel
     Friend WithEvents btnKeluar As Button
     Friend WithEvents btnDetail As Button
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 End Class

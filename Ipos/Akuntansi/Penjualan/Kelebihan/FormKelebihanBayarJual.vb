@@ -2,8 +2,35 @@
     Dim onEditCurrency As Boolean = False
     Dim kodejual As String = ""
 
+    Sub addhandlertoAllComponent()
+        For Each komponen As Control In Me.Controls
+            AddHandler komponen.KeyDown, AddressOf eventKeydown
+            If komponen.Controls.Count > 0 Then
+                For Each komponen2 As Control In komponen.Controls
+                    AddHandler komponen2.KeyDown, AddressOf eventKeydown
+                    If komponen2.Controls.Count > 0 Then
+                        For Each komponen3 As Control In komponen2.Controls
+                            AddHandler komponen3.KeyDown, AddressOf eventKeydown
+                        Next
+                    End If
+                Next
+            End If
+        Next
+    End Sub
+
+    Private Sub eventKeydown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        If e.KeyCode = Keys.F1 Then
+            Me.ActiveControl = eCari
+
+        ElseIf e.Control AndAlso e.KeyCode = Keys.End Then
+            Me.Close()
+        End If
+    End Sub
+
     Private Sub FormBayarPiutang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         focusData()
+        addhandlertoAllComponent()
     End Sub
 
     Sub editCurrency(tb As TextBox)
@@ -83,7 +110,7 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodejual from t
 
 
 
-    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
+    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) 
         Me.Close()
     End Sub
 

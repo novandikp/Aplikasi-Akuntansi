@@ -68,7 +68,7 @@
             ListSat.Columns(2).HeaderText = "Subklasifikasi"
             ListSat.Columns(3).HeaderText = "Arus Kas"
             ListSat.Columns(4).HeaderText = "Rasio"
-
+            ListSat.Columns(1).Visible = False
         Catch ex As Exception
         End Try
         styliseDG(ListSat)

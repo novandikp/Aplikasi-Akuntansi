@@ -227,10 +227,34 @@
     <Compile Include="Akuntansi\Dataset\Akuntansi.vb">
       <DependentUpon>Akuntansi.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Dialog\DialogFakturJual.Designer.vb">
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogFakturBeli.Designer.vb">
+      <DependentUpon>DialogFakturBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogFakturBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogPenawaranBeli.Designer.vb">
+      <DependentUpon>DialogPenawaranBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogPenawaranBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogPengirimanBeli.Designer.vb">
+      <DependentUpon>DialogPengirimanBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogPengirimanBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogPesananBeli.Designer.vb">
+      <DependentUpon>DialogPesananBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Pembelian\DialogPesananBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogFakturJual.Designer.vb">
       <DependentUpon>DialogFakturJual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Dialog\DialogFakturJual.vb">
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogFakturJual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Dialog\DialogKontak.Designer.vb">
@@ -251,10 +275,16 @@
     <Compile Include="Akuntansi\Dialog\DialogAkun.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\Dialog\DialogPesananJual.Designer.vb">
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogPengirimanJual.Designer.vb">
+      <DependentUpon>DialogPengirimanJual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogPengirimanJual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogPesananJual.Designer.vb">
       <DependentUpon>DialogPesananJual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Dialog\DialogPesananJual.vb">
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogPesananJual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Dialog\DialogProduk.Designer.vb">
@@ -617,16 +647,112 @@
     <Compile Include="Akuntansi\Master\Satuan\DatagridSatuan.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\Dialog\DialogPenawaranJual.Designer.vb">
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogPenawaranJual.Designer.vb">
       <DependentUpon>DialogPenawaranJual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Dialog\DialogPenawaranJual.vb">
+    <Compile Include="Akuntansi\Dialog\Penjualan\DialogPenawaranJual.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayar.Designer.vb">
-      <DependentUpon>DaftarKelebihanBayar.vb</DependentUpon>
+    <Compile Include="Akuntansi\Pembelian\Faktur\DaftarFakturBeli.Designer.vb">
+      <DependentUpon>DaftarFakturBeli.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayar.vb">
+    <Compile Include="Akuntansi\Pembelian\Faktur\DaftarFakturBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Faktur\FormFakturBeli.Designer.vb">
+      <DependentUpon>FormFakturBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Faktur\FormFakturBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Hutang\DaftarHutangUsaha.Designer.vb">
+      <DependentUpon>DaftarHutangUsaha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Hutang\DaftarHutangUsaha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Hutang\DetailHutangUsaha.Designer.vb">
+      <DependentUpon>DetailHutangUsaha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Hutang\DetailHutangUsaha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Kelebihan\DaftarKelebihanBayarBeli.Designer.vb">
+      <DependentUpon>DaftarKelebihanBayarBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Kelebihan\DaftarKelebihanBayarBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Kelebihan\FormKelebihanBayarBeli.Designer.vb">
+      <DependentUpon>FormKelebihanBayarBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Kelebihan\FormKelebihanBayarBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pembayaran Hutang\DaftarHistoriBayarHutang.Designer.vb">
+      <DependentUpon>DaftarHistoriBayarHutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pembayaran Hutang\DaftarHistoriBayarHutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pembayaran Hutang\FormBayarHutang.Designer.vb">
+      <DependentUpon>FormBayarHutang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pembayaran Hutang\FormBayarHutang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Penawaran\DaftarPenawaranBeli.Designer.vb">
+      <DependentUpon>DaftarPenawaranBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Penawaran\DaftarPenawaranBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Penawaran\FormPenawaranBeli.Designer.vb">
+      <DependentUpon>FormPenawaranBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Penawaran\FormPenawaranBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pengiriman\DaftarPengirimanBeli.Designer.vb">
+      <DependentUpon>DaftarPengirimanBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pengiriman\DaftarPengirimanBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pengiriman\FormPengirimanBeli.Designer.vb">
+      <DependentUpon>FormPengirimanBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pengiriman\FormPengirimanBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pesanan\DaftarPesananBeli.Designer.vb">
+      <DependentUpon>DaftarPesananBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pesanan\DaftarPesananBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pesanan\FormPesananBeli.Designer.vb">
+      <DependentUpon>FormPesananBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Pesanan\FormPesananBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Retur\DaftarReturBeli.Designer.vb">
+      <DependentUpon>DaftarReturBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Retur\DaftarReturBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Retur\FormReturBeli.Designer.vb">
+      <DependentUpon>FormReturBeli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Pembelian\Retur\FormReturBeli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayarJual.Designer.vb">
+      <DependentUpon>DaftarKelebihanBayarJual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayarJual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\DaftarHistoriBayarPiutang.Designer.vb">
@@ -635,10 +761,10 @@
     <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\DaftarHistoriBayarPiutang.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayar.Designer.vb">
-      <DependentUpon>FormKelebihanBayar.vb</DependentUpon>
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayarJual.Designer.vb">
+      <DependentUpon>FormKelebihanBayarJual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayar.vb">
+    <Compile Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayarJual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Penjualan\Pembayaran Piutang\FormBayarPiutang.Designer.vb">
@@ -1528,7 +1654,19 @@
     <EmbeddedResource Include="Aktivasi.resx">
       <DependentUpon>Aktivasi.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Dialog\DialogFakturJual.resx">
+    <EmbeddedResource Include="Akuntansi\Dialog\Pembelian\DialogFakturBeli.resx">
+      <DependentUpon>DialogFakturBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\Pembelian\DialogPenawaranBeli.resx">
+      <DependentUpon>DialogPenawaranBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\Pembelian\DialogPengirimanBeli.resx">
+      <DependentUpon>DialogPengirimanBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\Pembelian\DialogPesananBeli.resx">
+      <DependentUpon>DialogPesananBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\Penjualan\DialogFakturJual.resx">
       <DependentUpon>DialogFakturJual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\DialogKontak.resx">
@@ -1540,7 +1678,10 @@
     <EmbeddedResource Include="Akuntansi\Dialog\DialogAkun.resx">
       <DependentUpon>DialogAkun.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Dialog\DialogPesananJual.resx">
+    <EmbeddedResource Include="Akuntansi\Dialog\Penjualan\DialogPengirimanJual.resx">
+      <DependentUpon>DialogPengirimanJual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\Penjualan\DialogPesananJual.resx">
       <DependentUpon>DialogPesananJual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\DialogProduk.resx">
@@ -1736,17 +1877,65 @@
     <EmbeddedResource Include="Akuntansi\Master\Satuan\DatagridSatuan.resx">
       <DependentUpon>DatagridSatuan.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Dialog\DialogPenawaranJual.resx">
+    <EmbeddedResource Include="Akuntansi\Dialog\Penjualan\DialogPenawaranJual.resx">
       <DependentUpon>DialogPenawaranJual.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayar.resx">
-      <DependentUpon>DaftarKelebihanBayar.vb</DependentUpon>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Faktur\DaftarFakturBeli.resx">
+      <DependentUpon>DaftarFakturBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Faktur\FormFakturBeli.resx">
+      <DependentUpon>FormFakturBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Hutang\DaftarHutangUsaha.resx">
+      <DependentUpon>DaftarHutangUsaha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Hutang\DetailHutangUsaha.resx">
+      <DependentUpon>DetailHutangUsaha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Kelebihan\DaftarKelebihanBayarBeli.resx">
+      <DependentUpon>DaftarKelebihanBayarBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Kelebihan\FormKelebihanBayarBeli.resx">
+      <DependentUpon>FormKelebihanBayarBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Pembayaran Hutang\DaftarHistoriBayarHutang.resx">
+      <DependentUpon>DaftarHistoriBayarHutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Pembayaran Hutang\FormBayarHutang.resx">
+      <DependentUpon>FormBayarHutang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Penawaran\DaftarPenawaranBeli.resx">
+      <DependentUpon>DaftarPenawaranBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Penawaran\FormPenawaranBeli.resx">
+      <DependentUpon>FormPenawaranBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Pengiriman\DaftarPengirimanBeli.resx">
+      <DependentUpon>DaftarPengirimanBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Pengiriman\FormPengirimanBeli.resx">
+      <DependentUpon>FormPengirimanBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Pesanan\DaftarPesananBeli.resx">
+      <DependentUpon>DaftarPesananBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Pesanan\FormPesananBeli.resx">
+      <DependentUpon>FormPesananBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Retur\DaftarReturBeli.resx">
+      <DependentUpon>DaftarReturBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Pembelian\Retur\FormReturBeli.resx">
+      <DependentUpon>FormReturBeli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Kelebihan\DaftarKelebihanBayarJual.resx">
+      <DependentUpon>DaftarKelebihanBayarJual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Pembayaran Piutang\DaftarHistoriBayarPiutang.resx">
       <DependentUpon>DaftarHistoriBayarPiutang.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayar.resx">
-      <DependentUpon>FormKelebihanBayar.vb</DependentUpon>
+    <EmbeddedResource Include="Akuntansi\Penjualan\Kelebihan\FormKelebihanBayarJual.resx">
+      <DependentUpon>FormKelebihanBayarJual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Pembayaran Piutang\FormBayarPiutang.resx">
       <DependentUpon>FormBayarPiutang.vb</DependentUpon>

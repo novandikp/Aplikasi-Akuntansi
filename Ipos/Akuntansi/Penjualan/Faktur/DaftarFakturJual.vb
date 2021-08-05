@@ -94,15 +94,22 @@
     Sub editData()
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
+            Dim sqlJual As String = "select kodepengirimanjual from tbljual where kodejual ='" & idselected & "'"
 
             Dim pesanan As New FormFakturJual
-            pesanan.TBnotransaksi.Text = idselected
-            pesanan.edited = True
-            Dim ds As DialogResult = pesanan.ShowDialog()
-            If ds = DialogResult.OK Then
 
+            If String.IsNullOrEmpty(getValue(sqlJual, "kodepengirimanjual")) Then
+                pesanan.TBnotransaksi.Text = idselected
+                pesanan.edited = True
+                Dim ds As DialogResult = pesanan.ShowDialog()
+                If ds = DialogResult.OK Then
+                End If
+                fillData()
+            Else
+                dialogError("Faktur Dari Pengiriman tidak bisa diedit")
             End If
-            fillData()
+
+
             pesanan.Dispose()
         Else
             dialogError("Pilih item terlebih dahulu")
@@ -113,7 +120,8 @@
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
             Dim sqlparent As String = "SELECT kodejual from tblreturjual where kodejual='" & idselected & "'"
-            If getCount(sqlparent) = 0 Then
+            Dim sqlparent2 As String = "SELECT kodejual from tblbayarpiutang where kodejual='" & idselected & "'"
+            If getCount(sqlparent) = 0 And getCount(sqlparent2) = 0 Then
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
                     Dim sqlhapus = "DELETE FROM tbljual where kodejual = '" & idselected & "';"
                     Dim sqlhapusdetail = "DELETE FROM tbldetailjual where kodejual = '" & idselected & "';"
@@ -145,5 +153,108 @@
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
         Me.Close()
+    End Sub
+
+    Sub simpanDariPengiriman(bayar As DialogTransaksiBayar)
+        Dim kodejual As String = generateRefrence("PJ")
+        Dim pembayaran As Double = bayar.bayar
+        Dim grandTotal As Double = bayar.grandtotalResult
+        Dim kembali As Double = pembayaran - grandTotal
+
+        Dim isidata As String() = {bayar.kasPenerimaaan, pembayaran.ToString, kembali.ToString, kodejual, Now().ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), bayar.total.ToString, bayar.diskonRupiah.ToString, bayar.diskonPersen.ToString, bayar.totalpajak.ToString, bayar.biayaLain.ToString, bayar.kasBiayaLain.ToString, bayar.kasDiskon.ToString, bayar.nomerDokumen, bayar.tglDokumen, "0", bayar.refrensi}
+        Dim sql As String = "INSERT INTO public.tbljual (kaspenerimaan, bayar, kembali,kodejual, tgljual, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain,  kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang, statusjual,kodepengirimanjual)  select ?, ? ,? ,? , ?, kodedepartemen, kodeprojek, ?, ?,?,?,?, ?,?,?,?,pelanggan,kodegudang, ?,? from tblpengirimanjual where kodepengirimanjual ='" & bayar.refrensi & "'  limit 1;"
+        operationQuery(sql, isidata)
+        Dim sqlDetail As String = "insert into tbldetailjual (idharga, jumlahjual, hargajual, jumlahpajak, catatandetail, diskondetailpersen,kodejual) SELECT  idharga, jumlahjual, hargajual, jumlahpajak, catatandetail, diskondetailpersen,'" & kodejual & "' from tbldetailpengirimanjual where kodepengirimanjual ='" & bayar.refrensi & "'"
+        exc(sqlDetail)
+        Dim sqlhpp As String = "SELECT sum(hpp* jumlahjual) as hpp, sum(jumlahjual * tbldetailjual.hargajual * (100 - diskondetailpersen)/100) as total from tbldetailjual inner join tblharga on tblharga.idharga = tbldetailjual.idharga where kodejual ='" & kodejual & "'"
+
+        Dim akunPersediaan As String = "219001"
+        Dim akunHPP As String = "510001"
+        Dim akunPiutangUsaha As String = "130001"
+        Dim akunPenjualanProduk As String = "410001"
+        Dim akunUtangPajak As String = "230001"
+
+        ''Input Jurnal
+        Dim sqlJual As String = "select kodedepartemen, kodeprojek,pelanggan from tbljual where kodejual='" & kodejual & "'"
+        Dim iddepartemen = getValue(sqlJual, "kodedepartemen")
+        Dim idpelanggan = getValue(sqlJual, "pelanggan")
+        Dim idprojek = getValue(sqlJual, "kodeprojek")
+
+        If String.IsNullOrEmpty(idprojek) Then
+            idprojek = "NULL"
+        Else
+            idprojek = idprojek.ToString
+        End If
+
+        Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+
+        'Penjualan Produk
+        Dim dataPenjualanProduk As String() = {akunPenjualanProduk, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", getValue(sqlhpp, "total"), "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+        operationQuery(sqlJurnal, dataPenjualanProduk)
+
+
+        'Piutang Usaha
+        If kembali < 0 Then
+            Dim dataPiutangUsaha As String() = {akunPiutangUsaha, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), (kembali * -1).ToString, "0", "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+            operationQuery(sqlJurnal, dataPiutangUsaha)
+            exc("INSERT into tblhistoripiutang (idjurnal) select idjurnal from tbljurnal where koderefrensi='" & kodejual & "' AND kodeakun='" & akunPiutangUsaha & "'")
+        End If
+
+        'Uang Muka 
+        If bayar.bayar > 0 And kembali < 0 Then
+            Dim dataPembayaran As String() = {bayar.kasPenerimaaan, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), bayar.bayar.ToString, "0", "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+            operationQuery(sqlJurnal, dataPembayaran)
+        ElseIf bayar.bayar > 0 And kembali >= 0 Then
+            'Pembayaran
+            Dim total As Double = bayar.grandtotalResult
+            Dim dataPembayaran As String() = {bayar.kasPenerimaaan, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), total.ToString, "0", "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+            operationQuery(sqlJurnal, dataPembayaran)
+        End If
+
+        'Biaya lain
+        If bayar.biayaLain > 0 Then
+            Dim dataBiayaLain As String() = {bayar.kasBiayaLain, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", bayar.biayaLain.ToString, "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+            operationQuery(sqlJurnal, dataBiayaLain)
+        End If
+
+        'Potongan Harga
+        If bayar.diskonRupiah > 0 Then
+            Dim dataDiskonDebit As String() = {bayar.kasBiayaLain, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), bayar.diskonRupiah.ToString, "0", "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+            operationQuery(sqlJurnal, dataDiskonDebit)
+        End If
+
+        'Insert Pajaknya
+        Dim diskonSisa As Double = 100 - bayar.diskonPersen
+        Dim sqlpajak As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) select COALESCE(tblpajak.akunpajakjual,'" & akunUtangPajak & "')," & idprojek & ",'" & iddepartemen & "', " & idpelanggan & ",'" & Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":") & "',0, sum(jumlahpajak) * " & diskonSisa.ToString & "/100,'PJ','" & kodejual & "','Faktur Penjualan, Dari Pengiriman" & bayar.refrensi & "'  from tbldetailjual inner join tblharga on tblharga.idharga = tbldetailjual.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblpajak on tblpajak.kodepajak = tblproduk.pajakjual where kodejual='" & kodejual & "' GROUP BY tblpajak.akunpajakjual"
+        exc(sqlpajak)
+
+        'HPP dan Persediaan
+        Dim dataDebit As String() = {akunHPP, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), getValue(sqlhpp, "hpp"), "0", "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+        Dim dataKredit As String() = {akunPersediaan, idprojek, iddepartemen, idpelanggan, Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", getValue(sqlhpp, "hpp"), "PJ", kodejual, "Faktur Penjualan, Dari Pengiriman" & bayar.refrensi}
+
+        operationQuery(sqlJurnal, dataDebit)
+        operationQuery(sqlJurnal, dataKredit)
+    End Sub
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim dialogPengiriman As New DialogPengirimanJual
+        If dialogPengiriman.ShowDialog = DialogResult.OK Then
+            Dim dialogPembayaran As New DialogTransaksiBayar
+            Dim sqlPengirimanjual As String = "SELECT sum(jumlahpajak) as totalpajak, sum(jumlahjual * hargajual * (100 - diskondetailpersen)/100) as total from tbldetailpengirimanjual where kodepengirimanjual='" & dialogPengiriman.kodepengirimanjual & "'"
+
+            dialogPembayaran.total = toDouble(getValue(sqlPengirimanjual, "total"))
+            dialogPembayaran.totalpajak = toDouble(getValue(sqlPengirimanjual, "totalpajak"))
+            dialogPembayaran.tableRefrensi = "tblpengirimanjual"
+            dialogPembayaran.keyRefrensi = "kodepengirimanjual"
+            dialogPembayaran.refrensi = dialogPengiriman.kodepengirimanjual
+            If dialogPembayaran.ShowDialog = DialogResult.OK Then
+                simpanDariPengiriman(dialogPembayaran)
+                dialogSukses("Berhasil")
+                fillData()
+            End If
+            dialogPembayaran.Dispose()
+        End If
+        dialogPengiriman.Dispose()
     End Sub
 End Class

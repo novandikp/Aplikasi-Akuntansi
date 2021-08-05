@@ -3,22 +3,21 @@
     Public idkontak As String = "3"
     Dim kodejual As String = ""
     Private Sub DaftarPiutangUsaha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        addhandlertoAllComponent()
         focusData()
     End Sub
-
 
     Sub focusData()
         gbData.Enabled = True
         fillData()
-        panelAksi.Enabled = True
+
         gbForm.Enabled = False
         initForm()
     End Sub
 
     Sub focusForm()
         gbData.Enabled = False
-        panelAksi.Enabled = False
+
         gbForm.Enabled = True
         initForm()
     End Sub
@@ -164,7 +163,7 @@ SELECT tgljurnal,koderefrensi, tbljurnal.debit-tbljurnal.kredit as bayar,0,0,0 f
 
     End Sub
 
-    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
+    Private Sub btnKeluar_Click(sender As Object, e As EventArgs)
         closeTab()
     End Sub
 

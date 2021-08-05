@@ -846,7 +846,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         Dim akunPiutangUsaha As String = "130001"
         Dim akunPenjualanProduk As String = "410001"
         Dim akunUtangPajak As String = "230001"
-        Dim akunLaba As String = "320001"
+
 
         'Penjualan Produk
         Dim dataPenjualanProduk As String() = {akunPenjualanProduk, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", totalPenjualan.ToString, "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}

@@ -35,11 +35,11 @@ Partial Class DaftarFakturJual
         Me.ListSat = New MetroFramework.Controls.MetroGrid()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.panelAksi = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnTmbh = New System.Windows.Forms.Button()
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.BtnHps = New System.Windows.Forms.Button()
         Me.btnEdt = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -210,6 +210,20 @@ Partial Class DaftarFakturJual
         Me.panelAksi.Size = New System.Drawing.Size(835, 50)
         Me.panelAksi.TabIndex = 93
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = Global.Ipos.My.Resources.Resources.delivery1
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(96, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(149, 36)
+        Me.Button1.TabIndex = 91
+        Me.Button1.Text = "Tambah dari Pengiriman"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'btnTmbh
         '
         Me.btnTmbh.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -268,20 +282,6 @@ Partial Class DaftarFakturJual
         Me.btnEdt.Text = "Edit"
         Me.btnEdt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEdt.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Image = Global.Ipos.My.Resources.Resources.delivery1
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(96, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(149, 36)
-        Me.Button1.TabIndex = 91
-        Me.Button1.Text = "Tambah dari Pengiriman"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'DaftarFakturJual
         '
