@@ -4,7 +4,7 @@
         If ProgressBar1.Value = 100 Then
             Timer1.Enabled = False
             Me.Hide()
-            Form1.Show()
+
 
         Else
             ProgressBar1.Value += 2

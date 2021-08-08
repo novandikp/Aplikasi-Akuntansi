@@ -18,7 +18,7 @@ Public Class KoneksiDatabase
             dialogInfo("Koneksi Database Berhasil")
             setLocationDatabase(TextBox1.Text)
             Me.Close()
-            Form1.BukaLogin()
+
         Catch ex As Exception
             Debug.WriteLine(ex.Message)
             dialogError("Address yang anda masukkan tidak ditemukan")
@@ -33,7 +33,7 @@ Public Class KoneksiDatabase
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         If dialog("Apakah anda yakin untuk keluar aplikasi ?") Then
             SplashScreen.Close()
-            Form1.Close()
+
         End If
     End Sub
 End Class

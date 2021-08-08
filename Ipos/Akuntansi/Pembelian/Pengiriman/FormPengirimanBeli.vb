@@ -242,8 +242,7 @@ Public Class FormPengirimanBeli
         setProjek()
         getPelanggan()
         setTableColumn()
-        TBuser.Text = Form1.username
-        TBdept.Text = Form1.role
+
         If edited Then
             continueOrder()
             btnCariPenawaran.Enabled = False

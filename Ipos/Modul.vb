@@ -201,7 +201,7 @@ Module Modul
             Dim tables As DataTable = checkLisence()
             If Not IsNothing(tables) Then
                 If seperatorString(hashString(tables.Rows(0).Item("data")), "-", 4) = tables.Rows(0).Item("value") Then
-                    Form1.setnama()
+
                     pro = True
                 End If
             End If
@@ -211,8 +211,8 @@ Module Modul
         ElseIf getCount("select * from " & table) > 5 Then
             dialogError("Aplikasi Melampui batas inputan, silahkan aktivasi aplikasi ini")
 
-            Aktivasi.ShowDialog()
-            Aktivasi.Dispose()
+            ' Aktivasi.ShowDialog()
+            'Aktivasi.Dispose()
             Return False
         Else
             Return True

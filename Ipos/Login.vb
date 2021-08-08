@@ -12,13 +12,7 @@ Public Class Login
             Debug.WriteLine(sql)
             If getCount(sql) = 1 Then
                 Me.Close()
-                Form1.username = username
-                Dim tableUser As DataTable = getData(sql)
-                Form1.role = firstTable(tableUser, "role")
-                Form1.cabang = firstTable(tableUser, "cabang")
-                Form1.idcabang = firstTable(tableUser, "idcabang")
-                Form1.openMenuUtama(firstTable(tableUser, "role"))
-                tableUser.Dispose()
+
             Else
                 dialogError("Username atau password salah")
             End If
@@ -73,7 +67,7 @@ Public Class Login
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         If dialog("Apakah anda yakin untuk keluar aplikasi ?") Then
             SplashScreen.Close()
-            Form1.Close()
+
         End If
     End Sub
 

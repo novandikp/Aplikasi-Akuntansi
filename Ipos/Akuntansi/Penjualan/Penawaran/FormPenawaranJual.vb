@@ -224,8 +224,8 @@ Public Class FormPenawaranJual
         setProjek()
         getPelanggan()
         setTableColumn()
-        TBuser.Text = Form1.username
-        TBdept.Text = Form1.role
+        
+        
         If edited Then
             continueOrder()
         Else
