@@ -72,6 +72,17 @@
         addhandlertoAllComponent()
     End Sub
 
+
+    Sub cetakJurnal()
+        If ListSat.SelectedRows.Count = 1 Then
+            Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
+            Modul.openJurnalDialog(idselected)
+        Else
+            dialogError("Pilih item terlebih dahulu")
+        End If
+    End Sub
+
+
     Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs) Handles dtAwal.ValueChanged
         fillData()
     End Sub
@@ -111,15 +122,15 @@
     Sub hapusData()
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
-
-            If True Then
+            Dim sqlparent As String = "SELECT kodebeli from tblbeli where kodepengirimanbeli='" & idselected & "'"
+            If getCount(sqlparent) = 0 Then
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
                     Dim sqlhapus = "DELETE FROM tblpengirimanbeli where kodepengirimanbeli = '" & idselected & "';"
                     Dim sqlhapusdetail = "DELETE FROM tbldetailpengirimanbeli where kodepengirimanbeli = '" & idselected & "';"
-
+                    exc("update tblstokgudang set stok = stok - sub.jumlahbeli from ( SELECT tbldetailpengirimanbeli.idharga, tbldetailpengirimanbeli.jumlahbeli,tblpengirimanbeli.kodegudang, tbldetailpengirimanbeli.kodepengirimanbeli from tbldetailpengirimanbeli  inner join tblpengirimanbeli on tbldetailpengirimanbeli.kodepengirimanbeli = tblpengirimanbeli.kodepengirimanbeli ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodepengirimanbeli='" & idselected & "'")
                     If exc(sqlhapusdetail & sqlhapus) Then
                         exc("DELETE FROM tblhistoristok where refrensi='" & idselected & "';DELETE FROM tbljurnal WHERE koderefrensi='" & idselected & "';")
-                        exc("update tblstokgudang set stok = stok + sub.jumlahbeli from ( SELECT tbldetailpengirimanbeli.idharga, tbldetailpengirimanbeli.jumlahbeli,tblpengirimanbeli.kodegudang, tbldetailpengirimanbeli.kodepengirimanbeli from tbldetailpengirimanbeli  inner join tblpengirimanbeli on tbldetailpengirimanbeli.kodepengirimanbeli = tblpengirimanbeli.kodepengirimanbeli ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodepengirimanbeli='" & idselected & "'")
+
                         fillData()
                     Else
                         dialogError("Data tidak bisa dihapus karena data telah digunakan")
@@ -147,5 +158,9 @@
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        cetakJurnal()
     End Sub
 End Class

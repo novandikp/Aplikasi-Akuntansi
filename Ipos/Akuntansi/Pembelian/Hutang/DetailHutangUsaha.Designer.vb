@@ -48,7 +48,7 @@ Partial Class DetailHutangUsaha
         Me.cbProjek = New MetroFramework.Controls.MetroComboBox()
         Me.cbDepartemen = New MetroFramework.Controls.MetroComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.jumlahPiutang = New System.Windows.Forms.TextBox()
+        Me.jumlahhutang = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpPenghapusan = New MetroFramework.Controls.MetroDateTime()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -267,7 +267,7 @@ Partial Class DetailHutangUsaha
         Me.gbForm.Controls.Add(Me.cbProjek)
         Me.gbForm.Controls.Add(Me.cbDepartemen)
         Me.gbForm.Controls.Add(Me.Label5)
-        Me.gbForm.Controls.Add(Me.jumlahPiutang)
+        Me.gbForm.Controls.Add(Me.jumlahhutang)
         Me.gbForm.Controls.Add(Me.Label4)
         Me.gbForm.Controls.Add(Me.dtpPenghapusan)
         Me.gbForm.Controls.Add(Me.Label3)
@@ -334,7 +334,7 @@ Partial Class DetailHutangUsaha
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(184, 17)
         Me.Label8.TabIndex = 19
-        Me.Label8.Text = "Akun Penghapusan Piutang"
+        Me.Label8.Text = "Akun Penghapusan hutang"
         '
         'cbAkun
         '
@@ -396,14 +396,14 @@ Partial Class DetailHutangUsaha
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Jumlah"
         '
-        'jumlahPiutang
+        'jumlahhutang
         '
-        Me.jumlahPiutang.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jumlahPiutang.Location = New System.Drawing.Point(20, 168)
-        Me.jumlahPiutang.Name = "jumlahPiutang"
-        Me.jumlahPiutang.ReadOnly = True
-        Me.jumlahPiutang.Size = New System.Drawing.Size(291, 29)
-        Me.jumlahPiutang.TabIndex = 12
+        Me.jumlahhutang.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.jumlahhutang.Location = New System.Drawing.Point(20, 168)
+        Me.jumlahhutang.Name = "jumlahhutang"
+        Me.jumlahhutang.ReadOnly = True
+        Me.jumlahhutang.Size = New System.Drawing.Size(291, 29)
+        Me.jumlahhutang.TabIndex = 12
         '
         'Label4
         '
@@ -442,7 +442,7 @@ Partial Class DetailHutangUsaha
         Me.tbKode.Size = New System.Drawing.Size(291, 26)
         Me.tbKode.TabIndex = 8
         '
-        'DetailPiutangUsaha
+        'DetailhutangUsaha
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -451,9 +451,9 @@ Partial Class DetailHutangUsaha
         Me.Controls.Add(Me.gbForm)
         Me.Controls.Add(Me.gbData)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Name = "DetailPiutangUsaha"
+        Me.Name = "DetailhutangUsaha"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Detail Piutang Usaha"
+        Me.Text = "Detail hutang Usaha"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
         CType(Me.ListDetail, System.ComponentModel.ISupportInitialize).EndInit()
@@ -482,7 +482,7 @@ Partial Class DetailHutangUsaha
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpPenghapusan As MetroFramework.Controls.MetroDateTime
     Friend WithEvents Label5 As Label
-    Friend WithEvents jumlahPiutang As TextBox
+    Friend WithEvents jumlahhutang As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents cbAkun As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Label7 As Label

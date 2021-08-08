@@ -712,6 +712,7 @@ Module Modul
         Dim table As String = ""
         Dim key As String = ""
         Select Case tipe
+            'Jual
             Case "PN"
                 table = "tblpenawaranjual"
                 key = "kodepenawaranjual"
@@ -736,6 +737,31 @@ Module Modul
             Case "LP"
                 table = "tblkelebihanbayarjual"
                 key = "kodekelebihanbayarjual"
+            'Beli
+            Case "BN"
+                table = "tblpenawaranbeli"
+                key = "kodepenawaranbeli"
+            Case "PB"
+                table = "tblpesananbeli"
+                key = "kodepesananbeli"
+            Case "BD"
+                table = "tblpengirimanbeli"
+                key = "kodepengirimanbeli"
+            Case "FB"
+                table = "tblbeli"
+                key = "kodebeli"
+            Case "RB"
+                table = "tblreturbeli"
+                key = "kodereturbeli"
+            Case "DB"
+                table = "tblhapushutang"
+                key = "kodehapushutang"
+            Case "BB"
+                table = "tblbayarhutang"
+                key = "kodebayarhutang"
+            Case "LB"
+                table = "tblkelebihanbayarbeli"
+                key = "kodekelebihanbayarbeli"
 
         End Select
         Dim lastId As String
@@ -887,5 +913,20 @@ Module Modul
                     row.Cells(index).Value = "SELESAI"
             End Select
         Next
+    End Sub
+
+
+    Sub hitungHPPUlang(idbarang As String)
+        Dim sqlUpdateHPP As String = "UPDATE tblharga SET hpp = round(tblharga.nilaidasar::numeric * subquery.hpp::numeric,0)
+        FROM (SELECT idbarang, sum((masuk-keluar) * tblhistoristok.hpp)/ sum((masuk-keluar) * nilaidasar) as hpp from tblhistoristok inner join tblharga on tblharga.idharga = tblhistoristok.idharga GROUP by idbarang) AS subquery
+        WHERE tblharga.idbarang in " & idbarang
+        exc(sqlUpdateHPP)
+    End Sub
+
+
+    Sub openJurnalDialog(refrensi As String)
+        DialogJurnal.koderefrensi = refrensi
+        DialogJurnal.ShowDialog()
+        DialogJurnal.Dispose()
     End Sub
 End Module

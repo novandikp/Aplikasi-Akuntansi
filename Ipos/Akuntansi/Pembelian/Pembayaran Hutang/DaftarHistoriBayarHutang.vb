@@ -43,7 +43,7 @@
         ListSat.Columns(1).HeaderText = "Kode Refrensi"
         ListSat.Columns(2).HeaderText = "Pelanggan"
 
-        ListSat.Columns(3).HeaderText = "Kode Jual"
+        ListSat.Columns(3).HeaderText = "Kode beli"
         ListSat.Columns(4).HeaderText = "Nilai"
         makeFillDG(ListSat)
 
@@ -55,6 +55,16 @@
         addhandlertoAllComponent()
     End Sub
 
+    Sub cetakJurnal()
+        If ListSat.SelectedRows.Count = 1 Then
+            Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
+            Modul.openJurnalDialog(idselected)
+        Else
+            dialogError("Pilih item terlebih dahulu")
+        End If
+    End Sub
+
+
     Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs) Handles dtAwal.ValueChanged
         fillData()
     End Sub
@@ -65,12 +75,12 @@
 
 
     Sub tambahData()
-        Dim ds As DialogResult = FormBayarPiutang.ShowDialog()
+        Dim ds As DialogResult = FormBayarhutang.ShowDialog()
         If ds = DialogResult.OK Then
 
         End If
         fillData()
-        FormBayarPiutang.Dispose()
+        FormBayarhutang.Dispose()
     End Sub
 
 
@@ -106,5 +116,9 @@
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        cetakJurnal()
     End Sub
 End Class

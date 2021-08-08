@@ -1,7 +1,7 @@
 ﻿Public Class FormBayarPiutang
     Dim onEditCurrency As Boolean = False
     Dim kodejual As String = ""
-
+    Public klasifikasiBiayaLain As String = "4900"
 
     Sub addhandlertoAllComponent()
         For Each komponen As Control In Me.Controls
@@ -53,7 +53,7 @@
         cbAkun.ValueMember = "kodeakun"
         cbAkun.SelectedIndex = 0
         'isi akun penerimaan
-        cbBiayaLain.DataSource = getData("select kodeakun,akun from tblakun")
+        cbBiayaLain.DataSource = getData("select kodeakun,akun from tblakun where idsubklasifikasi='" & klasifikasiBiayaLain & "'")
         cbBiayaLain.DisplayMember = "akun"
         cbBiayaLain.ValueMember = "kodeakun"
         cbBiayaLain.SelectedIndex = 0
@@ -128,6 +128,8 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodejual from t
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim dialog As New DialogAkun
+        dialog.isLocked = True
+        dialog.selectedKlasifikasi = klasifikasiBiayaLain
         If dialog.ShowDialog = DialogResult.OK Then
             cbBiayaLain.SelectedValue = dialog.idakun
         End If

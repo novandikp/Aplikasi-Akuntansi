@@ -2,6 +2,10 @@
 Imports Microsoft.Reporting.WinForms
 
 Public Class DialogTransaksiBayar
+    'Atur Klasifikasi
+    Public klasifikasiBiayaLain As String = "4900"
+    Public klasifikasiPotonganHarga As String = "4100"
+
     Public grandtotalResult As Double
     Public total As Double
     Public totalpajak As Double
@@ -15,11 +19,12 @@ Public Class DialogTransaksiBayar
     Public tableRefrensi As String = ""
     Public keyRefrensi As String = ""
     Public kasDiskon As String
-
     Public bayar As Double
     Public kasPenerimaaan As String = ""
-    Dim onEdited As Boolean = False
 
+
+
+    Dim onEdited As Boolean = False
     Dim onEditCurrency As Boolean = False
 
     Sub awal()
@@ -29,7 +34,8 @@ Public Class DialogTransaksiBayar
         TBDiskon.Text = "0"
         TBPotongan.Text = "0"
         tbBiayaLain.Text = "0"
-        diskonNominal.Checked = True
+        diskonNominal.Checked = False
+        TBPotongan.Enabled = False
         panelDokumen.Enabled = checkDokumen.Checked
         setAkun()
         setAkunDiskon()
@@ -68,14 +74,14 @@ Public Class DialogTransaksiBayar
 
 
     Sub setAkun()
-        cbKasBiayaLain.DataSource = getData("select kodeakun, akun from tblakun")
+        cbKasBiayaLain.DataSource = getData("select kodeakun, akun from tblakun where idsubklasifikasi='" & klasifikasiBiayaLain & "'")
         cbKasBiayaLain.ValueMember = "kodeakun"
         cbKasBiayaLain.DisplayMember = "akun"
         cbKasBiayaLain.SelectedIndex = 0
     End Sub
 
     Sub setAkunDiskon()
-        cbAkunDiskon.DataSource = getData("select kodeakun, akun from tblakun")
+        cbAkunDiskon.DataSource = getData("select kodeakun, akun from tblakun where idsubklasifikasi='" & klasifikasiPotonganHarga & "'")
         cbAkunDiskon.ValueMember = "kodeakun"
         cbAkunDiskon.DisplayMember = "akun"
         cbAkunDiskon.SelectedIndex = 0
@@ -167,8 +173,10 @@ Public Class DialogTransaksiBayar
         onlyNumber(e)
     End Sub
 
-    Private Sub btnCariAkun_Click(sender As Object, e As EventArgs) Handles btnCariAkun.Click
+    Private Sub cariAkunBiayaLain(sender As Object, e As EventArgs) Handles btnCariAkun.Click
         Dim dialog As New DialogAkun
+        dialog.isLocked = True
+        dialog.selectedKlasifikasi = klasifikasiBiayaLain
         If dialog.ShowDialog = DialogResult.OK Then
             cbKasBiayaLain.SelectedValue = dialog.idakun
         End If
@@ -203,8 +211,10 @@ Public Class DialogTransaksiBayar
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub cariKasDiskon(sender As Object, e As EventArgs) Handles Button1.Click
         Dim dialog As New DialogAkun
+        dialog.isLocked = True
+        dialog.selectedKlasifikasi = klasifikasiPotonganHarga
         If dialog.ShowDialog = DialogResult.OK Then
             cbAkunDiskon.SelectedValue = dialog.idakun
         End If
@@ -222,6 +232,7 @@ Public Class DialogTransaksiBayar
 
     Private Sub btnCariAkunTerima_Click(sender As Object, e As EventArgs) Handles btnCariAkunTerima.Click
         Dim dialog As New DialogAkun
+
         If dialog.ShowDialog = DialogResult.OK Then
             cbAkunTerima.SelectedValue = dialog.idakun
         End If

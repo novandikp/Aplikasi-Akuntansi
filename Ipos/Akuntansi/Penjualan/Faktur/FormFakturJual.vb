@@ -824,7 +824,7 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
                 Dim data As String() = {refrensi, row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, row.Cells(6).Value.ToString, "-", row.Cells(9).Value.ToString, row.Cells(12).Value.ToString}
                 If operationQuery(sqldetail, data) Then
                     Dim sqlHistoriStok As String = "INSERT INTO public.tblhistoristok(masuk, keluar, harga, tglhistori, idharga, refrensi, hpp) VALUES ( ?, ?, ?, ?, ?, ?, ?);"
-                    Dim dataHistori As String() = {"0", row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, dtTanggal.Value.ToString("yyyy-MM-dd"), row.Cells(9).Value, TBnotransaksi.Text, hpp.ToString}
+                    Dim dataHistori As String() = {"0", row.Cells(3).Value.ToString.Replace(",", "."), row.Cells(5).Value.ToString, dtTanggal.Value.ToString("yyyy-MM-dd"), row.Cells(9).Value, TBnotransaksi.Text, hpp.ToString.Replace(",", ".")}
 
                     operationQuery(sqlHistoriStok, dataHistori)
                 End If
@@ -894,8 +894,8 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
 
         'HPP dan Persediaan
 
-        Dim dataDebit As String() = {akunHPP, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), Totalhpp, "0", "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}
-        Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", Totalhpp, "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}
+        Dim dataDebit As String() = {akunHPP, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), Totalhpp.ToString.Replace(",", "."), "0", "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}
+        Dim dataKredit As String() = {akunPersediaan, kodeprojek, ComboBox1.SelectedValue, CBsupplier.SelectedValue, dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss").Replace(".", ":"), "0", Totalhpp.ToString.Replace(",", "."), "PJ", TBnotransaksi.Text, "Faktur Penjualan, " & CBsupplier.Text}
 
         operationQuery(sqlJurnal, dataDebit)
         operationQuery(sqlJurnal, dataKredit)

@@ -51,7 +51,7 @@
         Dim filter As String = "WHERE (kodereturbeli ilike '%" & cari & "%' or tblkontak.pelanggan ilike '%" & cari & "%') AND tglreturbeli BETWEEN '" & tglAwal & "' AND '" & tglAkhir & "' order by tglreturbeli,kodereturbeli"
         ListSat.DataSource = getData(sql & filter)
         ListSat.Columns(0).HeaderText = "Tanggal"
-        ListSat.Columns(1).HeaderText = "Retur Penbelian"
+        ListSat.Columns(1).HeaderText = "Retur Pembelian"
         ListSat.Columns(2).HeaderText = "Pelanggan"
 
         ListSat.Columns(3).HeaderText = "Nilai"
@@ -71,6 +71,16 @@
         fillData()
         styliseDG(ListSat)
         addhandlertoAllComponent()
+    End Sub
+
+
+    Sub cetakJurnal()
+        If ListSat.SelectedRows.Count = 1 Then
+            Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
+            Modul.openJurnalDialog(idselected)
+        Else
+            dialogError("Pilih item terlebih dahulu")
+        End If
     End Sub
 
     Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs) Handles dtAwal.ValueChanged
@@ -117,7 +127,9 @@
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
                     Dim sqlhapus = "DELETE FROM tblreturbeli where kodereturbeli = '" & idselected & "';"
                     Dim sqlhapusdetail = "DELETE FROM tbldetailreturbeli where kodereturbeli = '" & idselected & "';"
+                    exc("update tblstokgudang set stok = stok + sub.jumlahbeli from ( SELECT tbldetailreturbeli.idharga, tbldetailreturbeli.jumlahbeli,tblreturbeli.kodegudang, tbldetailreturbeli.kodereturbeli from tbldetailreturbeli  inner join tblreturbeli on tbldetailreturbeli.kodereturbeli = tblreturbeli.kodereturbeli ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodereturbeli='" & idselected & "'")
                     If exc(sqlhapusdetail & sqlhapus) Then
+                        exc("DELETE FROM tblhistoristok where refrensi='" & idselected & "';DELETE FROM tbljurnal WHERE koderefrensi='" & idselected & "';")
                         fillData()
                     Else
                         dialogError("Data tidak bisa dihapus karena data telah digunakan")
@@ -145,5 +157,9 @@
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        cetakJurnal()
     End Sub
 End Class

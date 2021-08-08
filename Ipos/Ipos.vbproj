@@ -227,6 +227,12 @@
     <Compile Include="Akuntansi\Dataset\Akuntansi.vb">
       <DependentUpon>Akuntansi.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Akuntansi\Dialog\DialogJurnal.Designer.vb">
+      <DependentUpon>DialogJurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dialog\DialogJurnal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\Dialog\Pembelian\DialogFakturBeli.Designer.vb">
       <DependentUpon>DialogFakturBeli.vb</DependentUpon>
     </Compile>
@@ -303,6 +309,12 @@
       <DependentUpon>DialogTransaksiBayar.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\Dialog\DialogTransaksiBayar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Kas\DialogDebitKredit.Designer.vb">
+      <DependentUpon>DialogDebitKredit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Kas\DialogDebitKredit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Laporan\Keuangan\KasBank\LaporanJurnalPemasukan.Designer.vb">
@@ -1654,6 +1666,9 @@
     <EmbeddedResource Include="Aktivasi.resx">
       <DependentUpon>Aktivasi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\DialogJurnal.resx">
+      <DependentUpon>DialogJurnal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\Pembelian\DialogFakturBeli.resx">
       <DependentUpon>DialogFakturBeli.vb</DependentUpon>
     </EmbeddedResource>
@@ -1693,6 +1708,7 @@
     <EmbeddedResource Include="Akuntansi\Dialog\DialogTransaksiBayar.resx">
       <DependentUpon>DialogTransaksiBayar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Dialog\Rdlc\Jurnal.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\KasBank\LaporanJurnalPemasukan.resx">
       <DependentUpon>LaporanJurnalPemasukan.vb</DependentUpon>
     </EmbeddedResource>
@@ -2652,6 +2668,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Akuntansi\Kas\Pemasukan\" />
+    <Folder Include="Akuntansi\Kas\Pengeluaran\" />
     <Folder Include="Akuntansi\Laporan\Penjualan\Faktur\Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

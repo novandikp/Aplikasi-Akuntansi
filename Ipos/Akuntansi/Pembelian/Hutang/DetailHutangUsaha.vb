@@ -2,7 +2,7 @@
 
     Public idkontak As String = "3"
     Dim kodebeli As String = ""
-    Private Sub DaftarPiutangUsaha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub DaftarhutangUsaha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         addhandlertoAllComponent()
         focusData()
     End Sub
@@ -44,8 +44,8 @@
         cbProjek.SelectedIndex = -1
 
 
-        tbKode.Text = generateRefrence("DP")
-        jumlahPiutang.Text = "0"
+        tbKode.Text = generateRefrence("DB")
+        jumlahhutang.Text = "0"
 
     End Sub
 
@@ -205,7 +205,7 @@ SELECT tgljurnal,koderefrensi, tbljurnal.debit-tbljurnal.kredit as bayar,0,0,0 f
             detailRefrensi()
             If Not toDouble(ListSat.Rows(e.RowIndex).Cells(6).Value.ToString) = 0 Then
                 focusForm()
-                jumlahPiutang.Text = numberFormat(ListSat.Rows(e.RowIndex).Cells(6).Value.ToString)
+                jumlahhutang.Text = numberFormat(ListSat.Rows(e.RowIndex).Cells(6).Value.ToString)
             End If
         End If
     End Sub
@@ -238,33 +238,33 @@ SELECT tgljurnal,koderefrensi, tbljurnal.debit-tbljurnal.kredit as bayar,0,0,0 f
             If cbProjek.SelectedIndex >= 0 Then
                 kodeprojek = cbProjek.SelectedValue
             End If
-            Dim sqlHapusPiutang As String = "INSERT INTO public.tblhapushutang(kodehapushutang,
+            Dim sqlHapushutang As String = "INSERT INTO public.tblhapushutang(kodehapushutang,
 	 tglhapushutang, jumlahhutang, kodedepartemen, kodeprojek, kodeakun)
 	VALUES ( ?,?, ?, ?, ?, ?);"
 
-            Dim dataHapusPiutang As String() = {tbKode.Text, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), unnumberFormat(jumlahPiutang.Text), cbDepartemen.SelectedValue, kodeprojek, cbAkun.SelectedValue}
+            Dim dataHapushutang As String() = {tbKode.Text, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), unnumberFormat(jumlahhutang.Text), cbDepartemen.SelectedValue, kodeprojek, cbAkun.SelectedValue}
 
 
-            If operationQuery(sqlHapusPiutang, dataHapusPiutang) Then
+            If operationQuery(sqlHapushutang, dataHapushutang) Then
                 'Input ke dalam jurnal
                 'Jika hutang negatif atau positif
-                Dim akunPiutangUsaha As String = "130001"
-                Dim keterangan As String = "Penghapusan Piutang dari " & kodebeli
+                Dim akunhutangUsaha As String = "210001"
+                Dim keterangan As String = "Penghapusan hutang dari " & kodebeli
                 Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
-                Dim jumlah As Double = toDouble(unnumberFormat(jumlahPiutang.Text))
+                Dim jumlah As Double = toDouble(unnumberFormat(jumlahhutang.Text))
                 If jumlah < 0 Then
                     jumlah = jumlah * -1
                     Dim dataKredit As String() = {cbAkun.SelectedValue, kodeprojek, cbDepartemen.SelectedValue, idkontak, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), "0", jumlah.ToString, "DP", tbKode.Text, keterangan}
-                    Dim dataDebit As String() = {akunPiutangUsaha, kodeprojek, cbDepartemen.SelectedValue, idkontak, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), jumlah.ToString, "0", "DP", tbKode.Text, keterangan}
+                    Dim dataDebit As String() = {akunhutangUsaha, kodeprojek, cbDepartemen.SelectedValue, idkontak, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), jumlah.ToString, "0", "DP", tbKode.Text, keterangan}
                     operationQuery(sqlJurnal, dataDebit)
                     operationQuery(sqlJurnal, dataKredit)
                 Else
-                    Dim dataKredit As String() = {akunPiutangUsaha, kodeprojek, cbDepartemen.SelectedValue, idkontak, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), "0", jumlah.ToString, "DP", tbKode.Text, keterangan}
+                    Dim dataKredit As String() = {akunhutangUsaha, kodeprojek, cbDepartemen.SelectedValue, idkontak, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), "0", jumlah.ToString, "DP", tbKode.Text, keterangan}
                     Dim dataDebit As String() = {cbAkun.SelectedValue, kodeprojek, cbDepartemen.SelectedValue, idkontak, dtpPenghapusan.Value.ToString("yyyy-MM-dd"), jumlah.ToString, "0", "DP", tbKode.Text, keterangan}
                     operationQuery(sqlJurnal, dataDebit)
                     operationQuery(sqlJurnal, dataKredit)
                 End If
-                exc("INSERT into tblhistoribayarhutang (idjurnal,kodebeli) select idjurnal,'" & kodebeli & "' from tbljurnal where koderefrensi='" & tbKode.Text & "' AND kodeakun='" & akunPiutangUsaha & "'")
+                exc("INSERT into tblhistoribayarhutang (idjurnal,kodebeli) select idjurnal,'" & kodebeli & "' from tbljurnal where koderefrensi='" & tbKode.Text & "' AND kodeakun='" & akunhutangUsaha & "'")
                 dialogSukses("Berhasil")
                 focusData()
             End If

@@ -214,7 +214,7 @@ Partial Class DaftarHutangUsaha
         Me.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnKeluar.UseVisualStyleBackColor = False
         '
-        'DaftarPiutangUsaha
+        'DaftarhutangUsaha
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -223,9 +223,9 @@ Partial Class DaftarHutangUsaha
         Me.Controls.Add(Me.gbData)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.panelAksi)
-        Me.Name = "DaftarPiutangUsaha"
+        Me.Name = "DaftarhutangUsaha"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Daftar Piutang Usaha"
+        Me.Text = "Daftar hutang Usaha"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()

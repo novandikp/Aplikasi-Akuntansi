@@ -1,5 +1,5 @@
 ﻿Public Class DaftarHutangUsaha
-    Private Sub DaftarPiutangUsaha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub DaftarhutangUsaha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fillData()
     End Sub
 
@@ -61,7 +61,7 @@
     Private Sub btnDetail_Click(sender As Object, e As EventArgs) Handles btnDetail.Click
         If ListSat.SelectedRows.Count = 1 Then
             Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(4).Value
-            Dim dialog As New DetailPiutangUsaha
+            Dim dialog As New DetailhutangUsaha
             dialog.idkontak = idselected
             dialog.ShowDialog()
             fillData()

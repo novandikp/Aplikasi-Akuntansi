@@ -28,7 +28,7 @@
         End If
     End Sub
 
-    Private Sub FormBayarPiutang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormBayarhutang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         focusData()
         addhandlertoAllComponent()
     End Sub
@@ -53,18 +53,18 @@
         cbAkun.SelectedIndex = 0
         'isi akun penerimaan
 
-        jumlahPiutang.Text = "0"
+        jumlahhutang.Text = "0"
 
         tbBayar.Text = "0"
     End Sub
 
 
     Sub fillData()
-        Dim sqlHistoriPiutang As String = "SELECT tgljurnal,koderefrensi,(sum(tbljurnal.debit-tbljurnal.kredit) +COALESCE(T.bayar,0)) * -1 AS piutang from tblhistoripiutang inner join tbljurnal on tbljurnal.idjurnal = tblhistoripiutang.idjurnal 
-left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodebeli from tblhistoribayarpiutang inner join tbljurnal on tbljurnal.idjurnal = tblhistoribayarpiutang.idjurnal group by tblhistoribayarpiutang.kodebeli) T  on T.kodebeli = tbljurnal.koderefrensi where tbljurnal.tipe = 'PJ' and koderefrensi ILIKE '%" & eCari.Text & "%' and tgljurnal between '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' group by koderefrensi, T.bayar,tgljurnal"
-        Dim dt As DataTable = getData(sqlHistoriPiutang)
+        Dim sqlHistorihutang As String = "SELECT tgljurnal,koderefrensi,(sum(tbljurnal.debit-tbljurnal.kredit) +COALESCE(T.bayar,0)) * -1 AS hutang from tblhistorihutang inner join tbljurnal on tbljurnal.idjurnal = tblhistorihutang.idjurnal 
+left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodebeli from tblhistoribayarhutang inner join tbljurnal on tbljurnal.idjurnal = tblhistoribayarhutang.idjurnal group by tblhistoribayarhutang.kodebeli) T  on T.kodebeli = tbljurnal.koderefrensi where tbljurnal.tipe = 'FB' and koderefrensi ILIKE '%" & eCari.Text & "%' and tgljurnal between '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' group by koderefrensi, T.bayar,tgljurnal"
+        Dim dt As DataTable = getData(sqlHistorihutang)
         Dim dataview As DataView = dt.AsDataView
-        dataview.RowFilter = "piutang > 0"
+        dataview.RowFilter = "hutang > 0"
         ListSat.DataSource = dataview
 
         ListSat.Columns(0).HeaderText = "Tanggal Jurnal"
@@ -128,7 +128,7 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodebeli from t
             Dim row As DataGridViewRow = ListSat.Rows(e.RowIndex)
             kodebeli = row.Cells(1).Value
             focusForm()
-            jumlahPiutang.Text = numberFormat(row.Cells(2).Value)
+            jumlahhutang.Text = numberFormat(row.Cells(2).Value)
 
         End If
     End Sub
@@ -142,20 +142,20 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodebeli from t
         Dim akunPenerimaan As String = cbAkun.SelectedValue
 
 
-        Dim akunPiutangUsaha As String = "130001"
+        Dim akunhutangUsaha As String = "210001"
         Dim sqlinsert As String = "INSERT INTO public.tblkelebihanbayarbeli(
 	kodekelebihanbayarbeli, akun, jumlah, kodebeli, tglkelebihanbeli)
 	VALUES (?, ?, ?, ?, ?);"
 
-        Dim kode As String = generateRefrence("LP")
+        Dim kode As String = generateRefrence("LB")
         Dim dataInsert As String() = {kode, akunPenerimaan, jumlahBayar, kodebeli, tglbayar}
         If operationQuery(sqlinsert, dataInsert) Then
             Dim sqlJurnal As String = "INSERT INTO public.tbljurnal(kodeakun, kodeprojek, kodedepartemen, kontak, tgljurnal, debit, kredit, tipe, koderefrensi, deskripsijurnal) select ?,kodeprojek,kodedepartemen,pelanggan,?,?,?,?,?,? from tblbeli where kodebeli ='" & kodebeli & "' limit 1"
-            Dim dataDebit As String() = {akunPiutangUsaha, tglbayar, jumlahBayar, "0", "LP", kode, "Penegembalian Kelebihan dari Faktur " & kodebeli}
+            Dim dataDebit As String() = {akunhutangUsaha, tglbayar, jumlahBayar, "0", "LP", kode, "Penegembalian Kelebihan dari Faktur " & kodebeli}
             Dim dataKredit As String() = {akunPenerimaan, tglbayar, "0", (jumlahBayar).ToString, "LP", kode, "Penegembalian Kelebihan dari Faktur " & kodebeli}
             operationQuery(sqlJurnal, dataDebit)
             operationQuery(sqlJurnal, dataKredit)
-            exc("INSERT into tblhistoribayarpiutang (idjurnal,kodebeli) select idjurnal,'" & kodebeli & "' from tbljurnal where koderefrensi='" & kode & "' AND kodeakun='" & akunPiutangUsaha & "'")
+            exc("INSERT into tblhistoribayarhutang (idjurnal,kodebeli) select idjurnal,'" & kodebeli & "' from tbljurnal where koderefrensi='" & kode & "' AND kodeakun='" & akunhutangUsaha & "'")
             dialogSukses("Berhasil")
             focusData()
         End If
@@ -163,12 +163,12 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodebeli from t
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         Dim jumlahBayar As Double = unnumberFormat(tbBayar.Text)
-        Dim jmlPiutang As Double = unnumberFormat(jumlahPiutang.Text)
+        Dim jmlhutang As Double = unnumberFormat(jumlahhutang.Text)
 
-        If jumlahBayar > jmlPiutang Then
+        If jumlahBayar > jmlhutang Then
             dialogError("Melebihi Kelebihan")
         End If
-        If dialog("Apakah anda yakin untuk menyimpan kelebihan penbelian ini ?") Then
+        If dialog("Apakah anda yakin untuk menyimpan kelebihan Pembelian ini ?") Then
             simpanData()
         End If
     End Sub

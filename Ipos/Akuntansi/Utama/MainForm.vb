@@ -195,7 +195,7 @@
         DaftarHistoriBayarPiutang.Dispose()
     End Sub
 
-    Sub shoKelebihanBayar()
+    Sub shoKelebihanBayarJual()
         DaftarKelebihanBayarJual.ShowDialog()
         DaftarKelebihanBayarJual.Dispose()
     End Sub
@@ -229,6 +229,82 @@
     End Sub
 
     Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
-        shoKelebihanBayar()
+        shoKelebihanBayarJual()
+    End Sub
+
+    '======================= Pembelian 
+
+
+    Sub showPenawaranBeli()
+        DaftarPenawaranBeli.ShowDialog()
+        DaftarPenawaranBeli.Dispose()
+    End Sub
+
+
+    Sub showPesananBeli()
+        DaftarPesananBeli.ShowDialog()
+        DaftarPesananBeli.Dispose()
+    End Sub
+    Sub showPengirimanBeli()
+        DaftarPengirimanBeli.ShowDialog()
+        DaftarPengirimanBeli.Dispose()
+    End Sub
+    Sub showFakturBeli()
+        DaftarFakturBeli.ShowDialog()
+        DaftarFakturBeli.Dispose()
+    End Sub
+
+
+    Sub showReturBeli()
+        DaftarReturBeli.ShowDialog()
+        DaftarReturBeli.Dispose()
+    End Sub
+
+
+    Sub showHutangUsaha()
+        DaftarHutangUsaha.ShowDialog()
+        DaftarHutangUsaha.Dispose()
+    End Sub
+
+    Sub showBayarHutangUsaha()
+        DaftarHistoriBayarHutang.ShowDialog()
+        DaftarHistoriBayarHutang.Dispose()
+    End Sub
+
+    Sub shoKelebihanBayarBeli()
+        DaftarKelebihanBayarBeli.ShowDialog()
+        DaftarKelebihanBayarBeli.Dispose()
+    End Sub
+
+    Private Sub MetroTile21_Click(sender As Object, e As EventArgs) Handles MetroTile21.Click
+        showPenawaranBeli()
+    End Sub
+
+    Private Sub MetroTile20_Click(sender As Object, e As EventArgs) Handles MetroTile20.Click
+        showPesananBeli()
+    End Sub
+
+    Private Sub MetroTile19_Click(sender As Object, e As EventArgs) Handles MetroTile19.Click
+        showPengirimanBeli()
+    End Sub
+
+    Private Sub MetroTile18_Click(sender As Object, e As EventArgs) Handles MetroTile18.Click
+        showFakturBeli()
+    End Sub
+
+    Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click
+        showReturBeli()
+    End Sub
+
+    Private Sub MetroTile17_Click(sender As Object, e As EventArgs) Handles MetroTile17.Click
+        showHutangUsaha()
+    End Sub
+
+    Private Sub MetroTile16_Click(sender As Object, e As EventArgs) Handles MetroTile16.Click
+        showBayarHutangUsaha()
+    End Sub
+
+    Private Sub MetroTile15_Click(sender As Object, e As EventArgs) Handles MetroTile15.Click
+        shoKelebihanBayarBeli()
     End Sub
 End Class

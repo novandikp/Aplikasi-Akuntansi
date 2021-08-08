@@ -45,6 +45,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.TBPotongan = New System.Windows.Forms.TextBox()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cbAkunDiskon = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -58,12 +59,11 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Label9 = New System.Windows.Forms.Label()
         Me.tbTotal = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.panelDokumen.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cbKasBiayaLain
@@ -276,6 +276,35 @@ Partial Class DialogTransaksiTanpaBayar
         Me.Panel1.Size = New System.Drawing.Size(740, 575)
         Me.Panel1.TabIndex = 55
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.cbAkunDiskon)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.btnCariAkun)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.tbPajak)
+        Me.GroupBox1.Controls.Add(Me.checkDokumen)
+        Me.GroupBox1.Controls.Add(Me.diskonNominal)
+        Me.GroupBox1.Controls.Add(Me.tbGrand)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.TBPotongan)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.TBDiskon)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.cbKasBiayaLain)
+        Me.GroupBox1.Controls.Add(Me.panelDokumen)
+        Me.GroupBox1.Controls.Add(Me.tbBiayaLain)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.tbTotal)
+        Me.GroupBox1.Location = New System.Drawing.Point(14, 11)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(709, 547)
+        Me.GroupBox1.TabIndex = 65
+        Me.GroupBox1.TabStop = False
+        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(599, 256)
@@ -377,6 +406,7 @@ Partial Class DialogTransaksiTanpaBayar
         Me.diskonNominal.TabIndex = 56
         Me.diskonNominal.Text = "Diskon dalam potongan nominal"
         Me.diskonNominal.UseVisualStyleBackColor = True
+        Me.diskonNominal.Visible = False
         '
         'tbGrand
         '
@@ -430,35 +460,6 @@ Partial Class DialogTransaksiTanpaBayar
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(709, 38)
         Me.TableLayoutPanel1.TabIndex = 56
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.cbAkunDiskon)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.btnCariAkun)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.tbPajak)
-        Me.GroupBox1.Controls.Add(Me.checkDokumen)
-        Me.GroupBox1.Controls.Add(Me.diskonNominal)
-        Me.GroupBox1.Controls.Add(Me.tbGrand)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TBPotongan)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TBDiskon)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.cbKasBiayaLain)
-        Me.GroupBox1.Controls.Add(Me.panelDokumen)
-        Me.GroupBox1.Controls.Add(Me.tbBiayaLain)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.tbTotal)
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 11)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(709, 547)
-        Me.GroupBox1.TabIndex = 65
-        Me.GroupBox1.TabStop = False
-        '
         'DialogTransaksiTanpaBayar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -482,9 +483,9 @@ Partial Class DialogTransaksiTanpaBayar
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

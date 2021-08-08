@@ -494,6 +494,7 @@ Partial Class DialogTransaksiBayar
         Me.diskonNominal.TabIndex = 56
         Me.diskonNominal.Text = "Diskon dalam potongan nominal"
         Me.diskonNominal.UseVisualStyleBackColor = True
+        Me.diskonNominal.Visible = False
         '
         'tbGrand
         '

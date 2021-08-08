@@ -48,6 +48,16 @@
 
     End Sub
 
+
+    Sub cetakJurnal()
+        If ListSat.SelectedRows.Count = 1 Then
+            Dim idselected As String = ListSat.Rows(ListSat.SelectedRows(0).Index).Cells(1).Value
+            Modul.openJurnalDialog(idselected)
+        Else
+            dialogError("Pilih item terlebih dahulu")
+        End If
+    End Sub
+
     Private Sub DatagridBukuBesar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fillData()
         styliseDG(ListSat)
@@ -105,5 +115,9 @@
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        cetakJurnal()
     End Sub
 End Class

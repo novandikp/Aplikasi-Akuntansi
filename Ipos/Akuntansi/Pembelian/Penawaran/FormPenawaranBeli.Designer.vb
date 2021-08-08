@@ -544,7 +544,7 @@ Partial Class FormPenawaranBeli
         Me.diskon.Name = "diskon"
         Me.diskon.Width = 80
         '
-        'FormPenawaranJual
+        'FormPenawaranbeli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -579,7 +579,7 @@ Partial Class FormPenawaranBeli
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "FormPenawaranJual"
+        Me.Name = "FormPenawaranbeli"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Penawaran Harga"
         Me.StatusStrip1.ResumeLayout(False)

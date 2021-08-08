@@ -52,6 +52,7 @@ Partial Class MainForm
         Me.MetroTile14 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile15 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile16 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile17 = New MetroFramework.Controls.MetroTile()
@@ -61,13 +62,7 @@ Partial Class MainForm
         Me.MetroTile21 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabPage4 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.MetroTile22 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile23 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile24 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile25 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile26 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile27 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile28 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabPage5 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -77,6 +72,8 @@ Partial Class MainForm
         Me.MetroTile29 = New MetroFramework.Controls.MetroTile()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroTile28 = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile22 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -110,7 +107,7 @@ Partial Class MainForm
         Me.MetroTabControl1.Location = New System.Drawing.Point(30, 56)
         Me.MetroTabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 2
+        Me.MetroTabControl1.SelectedIndex = 4
         Me.MetroTabControl1.Size = New System.Drawing.Size(1140, 473)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -495,6 +492,7 @@ Partial Class MainForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.MetroTile4, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroTile15, 3, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroTile16, 2, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroTile17, 1, 1)
@@ -502,13 +500,24 @@ Partial Class MainForm
         Me.TableLayoutPanel3.Controls.Add(Me.MetroTile19, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroTile20, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroTile21, 0, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(2, 16)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(2, 25)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1128, 381)
-        Me.TableLayoutPanel3.TabIndex = 3
+        Me.TableLayoutPanel3.TabIndex = 4
+        '
+        'MetroTile4
+        '
+        Me.MetroTile4.ActiveControl = Nothing
+        Me.MetroTile4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile4.Location = New System.Drawing.Point(3, 193)
+        Me.MetroTile4.Name = "MetroTile4"
+        Me.MetroTile4.Size = New System.Drawing.Size(276, 185)
+        Me.MetroTile4.TabIndex = 8
+        Me.MetroTile4.Text = "Retur Pembelian"
+        Me.MetroTile4.UseSelectable = True
         '
         'MetroTile15
         '
@@ -518,7 +527,7 @@ Partial Class MainForm
         Me.MetroTile15.Name = "MetroTile15"
         Me.MetroTile15.Size = New System.Drawing.Size(276, 185)
         Me.MetroTile15.TabIndex = 7
-        Me.MetroTile15.Text = "MetroTile15"
+        Me.MetroTile15.Text = "Pengembalian Lebih Bayar (Debit)"
         Me.MetroTile15.UseSelectable = True
         '
         'MetroTile16
@@ -529,7 +538,7 @@ Partial Class MainForm
         Me.MetroTile16.Name = "MetroTile16"
         Me.MetroTile16.Size = New System.Drawing.Size(276, 185)
         Me.MetroTile16.TabIndex = 6
-        Me.MetroTile16.Text = "MetroTile16"
+        Me.MetroTile16.Text = "Pembayaran Utang Usaha"
         Me.MetroTile16.UseSelectable = True
         '
         'MetroTile17
@@ -540,7 +549,7 @@ Partial Class MainForm
         Me.MetroTile17.Name = "MetroTile17"
         Me.MetroTile17.Size = New System.Drawing.Size(276, 185)
         Me.MetroTile17.TabIndex = 5
-        Me.MetroTile17.Text = "MetroTile17"
+        Me.MetroTile17.Text = "Daftar Utang Usaha"
         Me.MetroTile17.UseSelectable = True
         '
         'MetroTile18
@@ -551,7 +560,7 @@ Partial Class MainForm
         Me.MetroTile18.Name = "MetroTile18"
         Me.MetroTile18.Size = New System.Drawing.Size(276, 184)
         Me.MetroTile18.TabIndex = 3
-        Me.MetroTile18.Text = "MetroTile18"
+        Me.MetroTile18.Text = "Faktur Pembelian"
         Me.MetroTile18.UseSelectable = True
         '
         'MetroTile19
@@ -562,7 +571,7 @@ Partial Class MainForm
         Me.MetroTile19.Name = "MetroTile19"
         Me.MetroTile19.Size = New System.Drawing.Size(276, 184)
         Me.MetroTile19.TabIndex = 2
-        Me.MetroTile19.Text = "MetroTile19"
+        Me.MetroTile19.Text = "Pengiriman Pembelian"
         Me.MetroTile19.UseSelectable = True
         '
         'MetroTile20
@@ -573,7 +582,7 @@ Partial Class MainForm
         Me.MetroTile20.Name = "MetroTile20"
         Me.MetroTile20.Size = New System.Drawing.Size(276, 184)
         Me.MetroTile20.TabIndex = 1
-        Me.MetroTile20.Text = "MetroTile20"
+        Me.MetroTile20.Text = "Pesanan Pembelian"
         Me.MetroTile20.UseSelectable = True
         '
         'MetroTile21
@@ -582,10 +591,9 @@ Partial Class MainForm
         Me.MetroTile21.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroTile21.Location = New System.Drawing.Point(3, 3)
         Me.MetroTile21.Name = "MetroTile21"
-        Me.TableLayoutPanel3.SetRowSpan(Me.MetroTile21, 2)
-        Me.MetroTile21.Size = New System.Drawing.Size(276, 375)
+        Me.MetroTile21.Size = New System.Drawing.Size(276, 184)
         Me.MetroTile21.TabIndex = 0
-        Me.MetroTile21.Text = "MetroTile21"
+        Me.MetroTile21.Text = "Penawaran Harga"
         Me.MetroTile21.UseSelectable = True
         '
         'MetroTabPage4
@@ -614,98 +622,28 @@ Partial Class MainForm
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile22, 3, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile23, 2, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile24, 1, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile25, 3, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile26, 2, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile27, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile22, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.MetroTile28, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.MetroTile27, 1, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(2, 16)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 2
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(1128, 381)
         Me.TableLayoutPanel4.TabIndex = 3
-        '
-        'MetroTile22
-        '
-        Me.MetroTile22.ActiveControl = Nothing
-        Me.MetroTile22.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile22.Location = New System.Drawing.Point(849, 193)
-        Me.MetroTile22.Name = "MetroTile22"
-        Me.MetroTile22.Size = New System.Drawing.Size(276, 185)
-        Me.MetroTile22.TabIndex = 7
-        Me.MetroTile22.Text = "MetroTile22"
-        Me.MetroTile22.UseSelectable = True
-        '
-        'MetroTile23
-        '
-        Me.MetroTile23.ActiveControl = Nothing
-        Me.MetroTile23.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile23.Location = New System.Drawing.Point(567, 193)
-        Me.MetroTile23.Name = "MetroTile23"
-        Me.MetroTile23.Size = New System.Drawing.Size(276, 185)
-        Me.MetroTile23.TabIndex = 6
-        Me.MetroTile23.Text = "MetroTile23"
-        Me.MetroTile23.UseSelectable = True
-        '
-        'MetroTile24
-        '
-        Me.MetroTile24.ActiveControl = Nothing
-        Me.MetroTile24.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile24.Location = New System.Drawing.Point(285, 193)
-        Me.MetroTile24.Name = "MetroTile24"
-        Me.MetroTile24.Size = New System.Drawing.Size(276, 185)
-        Me.MetroTile24.TabIndex = 5
-        Me.MetroTile24.Text = "MetroTile24"
-        Me.MetroTile24.UseSelectable = True
-        '
-        'MetroTile25
-        '
-        Me.MetroTile25.ActiveControl = Nothing
-        Me.MetroTile25.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile25.Location = New System.Drawing.Point(849, 3)
-        Me.MetroTile25.Name = "MetroTile25"
-        Me.MetroTile25.Size = New System.Drawing.Size(276, 184)
-        Me.MetroTile25.TabIndex = 3
-        Me.MetroTile25.Text = "MetroTile25"
-        Me.MetroTile25.UseSelectable = True
-        '
-        'MetroTile26
-        '
-        Me.MetroTile26.ActiveControl = Nothing
-        Me.MetroTile26.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile26.Location = New System.Drawing.Point(567, 3)
-        Me.MetroTile26.Name = "MetroTile26"
-        Me.MetroTile26.Size = New System.Drawing.Size(276, 184)
-        Me.MetroTile26.TabIndex = 2
-        Me.MetroTile26.Text = "MetroTile26"
-        Me.MetroTile26.UseSelectable = True
         '
         'MetroTile27
         '
         Me.MetroTile27.ActiveControl = Nothing
         Me.MetroTile27.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile27.Location = New System.Drawing.Point(285, 3)
+        Me.MetroTile27.Location = New System.Drawing.Point(567, 3)
         Me.MetroTile27.Name = "MetroTile27"
         Me.MetroTile27.Size = New System.Drawing.Size(276, 184)
         Me.MetroTile27.TabIndex = 1
-        Me.MetroTile27.Text = "MetroTile27"
+        Me.MetroTile27.Text = "Transfer Kas"
         Me.MetroTile27.UseSelectable = True
-        '
-        'MetroTile28
-        '
-        Me.MetroTile28.ActiveControl = Nothing
-        Me.MetroTile28.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile28.Location = New System.Drawing.Point(3, 3)
-        Me.MetroTile28.Name = "MetroTile28"
-        Me.TableLayoutPanel4.SetRowSpan(Me.MetroTile28, 2)
-        Me.MetroTile28.Size = New System.Drawing.Size(276, 375)
-        Me.MetroTile28.TabIndex = 0
-        Me.MetroTile28.Text = "MetroTile28"
-        Me.MetroTile28.UseSelectable = True
         '
         'MetroTabPage5
         '
@@ -823,6 +761,28 @@ Partial Class MainForm
         Me.MetroLabel1.TabIndex = 1
         Me.MetroLabel1.Text = "Aplikasi Akuntansi"
         '
+        'MetroTile28
+        '
+        Me.MetroTile28.ActiveControl = Nothing
+        Me.MetroTile28.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile28.Location = New System.Drawing.Point(3, 3)
+        Me.MetroTile28.Name = "MetroTile28"
+        Me.MetroTile28.Size = New System.Drawing.Size(276, 184)
+        Me.MetroTile28.TabIndex = 8
+        Me.MetroTile28.Text = "Pengeluaran"
+        Me.MetroTile28.UseSelectable = True
+        '
+        'MetroTile22
+        '
+        Me.MetroTile22.ActiveControl = Nothing
+        Me.MetroTile22.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile22.Location = New System.Drawing.Point(285, 3)
+        Me.MetroTile22.Name = "MetroTile22"
+        Me.MetroTile22.Size = New System.Drawing.Size(276, 184)
+        Me.MetroTile22.TabIndex = 9
+        Me.MetroTile22.Text = "Penerimaan"
+        Me.MetroTile22.UseSelectable = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -870,22 +830,8 @@ Partial Class MainForm
     Friend WithEvents MetroTile12 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile13 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile14 As MetroFramework.Controls.MetroTile
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents MetroTile15 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile16 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile17 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile18 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile19 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile20 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile21 As MetroFramework.Controls.MetroTile
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents MetroTile22 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile23 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile24 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile25 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile26 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile27 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile28 As MetroFramework.Controls.MetroTile
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TilePajak As MetroFramework.Controls.MetroTile
     Friend WithEvents TileProjek As MetroFramework.Controls.MetroTile
@@ -910,4 +856,15 @@ Partial Class MainForm
     Friend WithEvents MetroTile33 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile3 As MetroFramework.Controls.MetroTile
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile15 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile16 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile17 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile18 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile19 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile20 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile21 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile28 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile22 As MetroFramework.Controls.MetroTile
 End Class

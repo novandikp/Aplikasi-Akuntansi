@@ -61,7 +61,7 @@ Partial Class FormPengirimanBeli
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnCariPenawaran = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.tbPenawaranJual = New System.Windows.Forms.TextBox()
+        Me.tbPenawaranbeli = New System.Windows.Forms.TextBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -485,14 +485,14 @@ Partial Class FormPengirimanBeli
         Me.Label11.Text = "Pesanan : "
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'tbPenawaranJual
+        'tbPenawaranbeli
         '
-        Me.tbPenawaranJual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbPenawaranJual.Location = New System.Drawing.Point(92, 181)
-        Me.tbPenawaranJual.Name = "tbPenawaranJual"
-        Me.tbPenawaranJual.ReadOnly = True
-        Me.tbPenawaranJual.Size = New System.Drawing.Size(263, 22)
-        Me.tbPenawaranJual.TabIndex = 166
+        Me.tbPenawaranbeli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbPenawaranbeli.Location = New System.Drawing.Point(92, 181)
+        Me.tbPenawaranbeli.Name = "tbPenawaranbeli"
+        Me.tbPenawaranbeli.ReadOnly = True
+        Me.tbPenawaranbeli.Size = New System.Drawing.Size(263, 22)
+        Me.tbPenawaranbeli.TabIndex = 166
         '
         'Column1
         '
@@ -582,13 +582,13 @@ Partial Class FormPengirimanBeli
         Me.diskon.HeaderText = "Diskon(%)"
         Me.diskon.Name = "diskon"
         '
-        'FormPengirimanJual
+        'FormPengirimanbeli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1134, 518)
-        Me.Controls.Add(Me.tbPenawaranJual)
+        Me.Controls.Add(Me.tbPenawaranbeli)
         Me.Controls.Add(Me.btnCariPenawaran)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Panel2)
@@ -620,9 +620,9 @@ Partial Class FormPengirimanBeli
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "FormPengirimanJual"
+        Me.Name = "FormPengirimanbeli"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Pengiriman Penjualan"
+        Me.Text = "Pengiriman Pembelian"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.dgKeranjang, System.ComponentModel.ISupportInitialize).EndInit()
@@ -671,7 +671,7 @@ Partial Class FormPengirimanBeli
     Friend WithEvents Button1 As Button
     Friend WithEvents btnCariPenawaran As Button
     Friend WithEvents Label11 As Label
-    Friend WithEvents tbPenawaranJual As TextBox
+    Friend WithEvents tbPenawaranbeli As TextBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn

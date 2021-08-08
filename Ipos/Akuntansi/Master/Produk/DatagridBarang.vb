@@ -73,6 +73,14 @@ Public Class DatagridBarang
 
 
     Sub tambahData()
+        If getCount("select idkategori from tblkategori") = 0 Then
+            dialogError("Kategori masih kosong")
+            Return
+        End If
+        If getCount("select kodesatuan from tblsatuan") = 0 Then
+            dialogError("Satuan masih kosong")
+            Return
+        End If
         ListSat.ClearSelection()
 
         Dim dialogresult As DialogResult = FormBarang.ShowDialog()

@@ -39,6 +39,7 @@ Partial Class DaftarKelebihanBayarBeli
         Me.btnTmbh = New System.Windows.Forms.Button()
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.BtnHps = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -204,6 +205,7 @@ Partial Class DaftarKelebihanBayarBeli
         '
         Me.panelAksi.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.panelAksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelAksi.Controls.Add(Me.Button2)
         Me.panelAksi.Controls.Add(Me.btnTmbh)
         Me.panelAksi.Controls.Add(Me.btnKeluar)
         Me.panelAksi.Controls.Add(Me.BtnHps)
@@ -257,6 +259,20 @@ Partial Class DaftarKelebihanBayarBeli
         Me.BtnHps.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnHps.UseVisualStyleBackColor = False
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Image = Global.Ipos.My.Resources.Resources.shopping_list__1_
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(180, 6)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(82, 36)
+        Me.Button2.TabIndex = 93
+        Me.Button2.Text = "Jurnal"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'DaftarKelebihanBayarBeli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -294,4 +310,5 @@ Partial Class DaftarKelebihanBayarBeli
     Friend WithEvents BtnHps As Button
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents Button2 As Button
 End Class

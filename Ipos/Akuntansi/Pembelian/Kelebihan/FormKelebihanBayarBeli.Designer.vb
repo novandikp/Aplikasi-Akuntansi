@@ -43,7 +43,7 @@ Partial Class FormKelebihanBayarBeli
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbAkun = New MetroFramework.Controls.MetroComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.jumlahPiutang = New System.Windows.Forms.TextBox()
+        Me.jumlahhutang = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpBayar = New MetroFramework.Controls.MetroDateTime()
         Me.gbData.SuspendLayout()
@@ -211,7 +211,7 @@ Partial Class FormKelebihanBayarBeli
         Me.gbForm.Controls.Add(Me.Label8)
         Me.gbForm.Controls.Add(Me.cbAkun)
         Me.gbForm.Controls.Add(Me.Label5)
-        Me.gbForm.Controls.Add(Me.jumlahPiutang)
+        Me.gbForm.Controls.Add(Me.jumlahhutang)
         Me.gbForm.Controls.Add(Me.Label4)
         Me.gbForm.Controls.Add(Me.dtpBayar)
         Me.gbForm.Location = New System.Drawing.Point(646, 0)
@@ -317,14 +317,14 @@ Partial Class FormKelebihanBayarBeli
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "Jumlah Kelebihan Bayar"
         '
-        'jumlahPiutang
+        'jumlahhutang
         '
-        Me.jumlahPiutang.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jumlahPiutang.Location = New System.Drawing.Point(13, 158)
-        Me.jumlahPiutang.Name = "jumlahPiutang"
-        Me.jumlahPiutang.ReadOnly = True
-        Me.jumlahPiutang.Size = New System.Drawing.Size(291, 29)
-        Me.jumlahPiutang.TabIndex = 37
+        Me.jumlahhutang.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.jumlahhutang.Location = New System.Drawing.Point(13, 158)
+        Me.jumlahhutang.Name = "jumlahhutang"
+        Me.jumlahhutang.ReadOnly = True
+        Me.jumlahhutang.Size = New System.Drawing.Size(291, 29)
+        Me.jumlahhutang.TabIndex = 37
         '
         'Label4
         '
@@ -356,7 +356,7 @@ Partial Class FormKelebihanBayarBeli
         Me.Controls.Add(Me.StatusStrip1)
         Me.Name = "FormKelebihanByr"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form Bayar Piutang"
+        Me.Text = "Form Bayar hutang"
         Me.gbData.ResumeLayout(False)
         Me.gbData.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()
@@ -387,7 +387,7 @@ Partial Class FormKelebihanBayarBeli
     Friend WithEvents Label8 As Label
     Friend WithEvents cbAkun As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents jumlahPiutang As TextBox
+    Friend WithEvents jumlahhutang As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpBayar As MetroFramework.Controls.MetroDateTime
 End Class

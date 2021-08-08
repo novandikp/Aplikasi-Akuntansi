@@ -200,10 +200,10 @@ Public Class FormPesananBeli
     '======================= END EVENT
 
 
-    Sub cariPenawaranJual()
-        Dim dialog As New DialogPenawaranJual
+    Sub cariPenawaranbeli()
+        Dim dialog As New DialogPenawaranbeli
         If dialog.ShowDialog = DialogResult.OK Then
-            tbPenawaranJual.Text = dialog.kodepenawaranjual
+            tbPenawaranbeli.Text = dialog.kodepenawaranbeli
             getDataFromPenawaran()
         End If
         dialog.Dispose()
@@ -240,7 +240,7 @@ Public Class FormPesananBeli
         If edited Then
             continueOrder()
         Else
-            TBnotransaksi.Text = generateRefrence("PP")
+            TBnotransaksi.Text = generateRefrence("PB")
 
         End If
         getTotal()
@@ -315,7 +315,7 @@ Public Class FormPesananBeli
 
     'Isi Comboboxpelanggan
     Sub getPelanggan()
-        CBsupplier.DataSource = getData("select idpelanggan, pelanggan from tblkontak WHERE posisi LIKE '%Pelanggan%'")
+        CBsupplier.DataSource = getData("select idpelanggan, pelanggan from tblkontak WHERE posisi LIKE '%Supplier%'")
         CBsupplier.DisplayMember = "pelanggan"
         CBsupplier.ValueMember = "idpelanggan"
         CBsupplier.SelectedIndex = 0
@@ -380,8 +380,8 @@ Public Class FormPesananBeli
         If Not IsNothing(cbGudang.SelectedValue) Then
             dialog.idgudang = cbGudang.SelectedValue
         End If
-        dialog.visibleHargaBeli = False
-        dialog.visibleHPP = False
+        dialog.visibleHargaJual = False
+        
         dialog.eCari.Text = tbKodeProduk.Text
         Dim dialogResult As DialogResult = dialog.ShowDialog
         If dialogResult = DialogResult.OK Then
@@ -448,7 +448,7 @@ Public Class FormPesananBeli
     'cari pelanggan
     Sub cariPelanggan()
         Dim dialogPelanggan As New DialogKontak
-        dialogPelanggan.posisi = "Pelanggan"
+        dialogPelanggan.posisi = "Supplier"
         If dialogPelanggan.ShowDialog = DialogResult.OK Then
             CBsupplier.SelectedValue = dialogPelanggan.idpelanggan
         End If
@@ -530,10 +530,10 @@ Public Class FormPesananBeli
 
 
     Sub getDataFromPenawaran()
-        Dim sqlorder As String = "select kodepenawaranbeli, tglpenawaranbeli, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain, kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang from tblpenawaranbeli where kodepenawaranbeli='" & tbPenawaranJual.Text & "'"
-        Dim sqldetail As String = "select tbldetailpenawaranbeli.idharga,diskondetailpersen,idproduk,produk, idbarang,jumlahbeli, tbldetailpenawaranbeli.hargabeli,satuan,jumlahpajak from  tbldetailpenawaranbeli  inner join tblharga on tblharga.idharga = tbldetailpenawaranbeli.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan where kodepenawaranbeli='" & tbPenawaranJual.Text & "'"
+        Dim sqlorder As String = "select kodepenawaranbeli, tglpenawaranbeli, kodedepartemen, kodeprojek, total, diskonrupiah, diskonpersen, totalpajak, biayalain, kasbiayalain, kasdiskon, nomerdokumen, tgldokumen, pelanggan, kodegudang from tblpenawaranbeli where kodepenawaranbeli='" & tbPenawaranbeli.Text & "'"
+        Dim sqldetail As String = "select tbldetailpenawaranbeli.idharga,diskondetailpersen,idproduk,produk, idbarang,jumlahbeli, tbldetailpenawaranbeli.hargabeli,satuan,jumlahpajak from  tbldetailpenawaranbeli  inner join tblharga on tblharga.idharga = tbldetailpenawaranbeli.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan where kodepenawaranbeli='" & tbPenawaranbeli.Text & "'"
 
-        If String.IsNullOrEmpty(tbPenawaranJual.Text) Then
+        If String.IsNullOrEmpty(tbPenawaranbeli.Text) Then
             Return
         End If
         saved = True
@@ -603,7 +603,7 @@ Public Class FormPesananBeli
         CBsupplier.SelectedValue = getValue(sqlorder, "pelanggan")
         cbGudang.SelectedValue = getValue(sqlorder, "kodegudang")
         cbProjek.SelectedValue = getValue(sqlorder, "kodeprojek")
-        tbPenawaranJual.Text = getValue(sqlorder, "kodepenawaranbeli")
+        tbPenawaranbeli.Text = getValue(sqlorder, "kodepenawaranbeli")
         Dim tableExist As DataTable = getData(sqldetail)
         Dim no = 0
         For Each row As DataRow In tableExist.Rows
@@ -673,10 +673,10 @@ Public Class FormPesananBeli
 
 
         Dim kodepenawaran As String
-        If String.IsNullOrEmpty(tbPenawaranJual.Text) Then
+        If String.IsNullOrEmpty(tbPenawaranbeli.Text) Then
             kodepenawaran = "NULL"
         Else
-            kodepenawaran = tbPenawaranJual.Text
+            kodepenawaran = tbPenawaranbeli.Text
         End If
 
 
@@ -742,15 +742,17 @@ Public Class FormPesananBeli
         Next
         Dim dialog As New DialogTransaksiTanpaBayar
         dialog.total = t
+dialog.klasifikasiBiayaLain ="6900"
+dialog.klasifikasiPotonganHarga="5100"
         dialog.totalpajak = totalPajak
         If edited Then
             dialog.tableRefrensi = "tblpesananbeli"
             dialog.keyRefrensi = "kodepesananbeli"
             dialog.refrensi = TBnotransaksi.Text
-        ElseIf Not String.IsNullOrEmpty(tbPenawaranJual.Text) Then
+        ElseIf Not String.IsNullOrEmpty(tbPenawaranbeli.Text) Then
             dialog.tableRefrensi = "tblpenawaranbeli"
             dialog.keyRefrensi = "kodepenawaranbeli"
-            dialog.refrensi = tbPenawaranJual.Text
+            dialog.refrensi = tbPenawaranbeli.Text
         End If
 
         If dialog.ShowDialog = DialogResult.OK Then
@@ -760,7 +762,7 @@ Public Class FormPesananBeli
     End Sub
 
 
-    Private Sub FormPenbelian_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub FormPembelian_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         If Not IsNothing(dgKeranjang.Rows(0).Cells(9).Value) Then
             e.Cancel = True
             If dialog("Apakah anda yakin ingin keluar dari transaksi  ?") Then
@@ -774,6 +776,6 @@ Public Class FormPesananBeli
     End Sub
 
     Private Sub btnCariPenawaran_Click(sender As Object, e As EventArgs) Handles btnCariPenawaran.Click
-        cariPenawaranJual()
+        cariPenawaranbeli()
     End Sub
 End Class

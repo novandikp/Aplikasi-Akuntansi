@@ -229,7 +229,7 @@ Public Class FormPenawaranBeli
         If edited Then
             continueOrder()
         Else
-            TBnotransaksi.Text = generateRefrence("PN")
+            TBnotransaksi.Text = generateRefrence("BN")
 
         End If
         getTotal()
@@ -371,8 +371,8 @@ Public Class FormPenawaranBeli
         If Not IsNothing(cbGudang.SelectedValue) Then
             dialog.idgudang = cbGudang.SelectedValue
         End If
-        dialog.visibleHargaBeli = False
-        dialog.visibleHPP = False
+        dialog.visibleHargaJual = False
+        
         dialog.eCari.Text = tbKodeProduk.Text
         Dim dialogResult As DialogResult = dialog.ShowDialog
         If dialogResult = DialogResult.OK Then
@@ -510,7 +510,7 @@ Public Class FormPenawaranBeli
     End Sub
 
     Sub closeTab()
-        Dim listItemForms As FormPenawaranBeli = Application.OpenForms("FormPenbelian")
+        Dim listItemForms As FormPenawaranBeli = Application.OpenForms("FormPembelian")
         Me.Close()
     End Sub
 
@@ -672,6 +672,8 @@ Public Class FormPenawaranBeli
         Next
         Dim dialog As New DialogTransaksiTanpaBayar
         dialog.total = t
+dialog.klasifikasiBiayaLain ="6900"
+dialog.klasifikasiPotonganHarga="5100"
         dialog.totalpajak = totalPajak
         If edited Then
             dialog.tableRefrensi = "tblpenawaranbeli"
@@ -686,7 +688,7 @@ Public Class FormPenawaranBeli
     End Sub
 
 
-    Private Sub FormPenbelian_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub FormPembelian_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         If Not IsNothing(dgKeranjang.Rows(0).Cells(9).Value) Then
             e.Cancel = True
             If dialog("Apakah anda yakin ingin keluar dari transaksi  ?") Then

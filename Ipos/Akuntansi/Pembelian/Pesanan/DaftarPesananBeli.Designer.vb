@@ -281,7 +281,7 @@ Partial Class DaftarPesananBeli
         Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(88, 17)
         Me.ToolStripStatusLabel4.Text = "[Delete] Hapus,"
         '
-        'DaftarPesananJual
+        'DaftarPesananbeli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -290,9 +290,9 @@ Partial Class DaftarPesananBeli
         Me.Controls.Add(Me.panelAksi)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbData)
-        Me.Name = "DaftarPesananJual"
+        Me.Name = "DaftarPesananbeli"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Daftar Pesanan Penjualan"
+        Me.Text = "Daftar Pesanan Pembelian"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.gbData.ResumeLayout(False)

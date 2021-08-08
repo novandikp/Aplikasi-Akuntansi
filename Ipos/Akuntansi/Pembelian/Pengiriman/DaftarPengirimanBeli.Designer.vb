@@ -27,6 +27,9 @@ Partial Class DaftarPengirimanBeli
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.gbData = New System.Windows.Forms.GroupBox()
         Me.dtAwal = New MetroFramework.Controls.MetroDateTime()
         Me.dtAkhir = New MetroFramework.Controls.MetroDateTime()
@@ -38,9 +41,7 @@ Partial Class DaftarPengirimanBeli
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.BtnHps = New System.Windows.Forms.Button()
         Me.btnEdt = New System.Windows.Forms.Button()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.gbData.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +66,27 @@ Partial Class DaftarPengirimanBeli
         Me.StatusStrip1.Size = New System.Drawing.Size(835, 22)
         Me.StatusStrip1.TabIndex = 92
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel2
+        '
+        Me.ToolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripStatusLabel2.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
+        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(81, 17)
+        Me.ToolStripStatusLabel2.Text = "[F1] : Tambah,"
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(53, 17)
+        Me.ToolStripStatusLabel3.Text = "[F2] Edit,"
+        '
+        'ToolStripStatusLabel4
+        '
+        Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(88, 17)
+        Me.ToolStripStatusLabel4.Text = "[Delete] Hapus,"
         '
         'gbData
         '
@@ -191,6 +213,7 @@ Partial Class DaftarPengirimanBeli
         '
         Me.panelAksi.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.panelAksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelAksi.Controls.Add(Me.Button2)
         Me.panelAksi.Controls.Add(Me.btnTmbh)
         Me.panelAksi.Controls.Add(Me.btnKeluar)
         Me.panelAksi.Controls.Add(Me.BtnHps)
@@ -260,28 +283,21 @@ Partial Class DaftarPengirimanBeli
         Me.btnEdt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEdt.UseVisualStyleBackColor = False
         '
-        'ToolStripStatusLabel2
+        'Button2
         '
-        Me.ToolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ToolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ToolStripStatusLabel2.Margin = New System.Windows.Forms.Padding(0, 3, 3, 2)
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(81, 17)
-        Me.ToolStripStatusLabel2.Text = "[F1] : Tambah,"
+        Me.Button2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Image = Global.Ipos.My.Resources.Resources.shopping_list__1_
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(267, 6)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(82, 36)
+        Me.Button2.TabIndex = 93
+        Me.Button2.Text = "Jurnal"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = False
         '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(53, 17)
-        Me.ToolStripStatusLabel3.Text = "[F2] Edit,"
-        '
-        'ToolStripStatusLabel4
-        '
-        Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(88, 17)
-        Me.ToolStripStatusLabel4.Text = "[Delete] Hapus,"
-        '
-        'DaftarPengirimanJual
+        'DaftarPengirimanBeli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -290,9 +306,9 @@ Partial Class DaftarPengirimanBeli
         Me.Controls.Add(Me.panelAksi)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbData)
-        Me.Name = "DaftarPengirimanJual"
+        Me.Name = "DaftarPengirimanBeli"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Daftar Pengiriman Penjualan"
+        Me.Text = "Daftar Pengiriman Pembelian"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.gbData.ResumeLayout(False)
@@ -319,4 +335,5 @@ Partial Class DaftarPengirimanBeli
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
+    Friend WithEvents Button2 As Button
 End Class
