@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports Npgsql
 
 Public Class FormFakturJual
     Public edited As Boolean = False

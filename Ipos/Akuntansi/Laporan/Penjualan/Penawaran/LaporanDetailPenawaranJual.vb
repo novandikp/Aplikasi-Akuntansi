@@ -7,13 +7,13 @@
     Sub getDataLaporan()
 
         If cbSub.SelectedIndex > 0 Then
-            sql = "SELECT tblpenawaranjual.tglpenawaranjual, tblpenawaranjual.kodepenawaranjual, tblkontak.pelanggan, tbldepartemen.departemen, COALESCE(tblprojek.projek,'N/A') as projek, tblgudang.gudang, tbldetailpenawaranjual.idbarang, tblproduk.produk, tbldetailpenawaranjual.jumlahjual, tbldetailpenawaranjual.hargajual from tbldetailpenawaranjual inner join tblpenawaranjual on tblpenawaranjual.kodepenawaranjual = tbldetailpenawaranjual.kodepenawaranjual inner join  tblkontak on tblkontak.idpelanggan = tblpenawaranjual.pelanggan inner join tbldepartemen on tbldepartemen.iddepartemen = tblpenawaranjual.kodedepartemen inner join tblgudang on tblgudang.idgudang = tblpenawaranjual.kodegudang inner join tblproduk on tblproduk.idproduk = tbldetailpenawaranjual.idbarang left join tblprojek on tblprojek.idprojek  = tblpenawaranjual.kodeprojek
-WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & eCari.Text & "%'  )
+            sql = "SELECT  tbldetailpenawaranjual.kodepenawaranjual as kode,tglpenawaranjual as tgl,produk, jumlahjual as jumlah,satuan, tbldetailpenawaranjual.hargajual as harga, jumlahpajak, diskondetailpersen, tblkontak.pelanggan as kontak from tbldetailpenawaranjual inner join tblpenawaranjual on tblpenawaranjual.kodepenawaranjual = tbldetailpenawaranjual.kodepenawaranjual inner join tblharga on tblharga.idharga = tbldetailpenawaranjual.idharga inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblkontak on tblkontak.idpelanggan = tblpenawaranjual.pelanggan
+WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
           and kodedepartemen ='" & cbSub.SelectedValue & "' and tglpenawaranjual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
         Else
-            sql = "SELECT tblpenawaranjual.tglpenawaranjual, tblpenawaranjual.kodepenawaranjual, tblkontak.pelanggan, tbldepartemen.departemen, COALESCE(tblprojek.projek,'N/A') as projek, tblgudang.gudang, tbldetailpenawaranjual.idbarang, tblproduk.produk, tbldetailpenawaranjual.jumlahjual, tbldetailpenawaranjual.hargajual from tbldetailpenawaranjual inner join tblpenawaranjual on tblpenawaranjual.kodepenawaranjual = tbldetailpenawaranjual.kodepenawaranjual inner join  tblkontak on tblkontak.idpelanggan = tblpenawaranjual.pelanggan inner join tbldepartemen on tbldepartemen.iddepartemen = tblpenawaranjual.kodedepartemen inner join tblgudang on tblgudang.idgudang = tblpenawaranjual.kodegudang inner join tblproduk on tblproduk.idproduk = tbldetailpenawaranjual.idbarang left join tblprojek on tblprojek.idprojek  = tblpenawaranjual.kodeprojek
-WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & eCari.Text & "%'  )
+            sql = "SELECT  tbldetailpenawaranjual.kodepenawaranjual as kode,tglpenawaranjual as tgl,produk, jumlahjual as jumlah,satuan, tbldetailpenawaranjual.hargajual as harga, jumlahpajak, diskondetailpersen, tblkontak.pelanggan as kontak from tbldetailpenawaranjual inner join tblpenawaranjual on tblpenawaranjual.kodepenawaranjual = tbldetailpenawaranjual.kodepenawaranjual inner join tblharga on tblharga.idharga = tbldetailpenawaranjual.idharga inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblkontak on tblkontak.idpelanggan = tblpenawaranjual.pelanggan
+WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
            and tglpenawaranjual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
         End If
@@ -25,16 +25,16 @@ WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or depart
         Debug.WriteLine(sql)
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).HeaderText = "Kode"
+            ListSat.Columns(1).HeaderText = "Tanggal"
+            ListSat.Columns(2).HeaderText = "Produk"
+            ListSat.Columns(3).HeaderText = "Jumlah"
+            ListSat.Columns(4).HeaderText = "Satuan"
+            ListSat.Columns(5).HeaderText = "Harga"
+            ListSat.Columns(6).HeaderText = "Pajak"
+            ListSat.Columns(7).HeaderText = "Diskon(%)"
+            ListSat.Columns(8).HeaderText = "Pelanggan"
+
         Catch ex As Exception
 
         End Try
@@ -76,7 +76,7 @@ WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or depart
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
+        PreviewPenawaran.detail = True
         PreviewPenawaran.Show()
     End Sub
 

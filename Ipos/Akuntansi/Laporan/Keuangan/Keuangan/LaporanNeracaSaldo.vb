@@ -50,7 +50,9 @@
             ListSat.Columns(3).HeaderText = "Debit"
             ListSat.Columns(4).HeaderText = "Kredit"
 
-
+            ListSat.Columns(2).DefaultCellStyle.Format = "c0"
+            ListSat.Columns(3).DefaultCellStyle.Format = "c0"
+            ListSat.Columns(4).DefaultCellStyle.Format = "c0"
         Catch ex As Exception
 
         End Try

@@ -142,7 +142,7 @@
                 counter = 3
         End Select
 
-        Dim x As Integer = IIf(sisa = 0, (len\3), (len\3) + 1)
+        Dim x As Integer = IIf(sisa = 0, (len \ 3), (len \ 3) + 1)
         While (counter < len)
             If Not SemuaNol(strTemp, counter) Then Hasil = Hasil + STRDESIMAL(x)
 

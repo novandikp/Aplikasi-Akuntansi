@@ -181,9 +181,9 @@
         Dim sqlhpp As String = "SELECT sum(jumlahbeli * tbldetailbeli.hargabeli * (100 - diskondetailpersen)/100) as total from tbldetailbeli inner join tblharga on tblharga.idharga = tbldetailbeli.idharga where kodebeli ='" & kodebeli & "'"
 
         Dim akunPersediaan As String = "149001"
-        
+
         Dim akunhutangUsaha As String = "210001"
-        
+
         Dim akunUtangPajak As String = "152001"
 
         ''Input Jurnal

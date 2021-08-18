@@ -232,6 +232,9 @@ SELECT tgljurnal,koderefrensi, tbljurnal.debit-tbljurnal.kredit as bayar,0,0,0 f
         simpanData()
     End Sub
 
+
+
+
     Sub simpanData()
         If dialog("Apakah anda yakin untuk melakukan penghapusan piutang ?") Then
             Dim kodeprojek As String = "NULL"
@@ -268,6 +271,6 @@ SELECT tgljurnal,koderefrensi, tbljurnal.debit-tbljurnal.kredit as bayar,0,0,0 f
                 dialogSukses("Berhasil")
                 focusData()
             End If
-            End If
+        End If
     End Sub
 End Class

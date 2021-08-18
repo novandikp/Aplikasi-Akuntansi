@@ -129,7 +129,7 @@
                     dialogError("Data gagal dihapus dikarenakan data sedang digunakan")
                 End If
             End If
-            Else
+        Else
             dialogError("Pilih item terlebih dahulu")
         End If
     End Sub

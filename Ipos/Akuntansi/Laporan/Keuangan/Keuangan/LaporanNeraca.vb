@@ -3,26 +3,57 @@
     Dim dataview As DataView
     Sub getDataLaporan()
         Dim sql As String = "SELECT tblakun.kodeakun,
-    tblsubklasifikasi.idsubklasifikasi,
-    tblklasifikasi.idklasifikasi,
-    tblklasifikasi.klasifikasi,
-    tblakun.akun,
-    tblsubklasifikasi.subklasifikasi ,
-    COALESCE(sum(tbljurnal.debit - tbljurnal.kredit),0) as saldo
-    FROM 
-    tblakun
-    LEFT join tbljurnal
-    on tbljurnal.kodeakun = tblakun.kodeakun
-    and tbljurnal.tgljurnal BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
-    INNER  JOIN tblsubklasifikasi ON tblakun.idsubklasifikasi = tblsubklasifikasi.idsubklasifikasi 
-    and idklasifikasi <= 3
-    INNER join tblklasifikasi on  tblklasifikasi.idklasifikasi = tblsubklasifikasi.idklasifikasi
-    where (tblakun.kodeakun ILIKE '%" & eCari.Text & "%' OR akun ILIKE '%" & eCari.Text & "%')
-    GROUP by 
-    tblakun.kodeakun,
-    tblklasifikasi.idklasifikasi, 
-    tblsubklasifikasi.idsubklasifikasi
-    "
+        tblsubklasifikasi.idsubklasifikasi,
+        tblklasifikasi.idklasifikasi,
+        tblklasifikasi.klasifikasi,
+        tblakun.akun,
+        tblsubklasifikasi.subklasifikasi,
+        COALESCE(sum(tbljurnal.debit - tbljurnal.kredit), 0) + COALESCE(laba_temp.laba, 0) as saldo
+        FROM
+        tblakun
+        LEFT join tbljurnal on tbljurnal.kodeakun = tblakun.kodeakun
+        and tbljurnal.tgljurnal <= '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
+        INNER JOIN tblsubklasifikasi ON tblakun.idsubklasifikasi = tblsubklasifikasi.idsubklasifikasi
+        and idklasifikasi <= 3
+        left JOIN (
+            (
+                SELECT
+                    '320001' as kodeakun,
+                    sum((tbljurnal.debit - tbljurnal.kredit)) AS laba
+                FROM
+                    (
+                        (
+                            tbljurnal
+                            JOIN tblakun ON (
+                                (
+                                    (tbljurnal.kodeakun) :: text = (tblakun.kodeakun) :: text
+                                )
+                            )
+                        )
+                        JOIN tblsubklasifikasi ON (
+                            (
+                                (tblakun.idsubklasifikasi) :: text = (tblsubklasifikasi.idsubklasifikasi) :: text
+                            )
+                        )
+                    )
+                WHERE
+                    (
+                        tblsubklasifikasi.idklasifikasi > 3
+                        and tbljurnal.tgljurnal <= '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
+                    )
+            )
+        ) laba_temp on laba_temp.kodeakun = tblakun.kodeakun
+        INNER join tblklasifikasi on tblklasifikasi.idklasifikasi = tblsubklasifikasi.idklasifikasi
+        where
+            (
+                tblakun.kodeakun ILIKE '%" & eCari.Text & "%'
+                OR akun ILIKE '%" & eCari.Text & "%'
+            )
+        GROUP by
+        tblakun.kodeakun,
+        tblklasifikasi.idklasifikasi,
+        tblsubklasifikasi.idsubklasifikasi,
+        laba_temp.laba"
         Debug.WriteLine(sql)
         dataLaporan = getData(sql)
 
@@ -44,20 +75,15 @@
             ListSat.Columns(1).Visible = False
             ListSat.Columns(2).Visible = False
             ListSat.Columns(3).Visible = False
-            ListSat.Columns(4).Visible = False
-
-            ListSat.Columns(5).HeaderText = "Akun"
+            ListSat.Columns(5).Visible = False
+            ListSat.Columns(4).HeaderText = "Akun"
             ListSat.Columns(6).HeaderText = "Saldo"
-
+            ListSat.Columns(6).DefaultCellStyle.Format = "c0"
 
         Catch ex As Exception
 
         End Try
-        For Each row As DataGridViewRow In ListSat.Rows
-            total += CDbl(row.Cells(6).Value)
-        Next
 
-        tblTotal.Text = "Total : " & numberFor(total)
     End Sub
 
 
@@ -80,7 +106,7 @@
         getDataLaporan()
     End Sub
 
-    Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs) Handles dtAwal.ValueChanged
+    Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs)
         getDataLaporan()
     End Sub
 
@@ -88,7 +114,7 @@
         getDataLaporan()
     End Sub
 
-    Private Sub tblTotal_Click(sender As Object, e As EventArgs) Handles tblTotal.Click
+    Private Sub tblTotal_Click(sender As Object, e As EventArgs)
 
     End Sub
 

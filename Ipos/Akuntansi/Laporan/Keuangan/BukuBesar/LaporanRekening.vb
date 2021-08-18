@@ -2,7 +2,7 @@
     Dim dataLaporan As New DataTable
 
     Sub getDataLaporan()
-        Dim sql As String = " SELECT tblklasifikasi.idklasifikasi, tblklasifikasi.klasifikasi, tblsubklasifikasi.idsubklasifikasi,
+        Dim sql As String = " SELECT tblklasifikasi.idklasifikasi as kodeklasifikasi, tblklasifikasi.klasifikasi, tblsubklasifikasi.idsubklasifikasi as kodesubklasifikasi,
 tblsubklasifikasi.subklasifikasi, tblakun.kodeakun, tblakun.akun
 from tblakun
 inner join tblsubklasifikasi
@@ -14,9 +14,14 @@ order by tblklasifikasi.idklasifikasi,tblsubklasifikasi.idsubklasifikasi, kodeak
 
         dataLaporan = getData(sql)
         ListSat.DataSource = dataLaporan
-
-
-
+        ListSat.Columns(0).HeaderText = "Kode Klasifikasi"
+        ListSat.Columns(1).HeaderText = "Klasifikasi"
+        ListSat.Columns(2).HeaderText = "Kode Subklasifikasi"
+        ListSat.Columns(3).HeaderText = "Subklasifikasi"
+        ListSat.Columns(4).HeaderText = "Kode Akun"
+        ListSat.Columns(5).HeaderText = "Akun"
+        styliseDG(ListSat)
+        makeFillDG(ListSat)
     End Sub
 
 

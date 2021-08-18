@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports Npgsql
 
 Public Class FormFakturBeli
     Public edited As Boolean = False
@@ -394,7 +393,7 @@ Public Class FormFakturBeli
             dialog.idgudang = cbGudang.SelectedValue
         End If
         dialog.visibleHargaJual = False
-        
+
         dialog.eCari.Text = tbKodeProduk.Text
         Dim dialogResult As DialogResult = dialog.ShowDialog
         If dialogResult = DialogResult.OK Then

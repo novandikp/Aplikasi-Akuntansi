@@ -1,7 +1,4 @@
-﻿Imports System.ComponentModel
-Imports Microsoft.Reporting.WinForms
-
-Public Class DialogTransaksiBayar
+﻿Public Class DialogTransaksiBayar
     'Atur Klasifikasi
     Public klasifikasiBiayaLain As String = "4900"
     Public klasifikasiPotonganHarga As String = "4100"

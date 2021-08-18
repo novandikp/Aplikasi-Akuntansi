@@ -24,6 +24,33 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
+        Me.MetroTabPage7 = New MetroFramework.Controls.MetroTabPage()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MetroDateTime2 = New MetroFramework.Controls.MetroDateTime()
+        Me.MetroDateTime1 = New MetroFramework.Controls.MetroDateTime()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TilePajak = New MetroFramework.Controls.MetroTile()
@@ -32,14 +59,11 @@ Partial Class MainForm
         Me.TileSatuan = New MetroFramework.Controls.MetroTile()
         Me.TileProduk = New MetroFramework.Controls.MetroTile()
         Me.TileKontak = New MetroFramework.Controls.MetroTile()
-        Me.TileAkun = New MetroFramework.Controls.MetroTile()
         Me.TileGudang = New MetroFramework.Controls.MetroTile()
         Me.MetroTabPage6 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile31 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile32 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile33 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
@@ -70,11 +94,28 @@ Partial Class MainForm
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile6 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile7 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile8 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile29 = New MetroFramework.Controls.MetroTile()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroTile23 = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile24 = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile25 = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile26 = New MetroFramework.Controls.MetroTile()
+        Me.TileAkun = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile33 = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile8 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabControl1.SuspendLayout()
+        Me.MetroTabPage7.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MetroTabPage6.SuspendLayout()
@@ -95,6 +136,7 @@ Partial Class MainForm
         Me.MetroTabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage7)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage6)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
@@ -107,10 +149,337 @@ Partial Class MainForm
         Me.MetroTabControl1.Location = New System.Drawing.Point(30, 56)
         Me.MetroTabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 5
+        Me.MetroTabControl1.SelectedIndex = 2
         Me.MetroTabControl1.Size = New System.Drawing.Size(1140, 473)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
+        '
+        'MetroTabPage7
+        '
+        Me.MetroTabPage7.Controls.Add(Me.Panel7)
+        Me.MetroTabPage7.Controls.Add(Me.Panel2)
+        Me.MetroTabPage7.Controls.Add(Me.TableLayoutPanel7)
+        Me.MetroTabPage7.Controls.Add(Me.Panel1)
+        Me.MetroTabPage7.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage7.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage7.HorizontalScrollbarSize = 5
+        Me.MetroTabPage7.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage7.Name = "MetroTabPage7"
+        Me.MetroTabPage7.Size = New System.Drawing.Size(1132, 431)
+        Me.MetroTabPage7.TabIndex = 7
+        Me.MetroTabPage7.Text = "Dashboard"
+        Me.MetroTabPage7.VerticalScrollbarBarColor = True
+        Me.MetroTabPage7.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage7.VerticalScrollbarSize = 3
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Panel7.Controls.Add(Me.TableLayoutPanel9)
+        Me.Panel7.Controls.Add(Me.Label7)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 189)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Padding = New System.Windows.Forms.Padding(2, 8, 0, 0)
+        Me.Panel7.Size = New System.Drawing.Size(1132, 300)
+        Me.Panel7.TabIndex = 5
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.TableLayoutPanel9.ColumnCount = 1
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.Panel8, 0, 1)
+        Me.TableLayoutPanel9.Controls.Add(Me.Panel9, 0, 2)
+        Me.TableLayoutPanel9.Controls.Add(Me.Panel10, 0, 0)
+        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(2, 27)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.Padding = New System.Windows.Forms.Padding(0, 4, 0, 0)
+        Me.TableLayoutPanel9.RowCount = 3
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(1130, 273)
+        Me.TableLayoutPanel9.TabIndex = 2
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.LimeGreen
+        Me.Panel8.Controls.Add(Me.Label11)
+        Me.Panel8.Controls.Add(Me.Label12)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel8.Location = New System.Drawing.Point(3, 96)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1124, 83)
+        Me.Panel8.TabIndex = 6
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label11.Location = New System.Drawing.Point(26, 41)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(139, 29)
+        Me.Label11.TabIndex = 7
+        Me.Label11.Text = "12.000.000"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label12.Location = New System.Drawing.Point(28, 24)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(85, 17)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Keuntungan"
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.LimeGreen
+        Me.Panel9.Controls.Add(Me.Label9)
+        Me.Panel9.Controls.Add(Me.Label10)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Location = New System.Drawing.Point(3, 185)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(1124, 85)
+        Me.Panel9.TabIndex = 5
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label9.Location = New System.Drawing.Point(26, 41)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(139, 29)
+        Me.Label9.TabIndex = 7
+        Me.Label9.Text = "12.000.000"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label10.Location = New System.Drawing.Point(28, 24)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(85, 17)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Keuntungan"
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.LimeGreen
+        Me.Panel10.Controls.Add(Me.Label8)
+        Me.Panel10.Controls.Add(Me.Label13)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel10.Location = New System.Drawing.Point(3, 7)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(1124, 83)
+        Me.Panel10.TabIndex = 4
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label8.Location = New System.Drawing.Point(26, 41)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(139, 29)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "12.000.000"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label13.Location = New System.Drawing.Point(28, 24)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(85, 17)
+        Me.Label13.TabIndex = 6
+        Me.Label13.Text = "Keuntungan"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(2, 8)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(3, 8, 3, 8)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 19)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Neraca"
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 188)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 12, 3, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1132, 1)
+        Me.Panel2.TabIndex = 4
+        '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.TableLayoutPanel7.ColumnCount = 3
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.Controls.Add(Me.Panel5, 2, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.Panel4, 1, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.Panel3, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 65)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.Padding = New System.Windows.Forms.Padding(0, 0, 0, 8)
+        Me.TableLayoutPanel7.RowCount = 1
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(1132, 123)
+        Me.TableLayoutPanel7.TabIndex = 2
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Controls.Add(Me.Label6)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(757, 3)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(372, 109)
+        Me.Panel5.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label5.Location = New System.Drawing.Point(26, 41)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(139, 29)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "12.000.000"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label6.Location = New System.Drawing.Point(28, 24)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(85, 17)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Keuntungan"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(380, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(371, 109)
+        Me.Panel4.TabIndex = 4
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label3.Location = New System.Drawing.Point(26, 41)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(139, 29)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "12.000.000"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label4.Location = New System.Drawing.Point(28, 24)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(85, 17)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Keuntungan"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(3, 3)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(371, 109)
+        Me.Panel3.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label1.Location = New System.Drawing.Point(26, 41)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(139, 29)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "12.000.000"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label2.Location = New System.Drawing.Point(28, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 17)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Keuntungan"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Panel1.Controls.Add(Me.MetroDateTime2)
+        Me.Panel1.Controls.Add(Me.MetroDateTime1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1132, 65)
+        Me.Panel1.TabIndex = 3
+        '
+        'MetroDateTime2
+        '
+        Me.MetroDateTime2.Location = New System.Drawing.Point(259, 22)
+        Me.MetroDateTime2.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.MetroDateTime2.Name = "MetroDateTime2"
+        Me.MetroDateTime2.Size = New System.Drawing.Size(200, 29)
+        Me.MetroDateTime2.TabIndex = 1
+        '
+        'MetroDateTime1
+        '
+        Me.MetroDateTime1.Location = New System.Drawing.Point(19, 22)
+        Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.MetroDateTime1.Name = "MetroDateTime1"
+        Me.MetroDateTime1.Size = New System.Drawing.Size(224, 29)
+        Me.MetroDateTime1.TabIndex = 0
         '
         'MetroTabPage1
         '
@@ -219,22 +588,6 @@ Partial Class MainForm
         Me.TileKontak.Text = "Daftar Kontak"
         Me.TileKontak.UseSelectable = True
         '
-        'TileAkun
-        '
-        Me.TileAkun.ActiveControl = Nothing
-        Me.TileAkun.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.TileAkun.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TileAkun.Location = New System.Drawing.Point(3, 3)
-        Me.TileAkun.Name = "TileAkun"
-        Me.TileAkun.Size = New System.Drawing.Size(277, 209)
-        Me.TileAkun.TabIndex = 0
-        Me.TileAkun.Text = "Daftar Akun"
-        Me.TileAkun.TileImage = Global.Ipos.My.Resources.Resources.settings__1_1
-        Me.TileAkun.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.TileAkun.UseCustomBackColor = True
-        Me.TileAkun.UseSelectable = True
-        Me.TileAkun.UseTileImage = True
-        '
         'TileGudang
         '
         Me.TileGudang.ActiveControl = Nothing
@@ -270,8 +623,11 @@ Partial Class MainForm
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.MetroTile26, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.MetroTile25, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.MetroTile24, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.MetroTile23, 0, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.MetroTile1, 0, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.MetroTile31, 2, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.MetroTile32, 1, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.MetroTile33, 0, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
@@ -294,43 +650,16 @@ Partial Class MainForm
         Me.MetroTile1.Text = "Subklasifikasi Akun"
         Me.MetroTile1.UseSelectable = True
         '
-        'MetroTile31
-        '
-        Me.MetroTile31.ActiveControl = Nothing
-        Me.MetroTile31.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile31.Location = New System.Drawing.Point(852, 3)
-        Me.MetroTile31.Name = "MetroTile31"
-        Me.MetroTile31.Size = New System.Drawing.Size(277, 209)
-        Me.MetroTile31.TabIndex = 2
-        Me.MetroTile31.Text = "Buku Besar"
-        Me.MetroTile31.UseSelectable = True
-        '
         'MetroTile32
         '
         Me.MetroTile32.ActiveControl = Nothing
         Me.MetroTile32.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile32.Location = New System.Drawing.Point(569, 3)
+        Me.MetroTile32.Location = New System.Drawing.Point(852, 3)
         Me.MetroTile32.Name = "MetroTile32"
         Me.MetroTile32.Size = New System.Drawing.Size(277, 209)
         Me.MetroTile32.TabIndex = 1
         Me.MetroTile32.Text = "Status Proyek"
         Me.MetroTile32.UseSelectable = True
-        '
-        'MetroTile33
-        '
-        Me.MetroTile33.ActiveControl = Nothing
-        Me.MetroTile33.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.MetroTile33.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile33.Location = New System.Drawing.Point(3, 3)
-        Me.MetroTile33.Name = "MetroTile33"
-        Me.MetroTile33.Size = New System.Drawing.Size(277, 209)
-        Me.MetroTile33.TabIndex = 0
-        Me.MetroTile33.Text = "Kategori Produk"
-        Me.MetroTile33.TileImage = Global.Ipos.My.Resources.Resources.settings__1_1
-        Me.MetroTile33.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.MetroTile33.UseCustomBackColor = True
-        Me.MetroTile33.UseSelectable = True
-        Me.MetroTile33.UseTileImage = True
         '
         'MetroTabPage2
         '
@@ -657,7 +986,7 @@ Partial Class MainForm
         Me.MetroTile27.Name = "MetroTile27"
         Me.MetroTile27.Size = New System.Drawing.Size(277, 209)
         Me.MetroTile27.TabIndex = 1
-        Me.MetroTile27.Text = "Transfer Kas"
+        Me.MetroTile27.Text = "Buku Besar"
         Me.MetroTile27.UseSelectable = True
         '
         'MetroTabPage5
@@ -732,21 +1061,6 @@ Partial Class MainForm
         Me.MetroTile7.Text = "Laporan Produk"
         Me.MetroTile7.UseSelectable = True
         '
-        'MetroTile8
-        '
-        Me.MetroTile8.ActiveControl = Nothing
-        Me.MetroTile8.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.MetroTile8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTile8.Location = New System.Drawing.Point(3, 3)
-        Me.MetroTile8.Name = "MetroTile8"
-        Me.MetroTile8.Size = New System.Drawing.Size(277, 209)
-        Me.MetroTile8.TabIndex = 0
-        Me.MetroTile8.Text = "Laporan Keuangan"
-        Me.MetroTile8.TileImage = Global.Ipos.My.Resources.Resources.settings__1_1
-        Me.MetroTile8.TileImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.MetroTile8.UseCustomBackColor = True
-        Me.MetroTile8.UseSelectable = True
-        '
         'MetroTile29
         '
         Me.MetroTile29.ActiveControl = Nothing
@@ -774,6 +1088,97 @@ Partial Class MainForm
         Me.MetroLabel1.TabIndex = 1
         Me.MetroLabel1.Text = "Aplikasi Akuntansi"
         '
+        'MetroTile23
+        '
+        Me.MetroTile23.ActiveControl = Nothing
+        Me.MetroTile23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile23.Location = New System.Drawing.Point(569, 3)
+        Me.MetroTile23.Name = "MetroTile23"
+        Me.MetroTile23.Size = New System.Drawing.Size(277, 209)
+        Me.MetroTile23.TabIndex = 4
+        Me.MetroTile23.Text = "Kategori Aset Tetap"
+        Me.MetroTile23.UseSelectable = True
+        '
+        'MetroTile24
+        '
+        Me.MetroTile24.ActiveControl = Nothing
+        Me.MetroTile24.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile24.Location = New System.Drawing.Point(569, 218)
+        Me.MetroTile24.Name = "MetroTile24"
+        Me.MetroTile24.Size = New System.Drawing.Size(277, 210)
+        Me.MetroTile24.TabIndex = 5
+        Me.MetroTile24.Text = "Stok Opname"
+        Me.MetroTile24.UseSelectable = True
+        '
+        'MetroTile25
+        '
+        Me.MetroTile25.ActiveControl = Nothing
+        Me.MetroTile25.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile25.Location = New System.Drawing.Point(286, 218)
+        Me.MetroTile25.Name = "MetroTile25"
+        Me.MetroTile25.Size = New System.Drawing.Size(277, 210)
+        Me.MetroTile25.TabIndex = 6
+        Me.MetroTile25.Text = "Penyesuaian Stok Manual"
+        Me.MetroTile25.UseSelectable = True
+        '
+        'MetroTile26
+        '
+        Me.MetroTile26.ActiveControl = Nothing
+        Me.MetroTile26.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile26.Location = New System.Drawing.Point(3, 218)
+        Me.MetroTile26.Name = "MetroTile26"
+        Me.MetroTile26.Size = New System.Drawing.Size(277, 210)
+        Me.MetroTile26.TabIndex = 7
+        Me.MetroTile26.Text = "Aset Tetap"
+        Me.MetroTile26.UseSelectable = True
+        '
+        'TileAkun
+        '
+        Me.TileAkun.ActiveControl = Nothing
+        Me.TileAkun.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.TileAkun.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TileAkun.Location = New System.Drawing.Point(3, 3)
+        Me.TileAkun.Name = "TileAkun"
+        Me.TileAkun.Size = New System.Drawing.Size(277, 209)
+        Me.TileAkun.TabIndex = 0
+        Me.TileAkun.Text = "Daftar Akun"
+        Me.TileAkun.TileImage = Global.Ipos.My.Resources.Resources.settings__1_1
+        Me.TileAkun.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.TileAkun.UseCustomBackColor = True
+        Me.TileAkun.UseSelectable = True
+        Me.TileAkun.UseTileImage = True
+        '
+        'MetroTile33
+        '
+        Me.MetroTile33.ActiveControl = Nothing
+        Me.MetroTile33.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.MetroTile33.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile33.Location = New System.Drawing.Point(3, 3)
+        Me.MetroTile33.Name = "MetroTile33"
+        Me.MetroTile33.Size = New System.Drawing.Size(277, 209)
+        Me.MetroTile33.TabIndex = 0
+        Me.MetroTile33.Text = "Kategori Produk"
+        Me.MetroTile33.TileImage = Global.Ipos.My.Resources.Resources.settings__1_1
+        Me.MetroTile33.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroTile33.UseCustomBackColor = True
+        Me.MetroTile33.UseSelectable = True
+        Me.MetroTile33.UseTileImage = True
+        '
+        'MetroTile8
+        '
+        Me.MetroTile8.ActiveControl = Nothing
+        Me.MetroTile8.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.MetroTile8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTile8.Location = New System.Drawing.Point(3, 3)
+        Me.MetroTile8.Name = "MetroTile8"
+        Me.MetroTile8.Size = New System.Drawing.Size(277, 209)
+        Me.MetroTile8.TabIndex = 0
+        Me.MetroTile8.Text = "Laporan Keuangan"
+        Me.MetroTile8.TileImage = Global.Ipos.My.Resources.Resources.settings__1_1
+        Me.MetroTile8.TileImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.MetroTile8.UseCustomBackColor = True
+        Me.MetroTile8.UseSelectable = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -789,6 +1194,24 @@ Partial Class MainForm
         Me.Text = "Aplikasi Akuntansi"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MetroTabControl1.ResumeLayout(False)
+        Me.MetroTabPage7.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.MetroTabPage1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MetroTabPage6.ResumeLayout(False)
@@ -842,7 +1265,6 @@ Partial Class MainForm
     Friend WithEvents MetroTile29 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTabPage6 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents MetroTile31 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile32 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile33 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
@@ -858,4 +1280,35 @@ Partial Class MainForm
     Friend WithEvents MetroTile21 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile28 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile22 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTabPage7 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents MetroDateTime2 As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents MetroDateTime1 As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents MetroTile26 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile25 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile24 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile23 As MetroFramework.Controls.MetroTile
 End Class

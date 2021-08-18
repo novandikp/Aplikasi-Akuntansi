@@ -1,7 +1,4 @@
-﻿
-Imports System.ComponentModel
-
-Public Class FormBarang
+﻿Public Class FormBarang
     Dim idselected As String = ""
     Public idproduk As String = ""
     Private Sub FormBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load

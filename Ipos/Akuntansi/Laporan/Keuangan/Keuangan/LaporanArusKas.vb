@@ -82,6 +82,7 @@
             ListSat.Columns(6).HeaderText = "Akun"
             ListSat.Columns(7).HeaderText = "Arus Kas"
             ListSat.Columns(8).HeaderText = "Saldo"
+            ListSat.Columns(8).DefaultCellStyle.Format = "c0"
             ListSat.Columns(6).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             ListSat.Columns(8).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
 
@@ -97,8 +98,8 @@
         Dim sqltotal As String
         If cbSub.SelectedIndex > 0 Then
             sqltotal = "SELECT COALESCE(sum(tbljurnal.debit - tbljurnal.kredit),0) as saldo from tbljurnal 
-        INNER JOIN tblakun   on tblakun.kodeakun = tbljurnal.kodeakun
-        RIGHT JOIN tblsubklasifikasi   on tblakun.idsubklasifikasi = tblsubklasifikasi.idsubklasifikasi  and tblsubklasifikasi.tipearuskas != 'UNDEFINED' and tblsubklasifikasi.idklasifikasi = '" & cbSub.SelectedValue & "'
+            INNER JOIN tblakun   on tblakun.kodeakun = tbljurnal.kodeakun
+            RIGHT JOIN tblsubklasifikasi   on tblakun.idsubklasifikasi = tblsubklasifikasi.idsubklasifikasi  and tblsubklasifikasi.tipearuskas != 'UNDEFINED' and tblsubklasifikasi.idklasifikasi = '" & cbSub.SelectedValue & "'
         WHERE tbljurnal.tgljurnal < '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' 
         and (tbljurnal.kodeakun ILIKE '%" & eCari.Text & "%' OR akun ILIKE '%" & eCari.Text & "%')
         "
@@ -214,7 +215,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         PreviewArusKAs.sql = sql
         PreviewArusKAs.dataview = dv
-        PreviewArusKAs.saldoawal = CDbl(saldoawal)
+        PreviewArusKAs.saldoawal = toDouble(saldoawal)
         PreviewArusKAs.Show()
     End Sub
 End Class

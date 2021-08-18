@@ -4,7 +4,7 @@
     Dim dv As DataView
     Dim sql As String
     Sub getDataLaporan()
-        sql = "SELECT tblakun.akun , tblakun.kodeakun, tipe, tgljurnal,deskripsijurnal, koderefrensi, departemen, COALESCE(projek,'N\A') as projek , debit, kredit,
+        sql = "SELECT tblakun.akun , tblakun.kodeakun, tipe as dari , tgljurnal,deskripsijurnal, koderefrensi, departemen, COALESCE(projek,'N\A') as projek , debit, kredit,
     (sum(debit-kredit) over (PARTITION by tbljurnal.kodeakun  order by  tgljurnal, idjurnal)) as saldo, COALESCE(saldoawal,0) as saldoawal
     from tblakun
     left JOIN tbljurnal

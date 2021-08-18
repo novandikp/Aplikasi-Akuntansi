@@ -25,44 +25,32 @@ Partial Class LaporanKeuangan
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.MetroLabel18 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel19 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel20 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel21 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel22 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel23 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel24 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
         Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel11 = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel14 = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel16 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLink()
         Me.MetroLink3 = New MetroFramework.Controls.MetroLink()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
+        Me.MetroLabel24 = New MetroFramework.Controls.MetroLink()
+        Me.MetroLabel23 = New MetroFramework.Controls.MetroLink()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MetroPanel3.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
         Me.MetroPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -109,156 +97,6 @@ Partial Class LaporanKeuangan
         Me.MetroPanel3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel3.VerticalScrollbarSize = 10
         '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel18, 0, 6)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel19, 0, 5)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel20, 0, 4)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel21, 0, 3)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel22, 0, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel23, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel24, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.MetroLink2, 0, 7)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 40)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 12
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(294, 472)
-        Me.TableLayoutPanel4.TabIndex = 4
-        '
-        'MetroLabel18
-        '
-        Me.MetroLabel18.AutoSize = True
-        Me.MetroLabel18.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel18.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel18.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel18.Location = New System.Drawing.Point(3, 237)
-        Me.MetroLabel18.Name = "MetroLabel18"
-        Me.MetroLabel18.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel18.TabIndex = 6
-        Me.MetroLabel18.Text = "Giro Keluar"
-        Me.MetroLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel18.UseCustomForeColor = True
-        Me.MetroLabel18.UseSelectable = True
-        '
-        'MetroLabel19
-        '
-        Me.MetroLabel19.AutoSize = True
-        Me.MetroLabel19.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel19.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel19.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel19.Location = New System.Drawing.Point(3, 198)
-        Me.MetroLabel19.Name = "MetroLabel19"
-        Me.MetroLabel19.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel19.TabIndex = 5
-        Me.MetroLabel19.Text = "Giro Masuk - Jatuh Tempo"
-        Me.MetroLabel19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel19.UseCustomForeColor = True
-        Me.MetroLabel19.UseSelectable = True
-        '
-        'MetroLabel20
-        '
-        Me.MetroLabel20.AutoSize = True
-        Me.MetroLabel20.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel20.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel20.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel20.Location = New System.Drawing.Point(3, 159)
-        Me.MetroLabel20.Name = "MetroLabel20"
-        Me.MetroLabel20.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel20.TabIndex = 4
-        Me.MetroLabel20.Text = "Giro Masuk"
-        Me.MetroLabel20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel20.UseCustomForeColor = True
-        Me.MetroLabel20.UseSelectable = True
-        '
-        'MetroLabel21
-        '
-        Me.MetroLabel21.AutoSize = True
-        Me.MetroLabel21.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel21.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel21.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel21.Location = New System.Drawing.Point(3, 120)
-        Me.MetroLabel21.Name = "MetroLabel21"
-        Me.MetroLabel21.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel21.TabIndex = 3
-        Me.MetroLabel21.Text = "Rekonsilisasi Bank Per Buku Besar"
-        Me.MetroLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel21.UseCustomForeColor = True
-        Me.MetroLabel21.UseSelectable = True
-        '
-        'MetroLabel22
-        '
-        Me.MetroLabel22.AutoSize = True
-        Me.MetroLabel22.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel22.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel22.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel22.Location = New System.Drawing.Point(3, 81)
-        Me.MetroLabel22.Name = "MetroLabel22"
-        Me.MetroLabel22.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel22.TabIndex = 2
-        Me.MetroLabel22.Text = "Rekonsilisasi Bank Per Rekening Koran "
-        Me.MetroLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel22.UseCustomForeColor = True
-        Me.MetroLabel22.UseSelectable = True
-        '
-        'MetroLabel23
-        '
-        Me.MetroLabel23.AutoSize = True
-        Me.MetroLabel23.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel23.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel23.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel23.Location = New System.Drawing.Point(3, 42)
-        Me.MetroLabel23.Name = "MetroLabel23"
-        Me.MetroLabel23.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel23.TabIndex = 1
-        Me.MetroLabel23.Text = "Jurnal Penerimaan"
-        Me.MetroLabel23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel23.UseCustomForeColor = True
-        Me.MetroLabel23.UseSelectable = True
-        '
-        'MetroLabel24
-        '
-        Me.MetroLabel24.AutoSize = True
-        Me.MetroLabel24.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel24.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel24.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel24.Location = New System.Drawing.Point(3, 3)
-        Me.MetroLabel24.Name = "MetroLabel24"
-        Me.MetroLabel24.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLabel24.TabIndex = 0
-        Me.MetroLabel24.Text = "Jurnal Pengeluaran"
-        Me.MetroLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel24.UseCustomForeColor = True
-        Me.MetroLabel24.UseSelectable = True
-        '
-        'MetroLink2
-        '
-        Me.MetroLink2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLink2.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLink2.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLink2.Location = New System.Drawing.Point(3, 276)
-        Me.MetroLink2.Name = "MetroLink2"
-        Me.MetroLink2.Size = New System.Drawing.Size(288, 33)
-        Me.MetroLink2.TabIndex = 7
-        Me.MetroLink2.Text = "Giro Keluar - Jatuh Tempo"
-        Me.MetroLink2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLink2.UseCustomForeColor = True
-        Me.MetroLink2.UseSelectable = True
-        '
         'MetroTile3
         '
         Me.MetroTile3.ActiveControl = Nothing
@@ -292,14 +130,10 @@ Partial Class LaporanKeuangan
         '
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel10, 0, 6)
-        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel11, 0, 5)
-        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel12, 0, 4)
-        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel13, 0, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel14, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel12, 0, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel13, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel15, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.MetroLabel16, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.MetroLink1, 0, 7)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 40)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
@@ -319,43 +153,13 @@ Partial Class LaporanKeuangan
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(292, 472)
         Me.TableLayoutPanel3.TabIndex = 4
         '
-        'MetroLabel10
-        '
-        Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel10.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel10.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel10.Location = New System.Drawing.Point(3, 237)
-        Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(286, 33)
-        Me.MetroLabel10.TabIndex = 6
-        Me.MetroLabel10.Text = "Jejak Audit - Detail"
-        Me.MetroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel10.UseCustomForeColor = True
-        Me.MetroLabel10.UseSelectable = True
-        '
-        'MetroLabel11
-        '
-        Me.MetroLabel11.AutoSize = True
-        Me.MetroLabel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel11.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel11.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel11.Location = New System.Drawing.Point(3, 198)
-        Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(286, 33)
-        Me.MetroLabel11.TabIndex = 5
-        Me.MetroLabel11.Text = "Jejak Audit - Ringkasan"
-        Me.MetroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel11.UseCustomForeColor = True
-        Me.MetroLabel11.UseSelectable = True
-        '
         'MetroLabel12
         '
         Me.MetroLabel12.AutoSize = True
         Me.MetroLabel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroLabel12.FontSize = MetroFramework.MetroLinkSize.Medium
         Me.MetroLabel12.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel12.Location = New System.Drawing.Point(3, 159)
+        Me.MetroLabel12.Location = New System.Drawing.Point(3, 120)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(286, 33)
         Me.MetroLabel12.TabIndex = 4
@@ -370,7 +174,7 @@ Partial Class LaporanKeuangan
         Me.MetroLabel13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroLabel13.FontSize = MetroFramework.MetroLinkSize.Medium
         Me.MetroLabel13.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel13.Location = New System.Drawing.Point(3, 120)
+        Me.MetroLabel13.Location = New System.Drawing.Point(3, 81)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(286, 33)
         Me.MetroLabel13.TabIndex = 3
@@ -378,21 +182,6 @@ Partial Class LaporanKeuangan
         Me.MetroLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MetroLabel13.UseCustomForeColor = True
         Me.MetroLabel13.UseSelectable = True
-        '
-        'MetroLabel14
-        '
-        Me.MetroLabel14.AutoSize = True
-        Me.MetroLabel14.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel14.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel14.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel14.Location = New System.Drawing.Point(3, 81)
-        Me.MetroLabel14.Name = "MetroLabel14"
-        Me.MetroLabel14.Size = New System.Drawing.Size(286, 33)
-        Me.MetroLabel14.TabIndex = 2
-        Me.MetroLabel14.Text = "Jurnal - Semua Transaksi"
-        Me.MetroLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel14.UseCustomForeColor = True
-        Me.MetroLabel14.UseSelectable = True
         '
         'MetroLabel15
         '
@@ -423,21 +212,6 @@ Partial Class LaporanKeuangan
         Me.MetroLabel16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MetroLabel16.UseCustomForeColor = True
         Me.MetroLabel16.UseSelectable = True
-        '
-        'MetroLink1
-        '
-        Me.MetroLink1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLink1.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLink1.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLink1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.MetroLink1.Location = New System.Drawing.Point(3, 276)
-        Me.MetroLink1.Name = "MetroLink1"
-        Me.MetroLink1.Size = New System.Drawing.Size(286, 33)
-        Me.MetroLink1.TabIndex = 7
-        Me.MetroLink1.Text = "Jejak Audit - Histori Transaksi"
-        Me.MetroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLink1.UseCustomForeColor = True
-        Me.MetroLink1.UseSelectable = True
         '
         'MetroTile2
         '
@@ -472,10 +246,8 @@ Partial Class LaporanKeuangan
         '
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel6, 0, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel5, 0, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel4, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel3, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel6, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel4, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.MetroLabel2, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.MetroLink3, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -503,7 +275,7 @@ Partial Class LaporanKeuangan
         Me.MetroLabel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroLabel6.FontSize = MetroFramework.MetroLinkSize.Medium
         Me.MetroLabel6.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel6.Location = New System.Drawing.Point(3, 198)
+        Me.MetroLabel6.Location = New System.Drawing.Point(3, 120)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(286, 33)
         Me.MetroLabel6.TabIndex = 5
@@ -512,28 +284,13 @@ Partial Class LaporanKeuangan
         Me.MetroLabel6.UseCustomForeColor = True
         Me.MetroLabel6.UseSelectable = True
         '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel5.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel5.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel5.Location = New System.Drawing.Point(3, 159)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(286, 33)
-        Me.MetroLabel5.TabIndex = 4
-        Me.MetroLabel5.Text = "Neraca 12 Bulan"
-        Me.MetroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel5.UseCustomForeColor = True
-        Me.MetroLabel5.UseSelectable = True
-        '
         'MetroLabel4
         '
         Me.MetroLabel4.AutoSize = True
         Me.MetroLabel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroLabel4.FontSize = MetroFramework.MetroLinkSize.Medium
         Me.MetroLabel4.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel4.Location = New System.Drawing.Point(3, 120)
+        Me.MetroLabel4.Location = New System.Drawing.Point(3, 81)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(286, 33)
         Me.MetroLabel4.TabIndex = 3
@@ -541,21 +298,6 @@ Partial Class LaporanKeuangan
         Me.MetroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MetroLabel4.UseCustomForeColor = True
         Me.MetroLabel4.UseSelectable = True
-        '
-        'MetroLabel3
-        '
-        Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroLabel3.FontSize = MetroFramework.MetroLinkSize.Medium
-        Me.MetroLabel3.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.MetroLabel3.Location = New System.Drawing.Point(3, 81)
-        Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(286, 33)
-        Me.MetroLabel3.TabIndex = 2
-        Me.MetroLabel3.Text = "Laba Rugi 12 Bulan"
-        Me.MetroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MetroLabel3.UseCustomForeColor = True
-        Me.MetroLabel3.UseSelectable = True
         '
         'MetroLabel2
         '
@@ -600,6 +342,61 @@ Partial Class LaporanKeuangan
         Me.MetroTile1.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.MetroTile1.UseSelectable = True
         '
+        'MetroLabel24
+        '
+        Me.MetroLabel24.AutoSize = True
+        Me.MetroLabel24.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroLabel24.FontSize = MetroFramework.MetroLinkSize.Medium
+        Me.MetroLabel24.FontWeight = MetroFramework.MetroLinkWeight.Regular
+        Me.MetroLabel24.Location = New System.Drawing.Point(3, 3)
+        Me.MetroLabel24.Name = "MetroLabel24"
+        Me.MetroLabel24.Size = New System.Drawing.Size(288, 33)
+        Me.MetroLabel24.TabIndex = 0
+        Me.MetroLabel24.Text = "Jurnal Pengeluaran"
+        Me.MetroLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MetroLabel24.UseCustomForeColor = True
+        Me.MetroLabel24.UseSelectable = True
+        '
+        'MetroLabel23
+        '
+        Me.MetroLabel23.AutoSize = True
+        Me.MetroLabel23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroLabel23.FontSize = MetroFramework.MetroLinkSize.Medium
+        Me.MetroLabel23.FontWeight = MetroFramework.MetroLinkWeight.Regular
+        Me.MetroLabel23.Location = New System.Drawing.Point(3, 42)
+        Me.MetroLabel23.Name = "MetroLabel23"
+        Me.MetroLabel23.Size = New System.Drawing.Size(288, 33)
+        Me.MetroLabel23.TabIndex = 1
+        Me.MetroLabel23.Text = "Jurnal Penerimaan"
+        Me.MetroLabel23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MetroLabel23.UseCustomForeColor = True
+        Me.MetroLabel23.UseSelectable = True
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel23, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.MetroLabel24, 0, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 40)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 12
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(294, 472)
+        Me.TableLayoutPanel4.TabIndex = 4
+        '
         'LaporanKeuangan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -614,48 +411,36 @@ Partial Class LaporanKeuangan
         Me.Panel2.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MetroPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel4.PerformLayout()
         Me.MetroPanel2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.MetroPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents MetroPanel3 As MetroFramework.Controls.MetroPanel
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel21 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel22 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel23 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel24 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLink2 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroTile3 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroPanel2 As MetroFramework.Controls.MetroPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLink1 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroTile2 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLink
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLink3 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents MetroLabel23 As MetroFramework.Controls.MetroLink
+    Friend WithEvents MetroLabel24 As MetroFramework.Controls.MetroLink
 End Class

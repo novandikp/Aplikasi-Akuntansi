@@ -381,7 +381,7 @@ Public Class FormPesananBeli
             dialog.idgudang = cbGudang.SelectedValue
         End If
         dialog.visibleHargaJual = False
-        
+
         dialog.eCari.Text = tbKodeProduk.Text
         Dim dialogResult As DialogResult = dialog.ShowDialog
         If dialogResult = DialogResult.OK Then
@@ -742,8 +742,8 @@ Public Class FormPesananBeli
         Next
         Dim dialog As New DialogTransaksiTanpaBayar
         dialog.total = t
-dialog.klasifikasiBiayaLain ="6900"
-dialog.klasifikasiPotonganHarga="5100"
+        dialog.klasifikasiBiayaLain = "6900"
+        dialog.klasifikasiPotonganHarga = "5100"
         dialog.totalpajak = totalPajak
         If edited Then
             dialog.tableRefrensi = "tblpesananbeli"

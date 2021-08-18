@@ -22,7 +22,9 @@
     tblakun.kodeakun,
     tblklasifikasi.idklasifikasi, 
     tblsubklasifikasi.idsubklasifikasi
+    order by tblklasifikasi.idklasifikasi
     "
+        Debug.WriteLine(sql)
         dataLaporan = getData(sql)
 
         dataview = New DataView(dataLaporan)
@@ -43,9 +45,10 @@
             ListSat.Columns(1).Visible = False
             ListSat.Columns(2).Visible = False
             ListSat.Columns(3).Visible = False
-            ListSat.Columns(4).Visible = False
+            ListSat.Columns(5).Visible = False
 
-            ListSat.Columns(5).HeaderText = "Akun"
+            ListSat.Columns(4).HeaderText = "Akun"
+            ListSat.Columns(4).DefaultCellStyle.Format = "c0"
             ListSat.Columns(6).HeaderText = "Saldo"
 
 

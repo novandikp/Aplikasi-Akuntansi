@@ -82,6 +82,6 @@
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged
-            getDataLaporan()
-        End Sub
-    End Class
+        getDataLaporan()
+    End Sub
+End Class

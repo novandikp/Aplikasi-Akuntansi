@@ -1,6 +1,4 @@
-﻿Imports System.ComponentModel
-
-Public Class Login
+﻿Public Class Login
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         setLocationDatabase(TextBox3.Text)
@@ -60,7 +58,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 

@@ -1,5 +1,19 @@
 ﻿Public Class MainForm
 
+    Sub DashBoard()
+        isiChartPenjualan()
+    End Sub
+
+    Sub isiChartPenjualan()
+
+    End Sub
+
+
+    Sub isiData()
+        Dim sqlRekap = ""
+    End Sub
+
+
     'Master ======================
     Sub showAkun()
         Datagridakun.ShowDialog()
@@ -12,8 +26,8 @@
     End Sub
 
     Sub showGudang()
-        DataGridGudang.ShowDialog()
-        DataGridGudang.Dispose()
+        Datagridgudang.ShowDialog()
+        Datagridgudang.Dispose()
     End Sub
 
     Sub showProjek()
@@ -46,6 +60,11 @@
         DatagridKategori.Dispose()
     End Sub
 
+    Sub showKategoriAset()
+        DatagridKategoriaset.ShowDialog()
+        DatagridKategoriaset.Dispose()
+    End Sub
+
     Sub showStatus()
         DatagridStatus.ShowDialog()
         DatagridStatus.Dispose()
@@ -56,11 +75,23 @@
         DatagridSub.Dispose()
     End Sub
 
-    Sub showBukuBesar()
-        DatagridBukuBesar.ShowDialog()
-        DatagridBukuBesar.Dispose()
+
+    Sub showStokOpname()
+        DaftarStokOpname.ShowDialog()
+        DaftarStokOpname.Dispose()
     End Sub
+
+    Sub showStok()
+        DaftarStok.ShowDialog()
+        DaftarStok.Dispose()
+    End Sub
+
     'Event
+
+
+    Private Sub MetroTile23_Click(sender As Object, e As EventArgs) Handles MetroTile23.Click
+        showKategoriAset()
+    End Sub
     Private Sub TileAkun_Click(sender As Object, e As EventArgs) Handles TileAkun.Click
         showAkun()
     End Sub
@@ -92,6 +123,19 @@
     Private Sub TileProduk_Click(sender As Object, e As EventArgs) Handles TileProduk.Click
         showProduk()
     End Sub
+
+
+
+    Private Sub MetroTile24_Click(sender As Object, e As EventArgs) Handles MetroTile24.Click
+        showStokOpname()
+    End Sub
+
+
+    Private Sub MetroTile25_Click(sender As Object, e As EventArgs) Handles MetroTile25.Click
+        showStok()
+    End Sub
+
+
     'Master =======================
 
 
@@ -116,6 +160,9 @@
         LaporanLainnya.Dispose()
     End Sub
 
+
+
+
     Private Sub MetroTile8_Click(sender As Object, e As EventArgs) Handles MetroTile8.Click
         showLaporanKeuangan()
     End Sub
@@ -134,7 +181,7 @@
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MetroTabControl1.TabPages(0).Show()
-
+        DashBoard()
     End Sub
 
     Private Sub MetroTile33_Click(sender As Object, e As EventArgs) Handles MetroTile33.Click
@@ -145,15 +192,13 @@
         showStatus()
     End Sub
 
-    Private Sub MetroTile31_Click(sender As Object, e As EventArgs) Handles MetroTile31.Click
+    Private Sub MetroTile31_Click(sender As Object, e As EventArgs)
         showBukuBesar()
     End Sub
 
     Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
         showSubKlasifikasi()
     End Sub
-
-
 
 
 
@@ -306,5 +351,55 @@
 
     Private Sub MetroTile15_Click(sender As Object, e As EventArgs) Handles MetroTile15.Click
         shoKelebihanBayarBeli()
+    End Sub
+
+    'Kas
+
+    Sub showPenerimaan()
+        Dim dialog As New DaftarKreditDebit
+        dialog.debit = True
+        dialog.ShowDialog()
+        dialog.Dispose()
+    End Sub
+
+    Sub showPengeluaran()
+        Dim dialog As New DaftarKreditDebit
+        dialog.debit = False
+        dialog.ShowDialog()
+        dialog.Dispose()
+    End Sub
+
+    Sub showBukuBesar()
+        DatagridBukuBesar.ShowDialog()
+        DatagridBukuBesar.Dispose()
+    End Sub
+
+    Private Sub MetroTile28_Click(sender As Object, e As EventArgs) Handles MetroTile28.Click
+        showPengeluaran()
+    End Sub
+
+    Private Sub MetroTile22_Click(sender As Object, e As EventArgs) Handles MetroTile22.Click
+        showPenerimaan()
+    End Sub
+
+    Private Sub MetroTile27_Click(sender As Object, e As EventArgs) Handles MetroTile27.Click
+        showBukuBesar()
+    End Sub
+
+    Dim hasShown As Boolean = False
+    Private Sub MainForm_MouseLeave(sender As Object, e As EventArgs) Handles Me.Shown
+        If Not hasShown Then
+            DashBoard()
+            hasShown = True
+        End If
+
+    End Sub
+
+    Sub showAset()
+        DatagridAset.ShowDialog()
+        DatagridAset.Dispose()
+    End Sub
+    Private Sub MetroTile26_Click(sender As Object, e As EventArgs) Handles MetroTile26.Click
+        showAset()
     End Sub
 End Class

@@ -30,8 +30,7 @@ Public Class PreviewLabaRugi
         ReportViewer1.LocalReport.DataSources.Clear()
         ReportViewer1.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", CType(dataview, DataView)))
         ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
-        ReportViewer1.LocalReport.SetParameters(New ReportParameter("saldoawal",
-                                                                saldoawal))
+
         'ReportViewer1.LocalReport.SetParameters(New ReportParameter("namaToko",
         '                                                            getValue(sqlidentitas, "namatoko").ToString))
         'ReportViewer1.LocalReport.SetParameters(New ReportParameter("alamatToko",

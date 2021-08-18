@@ -234,8 +234,8 @@ Public Class FormPesananJual
         setProjek()
         getPelanggan()
         setTableColumn()
-        
-        
+
+
 
         If edited Then
             continueOrder()
@@ -714,7 +714,7 @@ Public Class FormPesananJual
                 operationQuery(sqldetail, Data)
             End If
         Next
-        End Sub
+    End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         bayar()

@@ -79,6 +79,7 @@ Partial Class LaporanJurnalSemua
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label1.Location = New System.Drawing.Point(18, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
@@ -247,7 +248,7 @@ Partial Class LaporanJurnalSemua
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Ipos.My.Resources.Resources.bgform
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(860, 629)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dtAkhir)
@@ -258,7 +259,8 @@ Partial Class LaporanJurnalSemua
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
         Me.Name = "LaporanJurnalSemua"
-        Me.Text = "LaporanJurnalUmum"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Laporan Jurnal Umum"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()

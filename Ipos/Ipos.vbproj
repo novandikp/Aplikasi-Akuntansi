@@ -184,6 +184,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
       <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net461\System.Windows.Forms.Ribbon.dll</HintPath>
     </Reference>
@@ -214,6 +215,11 @@
     </Compile>
     <Compile Include="Akuntansi\Dataset\Akuntansi.vb">
       <DependentUpon>Akuntansi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Dataset\DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\Dialog\DialogJurnal.Designer.vb">
       <DependentUpon>DialogJurnal.vb</DependentUpon>
@@ -299,10 +305,10 @@
     <Compile Include="Akuntansi\Dialog\DialogTransaksiBayar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Akuntansi\Kas\DialogDebitKredit.Designer.vb">
-      <DependentUpon>DialogDebitKredit.vb</DependentUpon>
+    <Compile Include="Akuntansi\Kas\KreditDebit\DaftarKreditDebit.Designer.vb">
+      <DependentUpon>DaftarKreditDebit.vb</DependentUpon>
     </Compile>
-    <Compile Include="Akuntansi\Kas\DialogDebitKredit.vb">
+    <Compile Include="Akuntansi\Kas\KreditDebit\DaftarKreditDebit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Laporan\Keuangan\KasBank\LaporanJurnalPemasukan.Designer.vb">
@@ -611,6 +617,24 @@
     <Compile Include="Akuntansi\Laporan\Sublaporan\LaporanProduk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\Master\Aset\Aset Tetap\DatagridAset.Designer.vb">
+      <DependentUpon>DatagridAset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Aset\Aset Tetap\DatagridAset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Aset\Aset Tetap\Datagridpenurunan.Designer.vb">
+      <DependentUpon>Datagridpenurunan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Aset\Aset Tetap\Datagridpenurunan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Aset\Kategori\DatagridKategoriAset.Designer.vb">
+      <DependentUpon>DatagridKategoriAset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Aset\Kategori\DatagridKategoriAset.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\Master\Buku Besar\DatagridBukuBesar.Designer.vb">
       <DependentUpon>DatagridBukuBesar.vb</DependentUpon>
     </Compile>
@@ -621,6 +645,30 @@
       <DependentUpon>FormBarang.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\Master\Produk\Form\FormBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Master\StokOpname\DaftarStokOpname.Designer.vb">
+      <DependentUpon>DaftarStokOpname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\StokOpname\DaftarStokOpname.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Master\StokOpname\FormStokOpname.Designer.vb">
+      <DependentUpon>FormStokOpname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\StokOpname\FormStokOpname.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Stok\DaftarStok.Designer.vb">
+      <DependentUpon>DaftarStok.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Stok\DaftarStok.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Stok\FormStok.Designer.vb">
+      <DependentUpon>FormStok.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Master\Stok\FormStok.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Master\Subklasifikasi\DatagridSub.Designer.vb">
@@ -1000,6 +1048,9 @@
       <DependentUpon>DialogTransaksiBayar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Dialog\Rdlc\Jurnal.rdlc" />
+    <EmbeddedResource Include="Akuntansi\Kas\KreditDebit\DaftarKreditDebit.resx">
+      <DependentUpon>DaftarKreditDebit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\KasBank\LaporanJurnalPemasukan.resx">
       <DependentUpon>LaporanJurnalPemasukan.vb</DependentUpon>
     </EmbeddedResource>
@@ -1062,8 +1113,8 @@
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\BukuBesar\Report\BukuBesarLengkap.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\BukuBesar\Report\BukuBesarSederhana.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\BukuBesar\Report\JurnalSemua.rdlc" />
-    <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\Keuangan\Report\NeracaSaldo.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\Keuangan\Report\Neraca.rdlc" />
+    <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\Keuangan\Report\NeracaSaldo.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\Keuangan\Report\LabaRugi.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\Keuangan\Report\ArusKas.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Keuangan\BukuBesar\Report\Rekening.rdlc" />
@@ -1098,6 +1149,7 @@
       <DependentUpon>PreviewPenawaran.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Penawaran\Report\PenawaranRangkuman.rdlc" />
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Penawaran\Report\DetailPenawaran.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Penawaran\Report\PenawaranRingkas.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pengiriman\LaporanDetailPengirimanJual.resx">
       <DependentUpon>LaporanDetailPengirimanJual.vb</DependentUpon>
@@ -1166,11 +1218,32 @@
     <EmbeddedResource Include="Akuntansi\Laporan\Sublaporan\LaporanProduk.resx">
       <DependentUpon>LaporanProduk.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\Aset\Aset Tetap\DatagridAset.resx">
+      <DependentUpon>DatagridAset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\Aset\Aset Tetap\Datagridpenurunan.resx">
+      <DependentUpon>Datagridpenurunan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\Aset\Kategori\DatagridKategoriAset.resx">
+      <DependentUpon>DatagridKategoriAset.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Master\Buku Besar\DatagridBukuBesar.resx">
       <DependentUpon>DatagridBukuBesar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Master\Produk\Form\FormBarang.resx">
       <DependentUpon>FormBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\StokOpname\DaftarStokOpname.resx">
+      <DependentUpon>DaftarStokOpname.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\StokOpname\FormStokOpname.resx">
+      <DependentUpon>FormStokOpname.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\Stok\DaftarStok.resx">
+      <DependentUpon>DaftarStok.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Master\Stok\FormStok.resx">
+      <DependentUpon>FormStok.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Master\Subklasifikasi\DatagridSub.resx">
       <DependentUpon>DatagridSub.vb</DependentUpon>
@@ -1344,6 +1417,17 @@
     </None>
     <None Include="Akuntansi\Dataset\Akuntansi.xss">
       <DependentUpon>Akuntansi.xsd</DependentUpon>
+    </None>
+    <None Include="Akuntansi\Dataset\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Akuntansi\Dataset\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Akuntansi\Dataset\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="dbtokoDataSet.xsc">
       <DependentUpon>dbtokoDataSet.xsd</DependentUpon>
@@ -1571,8 +1655,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Akuntansi\Kas\Pemasukan\" />
-    <Folder Include="Akuntansi\Kas\Pengeluaran\" />
     <Folder Include="Akuntansi\Laporan\Penjualan\Faktur\Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

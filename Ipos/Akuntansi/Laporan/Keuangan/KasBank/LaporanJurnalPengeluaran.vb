@@ -4,23 +4,21 @@
     Dim dv As DataView
     Dim sql As String
     Sub getDataLaporan()
-        sql = "SELECT tbltransaksi.kodetransaksi, asalakun.akun as akunasal, kontak, tgltransaksi,  deskripsitransaksi, 
- tujuanakun.akun as akuntujuan, besartransaksi, departemen, COALESCE(projek,'N\A') as projek, tipetransaksi 
- from tbldetailtransaksi
-inner join tbltransaksi
-on tbltransaksi.kodetransaksi = tbldetailtransaksi.idtransaksi
+        sql = "SELECT tbltransaksi.kodetransaksi, asalakun.akun as akunasal, tblkontak.pelanggan, tgltransaksi,
+ tujuanakun.akun as akuntujuan, jumlah as besartransaksi, departemen, COALESCE(projek,'N\A') as projek, tipetransaksi 
+ from  tbltransaksi
 inner join tblkontak
 on tblkontak.idpelanggan = tbltransaksi.kontak
 inner join tblakun asalakun
 on asalakun.kodeakun = tbltransaksi.akunasal
 inner join tblakun tujuanakun
-on tujuanakun.kodeakun = tbltransaksi.akunasal
+on tujuanakun.kodeakun = tbltransaksi.akuntujuan
 inner join tbldepartemen on
-tbldetailtransaksi.kodedepartemen = tbldepartemen.iddepartemen
+tbltransaksi.kodedepartemen = tbldepartemen.iddepartemen
 left join tblprojek on
-tblprojek.idprojek = tbldetailtransaksi.kodeprojek
-        WHERE deskripsitransaksi ILIKE '%" & eCari.Text & "%'
-        and tipetransaksi='K'  and  tgltransaksi BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
+tblprojek.idprojek = tbltransaksi.kodeprojek
+        WHERE tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'
+        and tipetransaksi='CK'  and  tgltransaksi BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'
         ORDER by tgltransaksi,kodetransaksi"
 
@@ -31,16 +29,16 @@ tblprojek.idprojek = tbldetailtransaksi.kodeprojek
 
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).HeaderText = "Kode Transaksi"
+            ListSat.Columns(1).HeaderText = "Akun Asal"
+            ListSat.Columns(2).HeaderText = "Kontak"
+            ListSat.Columns(3).HeaderText = "Tanggal"
+            ListSat.Columns(4).HeaderText = "Akun Tujuan"
+            ListSat.Columns(5).HeaderText = "Nominal"
+            ListSat.Columns(6).HeaderText = "Departemen"
+            ListSat.Columns(7).HeaderText = "Projek"
+            ListSat.Columns(8).Visible = False
+
 
 
         Catch ex As Exception
@@ -71,7 +69,7 @@ tblprojek.idprojek = tbldetailtransaksi.kodeprojek
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewJurnalPengeluaran.dataview = dv
-        PreviewJurnalPengeluaran.Show()
+        PreviewJurnalPemasukan.dataview = dv
+        PreviewJurnalPemasukan.Show()
     End Sub
 End Class

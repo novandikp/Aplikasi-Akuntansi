@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.85862cm</Width>
+              <Width>4.2182cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>10.65138cm</Width>
+              <Width>11.77649cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -26,18 +26,26 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Kode</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>times New Roman</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>LightBlue</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -56,18 +64,26 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nama</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>times New Roman</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>LightBlue</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -91,16 +107,21 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!kodeklasifikasi.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>kodeklasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -121,7 +142,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!klasifikasi.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -130,7 +153,7 @@
                       <rd:DefaultName>klasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -148,24 +171,27 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="kodesub">
+                    <Textbox Name="kodesubklasifikasi">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!kodesub.Value</Value>
-                              <Style />
+                              <Value>=Fields!kodesubklasifikasi.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>kodesub</rd:DefaultName>
+                      <rd:DefaultName>kodesubklasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>12pt</PaddingLeft>
@@ -178,24 +204,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="sub">
+                    <Textbox Name="subklasifikasi">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!sub.Value</Value>
-                              <Style />
+                              <Value>=Fields!subklasifikasi.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>sub</rd:DefaultName>
+                      <rd:DefaultName>subklasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>12pt</PaddingLeft>
@@ -221,7 +249,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!kodeakun.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -230,7 +261,7 @@
                       <rd:DefaultName>kodeakun</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>20pt</PaddingLeft>
@@ -251,7 +282,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!akun.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -260,7 +293,7 @@
                       <rd:DefaultName>akun</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>20pt</PaddingLeft>
@@ -322,9 +355,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.3462cm</Top>
+        <Top>0.3937cm</Top>
         <Height>2.4cm</Height>
-        <Width>16.51cm</Width>
+        <Width>15.99469cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -337,6 +370,65 @@
   </Body>
   <Width>6.5in</Width>
   <Page>
+    <PageHeader>
+      <Height>2.09021cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <ReportItems>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Daftar Akun</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>LightBlue</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.68791cm</Top>
+          <Left>0.51531cm</Left>
+          <Height>1.235cm</Height>
+          <Width>4.77542cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>2.03729cm</Top>
+          <Left>0.51531cm</Left>
+          <Height>0cm</Height>
+          <Width>15.47938cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Color>LightBlue</Color>
+              <Style>Solid</Style>
+              <Width>4pt</Width>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -379,8 +471,8 @@
           <DataField>kodesubklasifikasi</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="sub">
-          <DataField>sub</DataField>
+        <Field Name="subklasifikasi">
+          <DataField>subklasifikasi</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="klasifikasi">
@@ -391,12 +483,16 @@
           <DataField>kodesub</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cashflow">
-          <DataField>cashflow</DataField>
+        <Field Name="tipearuskas">
+          <DataField>tipearuskas</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="saldo">
           <DataField>saldo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idklasifikasi">
+          <DataField>idklasifikasi</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

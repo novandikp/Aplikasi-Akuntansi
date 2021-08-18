@@ -289,7 +289,7 @@ Partial Class LaporanNeracaSaldo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Ipos.My.Resources.Resources.bgform
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 515)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)

@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Public Class PreviewPenawaran
 
-
+    Public detail As Boolean = True
     Public ringkasan As Boolean = True
     Public sql As String = ""
     Public dataview As DataView
@@ -23,7 +23,9 @@ Public Class PreviewPenawaran
 
     Sub laporanBarangLengkap()
         ReportViewer1.Reset()
-        If Not ringkasan Then
+        If detail Then
+            ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.DetailPenawaran.rdlc"
+        ElseIf Not ringkasan Then
             ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.PenawaranRangkuman.rdlc"
         Else
             ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.PenawaranRingkas.rdlc"

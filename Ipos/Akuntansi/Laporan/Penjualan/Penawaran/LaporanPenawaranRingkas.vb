@@ -8,7 +8,7 @@
         If ringkasan Then
             makeFillDG(ListSat)
             If cbSub.SelectedIndex > 0 Then
-                sql = "SELECT tglpenawaranjual, kodepenawaranjual, tblkontak.pelanggan as idkontak,total, totalpajak
+                sql = "SELECT tglpenawaranjual as tglpenawaran, kodepenawaranjual, tblkontak.pelanggan as idkontak,total, totalpajak
 FROM tblpenawaranjual
 INNER join tblkontak
 on tblkontak.idpelanggan = tblpenawaranjual.pelanggan
@@ -16,7 +16,7 @@ on tblkontak.idpelanggan = tblpenawaranjual.pelanggan
           and kodedepartemen ='" & cbSub.SelectedValue & "' and tglpenawaranjual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
             Else
-                sql = "SELECT tglpenawaranjual, kodepenawaranjual, tblkontak.pelanggan as idkontak,total, totalpajak
+                sql = "SELECT tglpenawaranjual as tglpenawaran, kodepenawaranjual, tblkontak.pelanggan as idkontak,total, totalpajak
 FROM tblpenawaranjual
 INNER join tblkontak
 on tblkontak.idpelanggan = tblpenawaranjual.pelanggan
@@ -26,7 +26,7 @@ on tblkontak.idpelanggan = tblpenawaranjual.pelanggan
             End If
         Else
             If cbSub.SelectedIndex > 0 Then
-                sql = "SELECT tglpenawaranjual, kodepenawaranjual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain
+                sql = "SELECT tglpenawaranjual as tglpenawaran, kodepenawaranjual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain
 FROM tblpenawaranjual
 INNER join tbldepartemen
 on tbldepartemen.iddepartemen = tblpenawaranjual.kodedepartemen
@@ -34,7 +34,7 @@ WHERE (kodepenawaranjual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & 
           and kodedepartemen ='" & cbSub.SelectedValue & "' and tglpenawaranjual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
             Else
-                sql = "SELECT tglpenawaranjual, kodepenawaranjual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain
+                sql = "SELECT tglpenawaranjual as tglpenawaran, kodepenawaranjual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain
 FROM tblpenawaranjual
 INNER join tbldepartemen
 on tbldepartemen.iddepartemen = tblpenawaranjual.kodedepartemen
@@ -50,18 +50,25 @@ WHERE (kodepenawaranjual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & 
         Debug.WriteLine(sql)
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
 
-
+            If ringkasan Then
+                ListSat.Columns(0).HeaderText = "Tanggal"
+                ListSat.Columns(1).HeaderText = "Kode Penawaran"
+                ListSat.Columns(2).HeaderText = "Pelanggan"
+                ListSat.Columns(3).HeaderText = "Total"
+                ListSat.Columns(4).HeaderText = "Total Pajak"
+            Else
+                ListSat.Columns(0).HeaderText = "Tanggal"
+                ListSat.Columns(1).HeaderText = "Kode Penawaran"
+                ListSat.Columns(2).HeaderText = "Departemen"
+                ListSat.Columns(3).HeaderText = "Projek"
+                ListSat.Columns(4).HeaderText = "Total"
+                ListSat.Columns(5).HeaderText = "Diskon Rupiah"
+                ListSat.Columns(6).HeaderText = "Diskon Persen"
+                ListSat.Columns(7).HeaderText = "Total Pajak"
+                ListSat.Columns(8).HeaderText = "Biaya Lain"
+                ListSat.Columns(4).DisplayIndex = 6
+            End If
         Catch ex As Exception
 
         End Try

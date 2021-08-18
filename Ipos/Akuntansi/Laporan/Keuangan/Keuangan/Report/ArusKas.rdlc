@@ -33,8 +33,8 @@
           <DataField>kodesubklasifikasi</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="sub">
-          <DataField>sub</DataField>
+        <Field Name="subklasifikasi">
+          <DataField>subklasifikasi</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="klasifikasi">
@@ -45,8 +45,8 @@
           <DataField>kodesub</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cashflow">
-          <DataField>cashflow</DataField>
+        <Field Name="tipearuskas">
+          <DataField>tipearuskas</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="saldo">
@@ -72,18 +72,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.20688cm</Width>
+                  <Width>4.12331cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.32354cm</Width>
+                  <Width>5.8037cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.68854cm</Width>
+                  <Width>0.51563cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.60497cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.70583cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -94,10 +97,12 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>CashFlow</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -107,9 +112,11 @@
                           <rd:DefaultName>Textbox41</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -131,6 +138,7 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -142,9 +150,49 @@
                           <rd:DefaultName>Textbox42</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightBlue</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -162,10 +210,12 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>saldo</Value>
+                                  <Value>Saldo</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -177,10 +227,12 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -195,25 +247,24 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="cashflow">
+                        <Textbox Name="tipearuskas">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!cashflow.Value</Value>
+                                  <Value>=Fields!tipearuskas.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>Blue</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>cashflow</rd:DefaultName>
+                          <rd:DefaultName>tipearuskas</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -225,11 +276,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox15">
+                        <Textbox Name="Textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -248,7 +301,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -274,7 +327,6 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -287,7 +339,7 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -302,25 +354,24 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sub">
+                        <Textbox Name="subklasifikasi">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!sub.Value</Value>
+                                  <Value>=Fields!subklasifikasi.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>Blue</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sub</rd:DefaultName>
+                          <rd:DefaultName>subklasifikasi</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -332,11 +383,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox27">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -355,7 +408,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -381,7 +434,6 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -394,7 +446,7 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -419,7 +471,6 @@
                                   <Value>=Fields!kodeakun.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -452,6 +503,40 @@
                                   <Value>=Fields!akun.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>akun</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>12pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -461,7 +546,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>akun</rd:DefaultName>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -487,7 +572,7 @@
                                   <Value>=Fields!saldo.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
+                                    <Format>'Rp'#,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -502,10 +587,11 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -513,7 +599,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.67938cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -524,11 +610,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Total " &amp; Fields!sub.Value &amp; " :"</Value>
+                                  <Value>="Total " &amp; Fields!subklasifikasi.Value &amp; " :"</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -547,11 +632,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox23">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -570,7 +657,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -596,8 +683,7 @@
                                   <Value>=sum(Fields!saldo.Value, "kodesubklasifikasi")</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <Format>'Rp'#,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -609,13 +695,12 @@
                           <rd:DefaultName>Textbox29</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#47bf84</Color>
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
                               <Style>Solid</Style>
                             </TopBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -626,7 +711,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.78521cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -637,11 +722,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Total " &amp; Fields!cashflow.Value &amp;" :"</Value>
+                                  <Value>="Total " &amp; Fields!tipearuskas.Value &amp;" :"</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -660,11 +744,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="Textbox8">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -683,7 +769,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -709,8 +795,7 @@
                                   <Value>=sum(Fields!saldo.Value, "cashflow")</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <Format>'Rp'#,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -722,13 +807,12 @@
                           <rd:DefaultName>Textbox31</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#47bf84</Color>
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
                               <Style>Solid</Style>
                             </TopBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -753,8 +837,7 @@
                                   <Value>Kenaikan Bersih Kas Dan Setara Kas</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -787,7 +870,6 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -797,6 +879,41 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -822,8 +939,7 @@
                                   <Value>=sum(Fields!saldo.Value, "DataSet1")</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <Format>'Rp'#,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -838,7 +954,7 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -863,8 +979,7 @@
                                   <Value>Kas Dan Setara Kas Pada Awal Periode</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -897,7 +1012,6 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -907,6 +1021,41 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox36</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -932,8 +1081,7 @@
                                   <Value>=Parameters!saldoawal.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <Format>'Rp'#,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -948,7 +1096,7 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -973,8 +1121,7 @@
                                   <Value>Kas Dan Setara Kas Pada Akhir Periode</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1007,7 +1154,6 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1017,6 +1163,41 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox39</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1042,8 +1223,7 @@
                                   <Value>=sum(Fields!saldo.Value, "DataSet1")+Parameters!saldoawal.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>11pt</FontSize>
-                                    <Color>#47bf84</Color>
+                                    <Format>'Rp'#,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1055,13 +1235,12 @@
                           <rd:DefaultName>Textbox40</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#47bf84</Color>
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
                               <Style>Solid</Style>
                             </TopBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingLeft>12pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
@@ -1078,6 +1257,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1086,12 +1266,12 @@
                 <TablixMember>
                   <Group Name="cashflow">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!cashflow.Value</GroupExpression>
+                      <GroupExpression>=Fields!tipearuskas.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!cashflow.Value</Value>
+                      <Value>=Fields!tipearuskas.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -1134,9 +1314,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.51037cm</Top>
-            <Height>6.9875cm</Height>
-            <Width>16.21896cm</Width>
+            <Left>0.3175cm</Left>
+            <Height>7.35791cm</Height>
+            <Width>16.04761cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1144,11 +1324,70 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.03125in</Height>
+        <Height>3.17708in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>6.56795in</Width>
       <Page>
+        <PageHeader>
+          <Height>3.46604cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Arus Kas</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>20pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>LightBlue</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.05833cm</Top>
+              <Left>0.46239cm</Left>
+              <Height>1.235cm</Height>
+              <Width>4.77542cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line1">
+              <Top>2.40771cm</Top>
+              <Left>0.56822cm</Left>
+              <Height>0cm</Height>
+              <Width>15.47938cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Color>LightBlue</Color>
+                  <Style>Solid</Style>
+                  <Width>4pt</Width>
+                </Border>
+              </Style>
+            </Line>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>

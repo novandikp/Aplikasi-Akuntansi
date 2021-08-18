@@ -68,7 +68,7 @@
 
     Sub getDataProduk()
         ListSat.ClearSelection()
-        Dim sql As String = "select kodeakun, akun, subklasifikasi, CASE  WHEN tblakun.statusakun = 1  THEN 'Aktif' ELSE 'Tidak Aktif' END as status
+        Dim sql As String = "select kodeakun, akun, subklasifikasi, CASE  WHEN tblakun.statusakun = 1  THEN 'Aktif' ELSE 'Tidak Aktif' END as status, tblakun.defaultstatus
         from tblakun
         inner join tblsubklasifikasi
         on tblakun.idsubklasifikasi  = tblsubklasifikasi.idsubklasifikasi
@@ -94,6 +94,7 @@
                     row.Cells(3).Style.BackColor = Color.FromArgb(255, 87, 34)
                 End If
             Next
+            ListSat.Columns(4).Visible = False
         Catch ex As Exception
         End Try
         styliseDG(ListSat)
@@ -276,8 +277,21 @@
 
     Private Sub ListSat_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListSat.CellClick
         If e.RowIndex >= 0 Then
+            If ListSat.Rows(e.RowIndex).Cells(4).Value.ToString = "1" Then
+                TBKodeAkun.Enabled = False
+                cbSubklasifikasi.Enabled = False
+                cbStatus.Enabled = False
+                Button2.Enabled = False
+            Else
+                TBKodeAkun.Enabled = True
+                cbSubklasifikasi.Enabled = True
+                cbStatus.Enabled = True
+                Button2.Enabled = True
+            End If
             idselected = ListSat.Rows(e.RowIndex).Cells(0).Value
             setDataSelected()
         End If
     End Sub
+
+
 End Class

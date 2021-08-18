@@ -114,7 +114,7 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodejual from t
 
 
 
-    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) 
+    Private Sub btnKeluar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

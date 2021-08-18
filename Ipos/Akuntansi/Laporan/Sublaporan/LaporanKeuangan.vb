@@ -49,7 +49,7 @@
         LaporanNeracaSaldo.Dispose()
     End Sub
 
-    Private Sub MetroLabel14_Click(sender As Object, e As EventArgs) Handles MetroLabel14.Click
+    Private Sub MetroLabel14_Click(sender As Object, e As EventArgs) 
         LaporanJurnalSemua.ShowDialog()
         LaporanJurnalSemua.Dispose()
     End Sub

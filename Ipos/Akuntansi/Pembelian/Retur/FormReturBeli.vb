@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports Npgsql
 
 Public Class FormReturBeli
     Public edited As Boolean = False
@@ -242,8 +241,8 @@ Public Class FormReturBeli
         setProjek()
         getPelanggan()
         setTableColumn()
-        
-        
+
+
         If edited Then
             continueOrder()
             btnCariPenawaran.Enabled = False
@@ -387,7 +386,7 @@ Public Class FormReturBeli
             dialog.idgudang = cbGudang.SelectedValue
         End If
         dialog.visibleHargaJual = False
-        
+
         dialog.eCari.Text = tbKodeProduk.Text
         Dim dialogResult As DialogResult = dialog.ShowDialog
         If dialogResult = DialogResult.OK Then
@@ -834,9 +833,9 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
 
         'Default Akun
         Dim akunPersediaan As String = "110004"
-        
+
         Dim akunhutangUsaha As String = "210001"
-        
+
         Dim akunUtangPajak As String = "152001"
 
 
@@ -924,8 +923,8 @@ GROUP by  tblharga.idbarang,T.nilaidasar, B.nilaidasar,T.idharga,B.idharga ,Y.id
         Next
         Dim dialog As New DialogTransaksiBayar
         dialog.total = t
-dialog.klasifikasiBiayaLain ="6900"
-dialog.klasifikasiPotonganHarga="5100"
+        dialog.klasifikasiBiayaLain = "6900"
+        dialog.klasifikasiPotonganHarga = "5100"
         dialog.totalpajak = totalPajak
         If edited Then
             dialog.tableRefrensi = "tblreturbeli"

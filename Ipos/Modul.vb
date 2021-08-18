@@ -1,7 +1,6 @@
-﻿Imports System.Data.OleDb
-Imports System.Net.Mail
-Imports System.Text
+﻿Imports System.Net.Mail
 Imports System.Security.Cryptography
+Imports System.Text
 Imports Npgsql
 Module Modul
     'ITBrainPOSTheToko25122020ONLINE
@@ -762,7 +761,13 @@ Module Modul
             Case "LB"
                 table = "tblkelebihanbayarbeli"
                 key = "kodekelebihanbayarbeli"
-
+                'Stok Opname
+            Case "ST"
+                table = "tblstokopname"
+                key = "kodestokopname"
+            Case "SM"
+                table = "tblstok"
+                key = "kodestok"
         End Select
         Dim lastId As String
         If getCount("select " & key & " from " & table & " order by " & key & " desc LIMIT 1") > 0 Then

@@ -224,8 +224,8 @@ Public Class FormPenawaranJual
         setProjek()
         getPelanggan()
         setTableColumn()
-        
-        
+
+
         If edited Then
             continueOrder()
         Else

@@ -247,6 +247,7 @@ Partial Class LaporanJurnalPemasukan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(860, 629)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dtAkhir)
@@ -257,6 +258,7 @@ Partial Class LaporanJurnalPemasukan
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
         Me.Name = "LaporanJurnalPemasukan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Jurnal Pemasukan"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()

@@ -58,7 +58,7 @@ Partial Class LaporanBukuBesarLengkap
         'dtAkhir
         '
         Me.dtAkhir.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
-        Me.dtAkhir.Location = New System.Drawing.Point(372, 52)
+        Me.dtAkhir.Location = New System.Drawing.Point(372, 64)
         Me.dtAkhir.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtAkhir.Name = "dtAkhir"
         Me.dtAkhir.Size = New System.Drawing.Size(320, 29)
@@ -68,7 +68,7 @@ Partial Class LaporanBukuBesarLengkap
         'dtAwal
         '
         Me.dtAwal.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
-        Me.dtAwal.Location = New System.Drawing.Point(18, 52)
+        Me.dtAwal.Location = New System.Drawing.Point(18, 64)
         Me.dtAwal.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtAwal.Name = "dtAwal"
         Me.dtAwal.Size = New System.Drawing.Size(324, 29)
@@ -79,7 +79,8 @@ Partial Class LaporanBukuBesarLengkap
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(18, 11)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label1.Location = New System.Drawing.Point(18, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 125
@@ -164,7 +165,7 @@ Partial Class LaporanBukuBesarLengkap
         Me.eCari.CustomButton.UseSelectable = True
         Me.eCari.CustomButton.Visible = False
         Me.eCari.Lines = New String(-1) {}
-        Me.eCari.Location = New System.Drawing.Point(118, 6)
+        Me.eCari.Location = New System.Drawing.Point(118, 18)
         Me.eCari.MaxLength = 32767
         Me.eCari.Name = "eCari"
         Me.eCari.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -185,7 +186,7 @@ Partial Class LaporanBukuBesarLengkap
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button4.Image = Global.Ipos.My.Resources.Resources.refresh__2_
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(622, 4)
+        Me.Button4.Location = New System.Drawing.Point(622, 16)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(69, 26)
         Me.Button4.TabIndex = 126
@@ -247,6 +248,7 @@ Partial Class LaporanBukuBesarLengkap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(860, 629)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dtAkhir)
@@ -257,7 +259,8 @@ Partial Class LaporanBukuBesarLengkap
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
         Me.Name = "LaporanBukuBesarLengkap"
-        Me.Text = "LaporanBukuBesarLengkap"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Laporan Buku Besar Lengkap"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()

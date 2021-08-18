@@ -110,7 +110,7 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodejual from t
 
 
 
-    Private Sub btnKeluar_Click(sender As Object, e As EventArgs) 
+    Private Sub btnKeluar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -167,6 +167,7 @@ left join (SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodejual from t
 
         If jumlahBayar > jmlPiutang Then
             dialogError("Melebihi Kelebihan")
+            Return
         End If
         If dialog("Apakah anda yakin untuk menyimpan kelebihan penjualan ini ?") Then
             simpanData()

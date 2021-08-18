@@ -10,26 +10,22 @@
 
         If ringkasan Then
             makeFillDG(ListSat)
-
-
             If cbSub.SelectedIndex > 0 Then
                 sql = "SELECT tgljual, kodejual, tblkontak.pelanggan as idkontak,total, totalpajak
-FROM tbljual
-INNER join tblkontak
-on tblkontak.idpelanggan = tbljual.pelanggan
-        WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
-          and kodedepartemen ='" & cbSub.SelectedValue & "' and tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
+                FROM tbljual
+                INNER join tblkontak
+                on tblkontak.idpelanggan = tbljual.pelanggan
+                WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
+                and kodedepartemen ='" & cbSub.SelectedValue & "' and tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
-
             Else
                 sql = "SELECT tgljual, kodejual, tblkontak.pelanggan as idkontak,total, totalpajak
-FROM tbljual
-INNER join tblkontak
-on tblkontak.idpelanggan = tbljual.pelanggan
-        WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
-          and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
-        '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
-
+                FROM tbljual
+                INNER join tblkontak
+                on tblkontak.idpelanggan = tbljual.pelanggan
+                WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
+                  and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
+                '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
             End If
         Else
             If cbSub.SelectedIndex > 0 Then
@@ -57,18 +53,10 @@ WHERE (kodejual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & eCari.Tex
         Debug.WriteLine(sql)
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            If ringkasan Then
+            Else
 
-
+            End If
         Catch ex As Exception
 
         End Try

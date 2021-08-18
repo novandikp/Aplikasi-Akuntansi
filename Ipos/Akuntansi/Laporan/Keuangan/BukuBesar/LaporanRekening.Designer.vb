@@ -54,7 +54,8 @@ Partial Class LaporanRekening
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(12, 24)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label1.Location = New System.Drawing.Point(19, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 120
@@ -177,7 +178,7 @@ Partial Class LaporanRekening
         Me.ListSat.EnableHeadersVisualStyles = False
         Me.ListSat.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.ListSat.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ListSat.Location = New System.Drawing.Point(0, 56)
+        Me.ListSat.Location = New System.Drawing.Point(15, 56)
         Me.ListSat.MultiSelect = False
         Me.ListSat.Name = "ListSat"
         Me.ListSat.ReadOnly = True
@@ -192,7 +193,7 @@ Partial Class LaporanRekening
         Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListSat.Size = New System.Drawing.Size(800, 320)
+        Me.ListSat.Size = New System.Drawing.Size(773, 320)
         Me.ListSat.TabIndex = 117
         '
         'Button4
@@ -225,7 +226,7 @@ Partial Class LaporanRekening
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Ipos.My.Resources.Resources.bgform
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -234,6 +235,7 @@ Partial Class LaporanRekening
         Me.Controls.Add(Me.ListSat)
         Me.Controls.Add(Me.Button4)
         Me.Name = "LaporanRekening"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LaporanRekening"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()

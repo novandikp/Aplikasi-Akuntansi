@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports Npgsql
 
 Public Class FormPengirimanJual
     Public edited As Boolean = False
@@ -242,8 +241,8 @@ Public Class FormPengirimanJual
         setProjek()
         getPelanggan()
         setTableColumn()
-        
-        
+
+
         If edited Then
             continueOrder()
             btnCariPenawaran.Enabled = False

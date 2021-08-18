@@ -160,7 +160,7 @@
                     dialogError("Data gagal dihapus karena data telah digunakan")
                 End If
             End If
-            Else
+        Else
             dialogError("Pilih item terlebih dahulu")
         End If
     End Sub

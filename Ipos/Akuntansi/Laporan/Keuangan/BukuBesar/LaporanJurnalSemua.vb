@@ -4,7 +4,7 @@
     Dim dv As DataView
     Dim sql As String
     Sub getDataLaporan()
-        sql = "SELECT tipe, tbljurnal.kodeakun, tblakun.akun, tgljurnal, deskripsijurnal, koderefrensi, kodedepartemen, debit, kredit, COALESCE(kodeprojek,'N\A') AS kodeprojek from tbljurnal	    
+        sql = "SELECT tipe as dari, tbljurnal.kodeakun as idakun, tblakun.akun, tgljurnal, deskripsijurnal as deskripsi, koderefrensi, kodedepartemen, debit, kredit, COALESCE(kodeprojek,'N\A') AS kodeprojek from tbljurnal	    
     inner JOIN tblakun
     on tbljurnal.kodeakun = tblakun.kodeakun
         WHERE deskripsijurnal ILIKE '%" & eCari.Text & "%'
