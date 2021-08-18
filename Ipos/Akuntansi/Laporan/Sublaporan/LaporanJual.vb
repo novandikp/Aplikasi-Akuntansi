@@ -121,7 +121,11 @@
     End Sub
 
     Private Sub MetroLabel21_Click(sender As Object, e As EventArgs) Handles MetroLabel21.Click
-        LaporanDetailPesananJualKirim.ShowDialog()
-        LaporanDetailPesananJualKirim.Dispose()
+
+
+    End Sub
+
+    Private Sub LaporanJual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

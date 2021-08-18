@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Public Class PreviewPenawaran
 
-    Public detail As Boolean = True
+    Public detail As Boolean = False
     Public ringkasan As Boolean = True
     Public sql As String = ""
     Public dataview As DataView

@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
-Public Class PreviewPesananJual
+Public Class PreviewPesananjual
 
-
+    Public detail As Boolean = False
     Public ringkasan As Boolean = True
     Public sql As String = ""
     Public dataview As DataView
@@ -23,10 +23,12 @@ Public Class PreviewPesananJual
 
     Sub laporanBarangLengkap()
         ReportViewer1.Reset()
-        If ringkasan Then
-            ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.PesananRingkas.rdlc"
+        If detail Then
+            ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.DetailPesananJual.rdlc"
+        ElseIf Not ringkasan Then
+            ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.PesananJualRangkuman.rdlc"
         Else
-            ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.PesananRangkuman.rdlc"
+            ReportViewer1.LocalReport.ReportEmbeddedResource = "Ipos.PesananJualRingkas.rdlc"
         End If
 
         Dim sqlidentitas As String =

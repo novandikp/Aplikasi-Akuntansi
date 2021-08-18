@@ -473,6 +473,24 @@
     <Compile Include="Akuntansi\Laporan\Penjualan\Faktur\Preview\PreviewPenjualanFaktur.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJual.Designer.vb">
+      <DependentUpon>LaporanDetailPesananJual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanPesananJual.Designer.vb">
+      <DependentUpon>LaporanPesananJual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanPesananJual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\Preview\PreviewPesananJual.Designer.vb">
+      <DependentUpon>PreviewPesananJual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\Preview\PreviewPesananJual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Akuntansi\Laporan\Penjualan\Penawaran\LaporanDetailPenawaranJual.Designer.vb">
       <DependentUpon>LaporanDetailPenawaranJual.vb</DependentUpon>
     </Compile>
@@ -507,30 +525,6 @@
       <DependentUpon>PreviewPengiriman.vb</DependentUpon>
     </Compile>
     <Compile Include="Akuntansi\Laporan\Penjualan\Pengiriman\Preview\PreviewPengiriman.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJual.Designer.vb">
-      <DependentUpon>LaporanDetailPesananJual.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJual.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJualKirim.Designer.vb">
-      <DependentUpon>LaporanDetailPesananJualKirim.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJualKirim.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanPesananJual.Designer.vb">
-      <DependentUpon>LaporanPesananJual.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanPesananJual.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\Preview\PreviewPesananJual.Designer.vb">
-      <DependentUpon>PreviewPesananJual.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Akuntansi\Laporan\Penjualan\Pesanan\Preview\PreviewPesananJual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Akuntansi\Laporan\Penjualan\Piutang\LaporanMutasiPiutang.Designer.vb">
@@ -1139,6 +1133,18 @@
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Faktur\LaporanPenjualanFaktur.resx">
       <DependentUpon>LaporanPenjualanFaktur.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJual.resx">
+      <DependentUpon>LaporanDetailPesananJual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanPesananJual.resx">
+      <DependentUpon>LaporanPesananJual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Preview\PreviewPesananJual.resx">
+      <DependentUpon>PreviewPesananJual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Report\DetailPesananJual.rdlc" />
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Report\PesananJualRangkuman.rdlc" />
+    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Report\PesananJualRingkas.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Penawaran\LaporanDetailPenawaranJual.resx">
       <DependentUpon>LaporanDetailPenawaranJual.vb</DependentUpon>
     </EmbeddedResource>
@@ -1162,20 +1168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pengiriman\Report\PengirimanRangkuman.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pengiriman\Report\PengirimanRingkas.rdlc" />
-    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJual.resx">
-      <DependentUpon>LaporanDetailPesananJual.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanDetailPesananJualKirim.resx">
-      <DependentUpon>LaporanDetailPesananJualKirim.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\LaporanPesananJual.resx">
-      <DependentUpon>LaporanPesananJual.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Preview\PreviewPesananJual.resx">
-      <DependentUpon>PreviewPesananJual.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Report\PesananRangkuman.rdlc" />
-    <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Pesanan\Report\PesananRingkas.rdlc" />
     <EmbeddedResource Include="Akuntansi\Laporan\Penjualan\Piutang\LaporanMutasiPiutang.resx">
       <DependentUpon>LaporanMutasiPiutang.vb</DependentUpon>
     </EmbeddedResource>

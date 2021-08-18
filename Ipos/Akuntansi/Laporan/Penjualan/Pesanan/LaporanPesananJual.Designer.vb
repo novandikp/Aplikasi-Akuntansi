@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LaporanPesananJual
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,11 @@ Partial Class LaporanPesananJual
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dtAkhir = New MetroFramework.Controls.MetroDateTime()
         Me.dtAwal = New MetroFramework.Controls.MetroDateTime()
@@ -36,11 +36,11 @@ Partial Class LaporanPesananJual
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.cbSub = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.eCari = New MetroFramework.Controls.MetroTextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ListSat = New MetroFramework.Controls.MetroGrid()
+        Me.cbSub = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,41 +50,41 @@ Partial Class LaporanPesananJual
         Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.SystemColors.Control
-        Me.Button1.Location = New System.Drawing.Point(358, 539)
+        Me.Button1.Location = New System.Drawing.Point(358, 552)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(144, 32)
-        Me.Button1.TabIndex = 139
+        Me.Button1.TabIndex = 129
         Me.Button1.Text = "Cetak"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'dtAkhir
         '
         Me.dtAkhir.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
-        Me.dtAkhir.Location = New System.Drawing.Point(368, 91)
+        Me.dtAkhir.Location = New System.Drawing.Point(368, 104)
         Me.dtAkhir.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtAkhir.Name = "dtAkhir"
         Me.dtAkhir.Size = New System.Drawing.Size(320, 29)
-        Me.dtAkhir.TabIndex = 138
+        Me.dtAkhir.TabIndex = 128
         Me.dtAkhir.UseCustomForeColor = True
         '
         'dtAwal
         '
         Me.dtAwal.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
-        Me.dtAwal.Location = New System.Drawing.Point(18, 91)
+        Me.dtAwal.Location = New System.Drawing.Point(18, 104)
         Me.dtAwal.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtAwal.Name = "dtAwal"
         Me.dtAwal.Size = New System.Drawing.Size(324, 29)
-        Me.dtAwal.TabIndex = 137
+        Me.dtAwal.TabIndex = 127
         Me.dtAwal.UseCustomForeColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(18, 20)
+        Me.Label1.Location = New System.Drawing.Point(18, 33)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
-        Me.Label1.TabIndex = 135
+        Me.Label1.TabIndex = 125
         Me.Label1.Text = "Kata Kunci : "
         '
         'StatusStrip1
@@ -94,7 +94,7 @@ Partial Class LaporanPesananJual
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 607)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(860, 22)
-        Me.StatusStrip1.TabIndex = 134
+        Me.StatusStrip1.TabIndex = 124
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
@@ -151,29 +151,6 @@ Partial Class LaporanPesananJual
         Me.ToolStripStatusLabel6.Size = New System.Drawing.Size(115, 17)
         Me.ToolStripStatusLabel6.Text = "[CTRL+END] : Keluar"
         '
-        'cbSub
-        '
-        Me.cbSub.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cbSub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSub.FormattingEnabled = True
-        Me.cbSub.ItemHeight = 16
-        Me.cbSub.Location = New System.Drawing.Point(118, 51)
-        Me.cbSub.Name = "cbSub"
-        Me.cbSub.Size = New System.Drawing.Size(264, 24)
-        Me.cbSub.TabIndex = 140
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(18, 55)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 13)
-        Me.Label2.TabIndex = 141
-        Me.Label2.Text = "Klasifikasi :"
-        '
         'eCari
         '
         '
@@ -189,7 +166,7 @@ Partial Class LaporanPesananJual
         Me.eCari.CustomButton.UseSelectable = True
         Me.eCari.CustomButton.Visible = False
         Me.eCari.Lines = New String(-1) {}
-        Me.eCari.Location = New System.Drawing.Point(118, 15)
+        Me.eCari.Location = New System.Drawing.Point(118, 28)
         Me.eCari.MaxLength = 32767
         Me.eCari.Name = "eCari"
         Me.eCari.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -199,7 +176,7 @@ Partial Class LaporanPesananJual
         Me.eCari.SelectionStart = 0
         Me.eCari.ShortcutsEnabled = True
         Me.eCari.Size = New System.Drawing.Size(480, 20)
-        Me.eCari.TabIndex = 133
+        Me.eCari.TabIndex = 123
         Me.eCari.UseSelectable = True
         Me.eCari.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.eCari.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -210,10 +187,10 @@ Partial Class LaporanPesananJual
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button4.Image = Global.Ipos.My.Resources.Resources.refresh__2_
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(622, 13)
+        Me.Button4.Location = New System.Drawing.Point(622, 26)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(69, 26)
-        Me.Button4.TabIndex = 136
+        Me.Button4.TabIndex = 126
         Me.Button4.Text = "Refresh"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.UseVisualStyleBackColor = False
@@ -230,62 +207,86 @@ Partial Class LaporanPesananJual
         Me.ListSat.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListSat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.ListSat.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft PhagsPa", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListSat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft PhagsPa", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListSat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.ListSat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ListSat.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ListSat.DefaultCellStyle = DataGridViewCellStyle2
         Me.ListSat.EnableHeadersVisualStyles = False
         Me.ListSat.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.ListSat.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ListSat.Location = New System.Drawing.Point(-2, 147)
+        Me.ListSat.Location = New System.Drawing.Point(-2, 160)
         Me.ListSat.MultiSelect = False
         Me.ListSat.Name = "ListSat"
         Me.ListSat.ReadOnly = True
         Me.ListSat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ListSat.Size = New System.Drawing.Size(864, 362)
-        Me.ListSat.TabIndex = 132
+        Me.ListSat.TabIndex = 122
         '
-        'LaporanPesananJual
+        'cbSub
+        '
+        Me.cbSub.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cbSub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSub.FormattingEnabled = True
+        Me.cbSub.ItemHeight = 16
+        Me.cbSub.Location = New System.Drawing.Point(118, 64)
+        Me.cbSub.Name = "cbSub"
+        Me.cbSub.Size = New System.Drawing.Size(264, 24)
+        Me.cbSub.TabIndex = 130
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(18, 68)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.TabIndex = 131
+        Me.Label2.Text = "Klasifikasi :"
+        '
+        'LaporanPenawaranRingkas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Ipos.My.Resources.Resources.bgform
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(860, 629)
+        Me.Controls.Add(Me.cbSub)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dtAkhir)
         Me.Controls.Add(Me.dtAwal)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.cbSub)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.eCari)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
-        Me.Name = "LaporanPesananJual"
-        Me.Text = "LaporanPesananJual"
+        Me.Name = "LaporanPenawaranRingkas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "LaporanPenawaranRingkas"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.ListSat, System.ComponentModel.ISupportInitialize).EndInit()
@@ -305,9 +306,9 @@ Partial Class LaporanPesananJual
     Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
-    Friend WithEvents cbSub As ComboBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents eCari As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents ListSat As MetroFramework.Controls.MetroGrid
+    Friend WithEvents cbSub As ComboBox
+    Friend WithEvents Label2 As Label
 End Class
