@@ -1,9 +1,15 @@
 ﻿Partial Class Akuntansi
+    Partial Public Class StokDataTable
+    End Class
+
+    Partial Public Class ProdukDataTable
+    End Class
+
+    Partial Public Class UmurPiutangDataTable
+    End Class
+
     Partial Public Class ArusKasDataTable
-        Private Sub ArusKasDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
 
-
-        End Sub
 
     End Class
 

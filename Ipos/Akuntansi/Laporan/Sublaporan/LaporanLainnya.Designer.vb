@@ -353,6 +353,7 @@ Partial Class LaporanLainnya
         Me.ClientSize = New System.Drawing.Size(912, 540)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "LaporanLainnya"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LaporanLainnya"
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()

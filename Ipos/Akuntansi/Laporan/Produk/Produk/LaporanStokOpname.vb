@@ -8,22 +8,24 @@
 
         Dim cari As String = eCari.Text
         If cbSub.SelectedIndex = 0 Then
-            sql = "SELECT  tglstokopname,tblstokopname.kodestokopname, gudang,deskripsiopname, idproduk,produk,fisik,selisih,buku, satuan, hpp
-from tbldetailstokopname inner join tblstokopname on tblstokopname.kodestokopname = tbldetailstokopname.kodestokopname
-inner join tblgudang on tblstokopname.kodegudang = tblgudang.idgudang
-inner join tblproduk on tblproduk.idproduk = tbldetailstokopname.kodebarang
+            sql = "SELECT kodestokopname, produk,buku, fisik, satuan, gudang, tglstokopname, akun, departemen  from tblstokopname
 inner join tblakun on tblakun.kodeakun = tblstokopname.kodeakun
-inner join tblsatuan on tblsatuan.kodesatuan = tbldetailstokopname.idsatuan
+inner join tblharga on tblharga.idharga = tblstokopname.idharga
+inner join tblproduk on tblproduk.idproduk = tblharga.idbarang
+inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan
+inner join tblgudang on tblgudang.idgudang = tblstokopname.kodegudang
+inner join tbldepartemen on tbldepartemen.iddepartemen = tblstokopname.kodedepartemen
 where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tglstokopname BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
 "
         Else
-            sql = "SELECT  tglstokopname,tblstokopname.kodestokopname, gudang,deskripsiopname, idproduk,produk,fisik,selisih,buku, satuan, hpp
-from tbldetailstokopname inner join tblstokopname on tblstokopname.kodestokopname = tbldetailstokopname.kodestokopname
-inner join tblgudang on tblstokopname.kodegudang = tblgudang.idgudang
-inner join tblproduk on tblproduk.idproduk = tbldetailstokopname.kodebarang
+            sql = "SELECT kodestokopname, produk,buku, fisik, satuan, gudang, tglstokopname, akun, departemen  from tblstokopname
 inner join tblakun on tblakun.kodeakun = tblstokopname.kodeakun
-inner join tblsatuan on tblsatuan.kodesatuan = tbldetailstokopname.idsatuan
-where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tglstokopname BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' and kodegudang = '" & cbSub.SelectedValue & "'
+inner join tblharga on tblharga.idharga = tblstokopname.idharga
+inner join tblproduk on tblproduk.idproduk = tblharga.idbarang
+inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan
+inner join tblgudang on tblgudang.idgudang = tblstokopname.kodegudang
+inner join tbldepartemen on tbldepartemen.iddepartemen = tblstokopname.kodedepartemen
+where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tglstokopname BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' and tblstokopname.kodegudang = '" & cbSub.SelectedValue & "'
 "
         End If
 
@@ -36,16 +38,16 @@ where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & c
         Debug.WriteLine("SQL CARI :" & sql)
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).HeaderText = "Kode"
+            ListSat.Columns(1).HeaderText = "Produk"
+            ListSat.Columns(2).HeaderText = "Buku"
+            ListSat.Columns(3).HeaderText = "Fisik"
+            ListSat.Columns(4).HeaderText = "Satuan"
+            ListSat.Columns(5).HeaderText = "Gudang"
+            ListSat.Columns(6).HeaderText = "Tanggal"
+            ListSat.Columns(7).HeaderText = "Akun"
+            ListSat.Columns(8).HeaderText = "Departemen"
+
         Catch ex As Exception
 
         End Try
@@ -78,9 +80,9 @@ where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & c
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewStokopname.dataview = dv
+        PreviewStokopname.Show()
+
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

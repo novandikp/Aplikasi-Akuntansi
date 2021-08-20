@@ -21,15 +21,15 @@
     End Sub
 
     Private Sub MetroLink3_Click(sender As Object, e As EventArgs) Handles MetroLink3.Click
-        LaporanPenawaranRingkas.ringkasan = True
-        LaporanPenawaranRingkas.ShowDialog()
-        LaporanPenawaranRingkas.Dispose()
+        LaporanPenawaranJual.ringkasan = True
+        LaporanPenawaranJual.ShowDialog()
+        LaporanPenawaranJual.Dispose()
     End Sub
 
     Private Sub MetroLabel2_Click(sender As Object, e As EventArgs) Handles MetroLabel2.Click
-        LaporanPenawaranRingkas.ringkasan = False
-        LaporanPenawaranRingkas.ShowDialog()
-        LaporanPenawaranRingkas.Dispose()
+        LaporanPenawaranJual.ringkasan = False
+        LaporanPenawaranJual.ShowDialog()
+        LaporanPenawaranJual.Dispose()
     End Sub
 
     Private Sub MetroLabel4_Click(sender As Object, e As EventArgs) Handles MetroLabel4.Click
@@ -45,15 +45,15 @@
     End Sub
 
     Private Sub MetroLabel24_Click(sender As Object, e As EventArgs) Handles MetroLabel24.Click
-        LaporanPengiriman.ringkasan = True
-        LaporanPengiriman.ShowDialog()
-        LaporanPengiriman.Dispose()
+        LaporanPengirimanJual.ringkasan = True
+        LaporanPengirimanJual.ShowDialog()
+        LaporanPengirimanJual.Dispose()
     End Sub
 
     Private Sub MetroLabel23_Click(sender As Object, e As EventArgs) Handles MetroLabel23.Click
-        LaporanPengiriman.ringkasan = False
-        LaporanPengiriman.ShowDialog()
-        LaporanPengiriman.Dispose()
+        LaporanPengirimanJual.ringkasan = False
+        LaporanPengirimanJual.ShowDialog()
+        LaporanPengirimanJual.Dispose()
     End Sub
 
     Private Sub MetroLabel1_Click(sender As Object, e As EventArgs) Handles MetroLabel1.Click
@@ -84,15 +84,15 @@
     End Sub
 
     Private Sub MetroLabel9_Click(sender As Object, e As EventArgs) Handles MetroLabel9.Click
-        LaporanReturPenjualan.ringkasan = True
-        LaporanReturPenjualan.ShowDialog()
-        LaporanReturPenjualan.Dispose()
+        LaporanReturJual.ringkasan = True
+        LaporanReturJual.ShowDialog()
+        LaporanReturJual.Dispose()
     End Sub
 
     Private Sub MetroLabel17_Click(sender As Object, e As EventArgs) Handles MetroLabel17.Click
-        LaporanReturPenjualan.ringkasan = False
-        LaporanReturPenjualan.ShowDialog()
-        LaporanReturPenjualan.Dispose()
+        LaporanReturJual.ringkasan = False
+        LaporanReturJual.ShowDialog()
+        LaporanReturJual.Dispose()
     End Sub
 
     Private Sub MetroLabel3_Click(sender As Object, e As EventArgs) Handles MetroLabel3.Click
@@ -111,8 +111,8 @@
     End Sub
 
     Private Sub MetroLabel25_Click(sender As Object, e As EventArgs) Handles MetroLabel25.Click
-        LaporanDetailReturPenjualan.ShowDialog()
-        LaporanDetailReturPenjualan.Dispose()
+        LaporanDetailReturJual.ShowDialog()
+        LaporanDetailReturJual.Dispose()
     End Sub
 
     Private Sub MetroLabel22_Click(sender As Object, e As EventArgs) Handles MetroLabel22.Click
@@ -120,12 +120,17 @@
         LaporanDetailPengirimanJual.Dispose()
     End Sub
 
-    Private Sub MetroLabel21_Click(sender As Object, e As EventArgs) Handles MetroLabel21.Click
+    Private Sub MetroLabel21_Click(sender As Object, e As EventArgs)
 
 
     End Sub
 
     Private Sub LaporanJual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub MetroLabel11_Click(sender As Object, e As EventArgs) Handles MetroLabel11.Click
+        PreviewTagihanPiutang.ShowDialog()
+        PreviewTagihanPiutang.Dispose()
     End Sub
 End Class

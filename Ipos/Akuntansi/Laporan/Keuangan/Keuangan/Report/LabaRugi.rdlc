@@ -106,7 +106,7 @@
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>Black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -116,10 +116,10 @@
                           <rd:DefaultName>Textbox41</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
+                              <Color>Black</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -141,7 +141,7 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color>White</Color>
+                                    <Color>Black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -153,10 +153,10 @@
                           <rd:DefaultName>Textbox42</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
+                              <Color>Black</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -178,7 +178,7 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color>White</Color>
+                                    <Color>Black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -190,10 +190,10 @@
                           <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
+                              <Color>Black</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -215,7 +215,7 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color>White</Color>
+                                    <Color>Black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -227,10 +227,10 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
+                              <Color>Black</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1045,7 +1045,7 @@
                         <FontFamily>Times New Roman</FontFamily>
                         <FontSize>20pt</FontSize>
                         <FontWeight>Bold</FontWeight>
-                        <Color>LightBlue</Color>
+                        <Color>Black</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1073,7 +1073,7 @@
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
-                  <Color>LightBlue</Color>
+                  <Color>Black</Color>
                   <Style>Solid</Style>
                   <Width>4pt</Width>
                 </Border>

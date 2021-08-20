@@ -6,41 +6,73 @@
 
     Public ringkasan As Boolean = False
     Sub getDataLaporan()
-        sql = "SELECT tbljual.tgljual , tblkontak.pelanggan, tbljual.kodejual, kembali, kembali, kembali, kembali from tbljual inner join tblkontak
-        on tblkontak.idpelanggan = tbljual.pelanggan where kembali > 0 and tgljual <= '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and tblkontak.pelanggan ilike '%" & eCari.Text & "%'"
-        dataLaporan = getData(sql)
+        styliseDG(ListSat)
+        Dim sql As String = "SELECT tgljurnal,
+
+koderefrensi,
+sum(tbljurnal.debit-tbljurnal.kredit) +COALESCE(T.bayar,0) AS piutang,
+0 as piutang1 ,
+0 as piutang2,
+0 as piutang3,
+0,
+tblkontak.pelanggan from tblhistoripiutang inner join tbljurnal on tbljurnal.idjurnal = tblhistoripiutang.idjurnal 
+inner join tblkontak on tblkontak.idpelanggan = tbljurnal.kontak
+left join
+(SELECT sum(tbljurnal.debit-tbljurnal.kredit) as bayar,kodejual from tblhistoribayarpiutang inner join tbljurnal on tbljurnal.idjurnal = tblhistoribayarpiutang.idjurnal group by tblhistoribayarpiutang.kodejual) T  on T.kodejual = tbljurnal.koderefrensi
+ where  koderefrensi ilike '%" & eCari.Text & "%' group by koderefrensi, T.bayar,tgljurnal,tblkontak.pelanggan;"
         Debug.WriteLine(sql)
-        For Each row As DataRow In dataLaporan.Rows
+        Dim datalaporan As DataTable = getData(sql)
+        For Each row As DataRow In datalaporan.Rows
             Dim hariData As Date = CDate(row.Item(0))
+            Dim nilai As Double = toDouble(row.Item(2))
             Dim hariini As Date = dtAwal.Value
-            Dim harike30 As Date = dtAwal.Value.AddDays(-30)
-            Dim harike60 As Date = dtAwal.Value.AddDays(-60)
-            Dim harike90 As Date = dtAwal.Value.AddDays(-90)
+            Dim harike30 As Date = hariini.AddDays(-30)
+            Dim harike60 As Date = hariini.AddDays(-60)
+            Dim harike90 As Date = hariini.AddDays(-90)
+            row.Item(6) = nilai
             If hariData <= hariini And hariData >= harike30 Then
-                row.Item(4) = "0"
-                row.Item(5) = "0"
-                row.Item(6) = "0"
+                row.Item(2) = nilai
+                row.Item(4) = 0
+                row.Item(5) = 0
+                row.Item(3) = 0
             ElseIf hariData < harike30 And hariData >= harike60 Then
-                row.Item(3) = "0"
-                row.Item(5) = "0"
-                row.Item(6) = "0"
+                row.Item(3) = nilai
+                row.Item(2) = 0
+                row.Item(4) = 0
+                row.Item(5) = 0
             ElseIf hariData < harike60 And hariData >= harike90 Then
-                row.Item(4) = "0"
-                row.Item(3) = "0"
-                row.Item(6) = "0"
+                row.Item(4) = nilai
+                row.Item(2) = 0
+                row.Item(3) = 0
+                row.Item(5) = 0
             Else
-                row.Item(4) = "0"
-                row.Item(3) = "0"
-                row.Item(5) = "0"
+                row.Item(4) = 0
+                row.Item(3) = 0
+                row.Item(2) = 0
+                row.Item(5) = nilai
             End If
         Next
-        dv = New DataView(dataLaporan)
-        ListSat.DataSource = dv
-        ListSat.Columns(3).HeaderText = "0 - 30"
-        ListSat.Columns(4).HeaderText = "31 - 60"
-        ListSat.Columns(5).HeaderText = "61 - 90"
-        ListSat.Columns(6).HeaderText = "90 >"
-        styliseDG(ListSat)
+        dv = datalaporan.AsDataView
+
+        ListSat.DataSource = datalaporan
+        makeFillDG(ListSat)
+
+
+        ListSat.Columns(0).HeaderText = "Tanggal"
+        ListSat.Columns(1).HeaderText = "Kode Refrensi"
+        ListSat.Columns(2).HeaderText = "< 30 Hari"
+        ListSat.Columns(3).HeaderText = "30-60 Hari"
+        ListSat.Columns(4).HeaderText = "60-90 Hari"
+        ListSat.Columns(5).HeaderText = "> 90 Hari"
+        ListSat.Columns(7).HeaderText = "Pelanggan"
+
+        ListSat.Columns(6).Visible = False
+        ListSat.Columns(5).DefaultCellStyle.Format = "c0"
+        ListSat.Columns(4).DefaultCellStyle.Format = "c0"
+        ListSat.Columns(2).DefaultCellStyle.Format = "c0"
+        ListSat.Columns(3).DefaultCellStyle.Format = "c0"
+        ListSat.Columns(7).DisplayIndex = 2
+
 
     End Sub
 
@@ -76,9 +108,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPesananJual.dataview = dv
-        PreviewPesananJual.ringkasan = Me.ringkasan
-        PreviewPesananJual.Show()
+        PreviewUmurPiutang.dataview = dv
+
+        PreviewUmurPiutang.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

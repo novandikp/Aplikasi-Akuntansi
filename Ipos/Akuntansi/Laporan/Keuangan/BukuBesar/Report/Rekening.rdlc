@@ -30,7 +30,6 @@
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -42,10 +41,9 @@
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -68,7 +66,6 @@
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -80,10 +77,9 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -121,8 +117,7 @@
                       <rd:DefaultName>kodeklasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>White</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -153,8 +148,7 @@
                       <rd:DefaultName>klasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>White</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -191,8 +185,7 @@
                       <rd:DefaultName>kodesubklasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>White</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>12pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -223,8 +216,7 @@
                       <rd:DefaultName>subklasifikasi</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>White</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>12pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -261,8 +253,7 @@
                       <rd:DefaultName>kodeakun</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>White</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>20pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -293,8 +284,7 @@
                       <rd:DefaultName>akun</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>White</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>20pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -386,7 +376,6 @@
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>20pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Color>LightBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -416,7 +405,6 @@
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
-              <Color>LightBlue</Color>
               <Style>Solid</Style>
               <Width>4pt</Width>
             </Border>

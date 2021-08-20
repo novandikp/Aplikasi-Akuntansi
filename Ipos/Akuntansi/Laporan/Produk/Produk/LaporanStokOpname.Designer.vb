@@ -61,7 +61,7 @@ Partial Class LaporanStokOpname
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(18, 13)
+        Me.Label1.Location = New System.Drawing.Point(18, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 175
@@ -71,7 +71,7 @@ Partial Class LaporanStokOpname
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel5, Me.ToolStripStatusLabel6})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 607)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 564)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(860, 22)
         Me.StatusStrip1.TabIndex = 174
@@ -134,7 +134,7 @@ Partial Class LaporanStokOpname
         'dtAkhir
         '
         Me.dtAkhir.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
-        Me.dtAkhir.Location = New System.Drawing.Point(371, 81)
+        Me.dtAkhir.Location = New System.Drawing.Point(371, 92)
         Me.dtAkhir.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtAkhir.Name = "dtAkhir"
         Me.dtAkhir.Size = New System.Drawing.Size(320, 29)
@@ -144,7 +144,7 @@ Partial Class LaporanStokOpname
         'dtAwal
         '
         Me.dtAwal.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
-        Me.dtAwal.Location = New System.Drawing.Point(21, 81)
+        Me.dtAwal.Location = New System.Drawing.Point(21, 92)
         Me.dtAwal.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtAwal.Name = "dtAwal"
         Me.dtAwal.Size = New System.Drawing.Size(324, 29)
@@ -159,7 +159,7 @@ Partial Class LaporanStokOpname
         Me.cbSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbSub.FormattingEnabled = True
         Me.cbSub.ItemHeight = 16
-        Me.cbSub.Location = New System.Drawing.Point(118, 44)
+        Me.cbSub.Location = New System.Drawing.Point(118, 55)
         Me.cbSub.Name = "cbSub"
         Me.cbSub.Size = New System.Drawing.Size(264, 24)
         Me.cbSub.TabIndex = 178
@@ -168,7 +168,7 @@ Partial Class LaporanStokOpname
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(18, 48)
+        Me.Label2.Location = New System.Drawing.Point(18, 59)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 13)
         Me.Label2.TabIndex = 179
@@ -189,7 +189,7 @@ Partial Class LaporanStokOpname
         Me.eCari.CustomButton.UseSelectable = True
         Me.eCari.CustomButton.Visible = False
         Me.eCari.Lines = New String(-1) {}
-        Me.eCari.Location = New System.Drawing.Point(118, 8)
+        Me.eCari.Location = New System.Drawing.Point(118, 19)
         Me.eCari.MaxLength = 32767
         Me.eCari.Name = "eCari"
         Me.eCari.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -210,7 +210,7 @@ Partial Class LaporanStokOpname
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button4.Image = Global.Ipos.My.Resources.Resources.refresh__2_
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(622, 6)
+        Me.Button4.Location = New System.Drawing.Point(622, 17)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(69, 26)
         Me.Button4.TabIndex = 176
@@ -250,7 +250,7 @@ Partial Class LaporanStokOpname
         Me.ListSat.EnableHeadersVisualStyles = False
         Me.ListSat.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.ListSat.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ListSat.Location = New System.Drawing.Point(-2, 126)
+        Me.ListSat.Location = New System.Drawing.Point(-2, 138)
         Me.ListSat.MultiSelect = False
         Me.ListSat.Name = "ListSat"
         Me.ListSat.ReadOnly = True
@@ -265,14 +265,15 @@ Partial Class LaporanStokOpname
         Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListSat.Size = New System.Drawing.Size(864, 362)
+        Me.ListSat.Size = New System.Drawing.Size(864, 349)
         Me.ListSat.TabIndex = 172
         '
         'LaporanStokOpname
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(860, 629)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(860, 586)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -284,6 +285,7 @@ Partial Class LaporanStokOpname
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
         Me.Name = "LaporanStokOpname"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LaporanStokOpname"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()

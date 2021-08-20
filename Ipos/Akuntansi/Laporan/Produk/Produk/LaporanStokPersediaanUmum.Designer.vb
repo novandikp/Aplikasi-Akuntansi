@@ -69,7 +69,7 @@ Partial Class LaporanStokPersediaanUmum
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel5, Me.ToolStripStatusLabel6})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 607)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 564)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(860, 22)
         Me.StatusStrip1.TabIndex = 174
@@ -240,14 +240,15 @@ Partial Class LaporanStokPersediaanUmum
         Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListSat.Size = New System.Drawing.Size(864, 362)
+        Me.ListSat.Size = New System.Drawing.Size(864, 364)
         Me.ListSat.TabIndex = 172
         '
         'LaporanStokPersediaanUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(860, 629)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(860, 586)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -257,6 +258,7 @@ Partial Class LaporanStokPersediaanUmum
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
         Me.Name = "LaporanStokPersediaanUmum"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LaporanStokPersediaanUmum"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()

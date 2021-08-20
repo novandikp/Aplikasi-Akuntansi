@@ -10,7 +10,7 @@
     Sub getDataLaporan()
 
         Dim cari As String = eCari.Text
-        sql = "SELECT iddepartemen, departemen, pelanggan from tbldepartemen inner join tblkontak on tblkontak.idpelanggan = tbldepartemen.penanggunjawab where (pelanggan ilike '%" & cari & "%' or iddepartemen ilike '%" & cari & "%' or departemen ilike '%" & cari & "%')"
+        sql = "SELECT iddepartemen as kodedepartemen, departemen, pelanggan from tbldepartemen inner join tblkontak on tblkontak.idpelanggan = tbldepartemen.penanggunjawab where (pelanggan ilike '%" & cari & "%' or iddepartemen ilike '%" & cari & "%' or departemen ilike '%" & cari & "%')"
 
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
@@ -19,20 +19,13 @@
         Debug.WriteLine("SQL CARI :" & sql)
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).HeaderText = "Kode Departemen"
+            ListSat.Columns(1).HeaderText = "Departemen"
+            ListSat.Columns(2).HeaderText = "Penanggung Jawab"
         Catch ex As Exception
 
         End Try
-
+        makeFillDG(ListSat)
 
     End Sub
 
@@ -50,9 +43,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewLaporanDepartemen.dataview = dv
+
+        PreviewLaporanDepartemen.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs)

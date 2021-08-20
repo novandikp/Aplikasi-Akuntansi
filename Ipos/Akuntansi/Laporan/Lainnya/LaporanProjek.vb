@@ -10,29 +10,30 @@
     Sub getDataLaporan()
 
         Dim cari As String = eCari.Text
-        sql = "SELECT idprojek, projek, tglpesanan, tglkirim, tblkontak.pelanggan from tblprojek inner join tblkontak on tblkontak.idpelanggan = tblprojek.pelanggan where (tblkontak.pelanggan ilike '%" & cari & "%' or projek ilike '%" & cari & "%' )"
+        sql = "SELECT idprojek, projek, tblkontak.pelanggan,manager.pelanggan as manajer, persentase || '%'  as persentase,status from tblprojek 
+inner join tblkontak on tblkontak.idpelanggan = tblprojek.pelanggan 
+inner join tblkontak as manager on manager.idpelanggan = tblprojek.manajer 
+inner join tblstatus on tblstatus.idstatus = tblprojek.idstatus
+ where (tblkontak.pelanggan ilike '%" & cari & "%' or projek ilike '%" & cari & "%' )"
 
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
 
         ListSat.DataSource = dv
-        Debug.WriteLine("SQL CARI :" & sql)
+
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).HeaderText = "Kode Projek"
+            ListSat.Columns(1).HeaderText = "Projek"
+            ListSat.Columns(2).HeaderText = "Pelanggan"
+            ListSat.Columns(3).HeaderText = "Manajer"
+            ListSat.Columns(4).HeaderText = "Persentase"
+            ListSat.Columns(5).HeaderText = "Status"
+
         Catch ex As Exception
 
         End Try
-
+        makeFillDG(ListSat)
 
     End Sub
 
@@ -50,9 +51,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewLaporanProjek.dataview = dv
+
+        PreviewLaporanProjek.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs)

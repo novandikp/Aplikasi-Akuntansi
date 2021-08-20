@@ -10,7 +10,7 @@
     Sub getDataLaporan()
 
         Dim cari As String = eCari.Text
-        sql = "SELECT idpelanggan, pelanggan, alamat, notelp, posisi, bayarpiutang, bayarhutang, sisapiutang, sisahutang from tblkontak where posisi ilike '%" & klasifikasi & "%' and (pelanggan ilike '%" & cari & "%' or alamat ilike '%" & cari & "%' or notelp ilike '%" & cari & "%')"
+        sql = "SELECT  pelanggan, alamat, notelp, posisi from tblkontak where posisi ilike '%" & klasifikasi & "%' and (pelanggan ilike '%" & cari & "%' or alamat ilike '%" & cari & "%' or notelp ilike '%" & cari & "%')"
 
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
@@ -18,21 +18,11 @@
         ListSat.DataSource = dv
         Debug.WriteLine("SQL CARI :" & sql)
         styliseDG(ListSat)
-        Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
-        Catch ex As Exception
-
-        End Try
-
+        ListSat.Columns(0).HeaderText = "Kontak"
+        ListSat.Columns(1).HeaderText = "Alamat"
+        ListSat.Columns(2).HeaderText = "No Telp"
+        ListSat.Columns(3).HeaderText = "Posisi"
+        makeFillDG(ListSat)
 
     End Sub
 
@@ -50,9 +40,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewLaporanKontak.dataview = dv
+        PreviewLaporanKontak.judul = klasifikasi
+        PreviewLaporanKontak.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs)

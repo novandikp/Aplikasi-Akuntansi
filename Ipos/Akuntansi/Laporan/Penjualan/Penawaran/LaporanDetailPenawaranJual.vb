@@ -75,9 +75,9 @@ WHERE (tblpenawaranjual.kodepenawaranjual ILIKE '%" & eCari.Text & "%' or tblkon
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.detail = True
-        PreviewPenawaran.Show()
+        PreviewPenawaranJual.dataview = dv
+        PreviewPenawaranJual.detail = True
+        PreviewPenawaranJual.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

@@ -8,37 +8,29 @@
     Sub getDataLaporan()
 
         Dim cari As String = eCari.Text
-        sql = "(select 0 as idhistoristok,tblproduk.produk, tblsatuan.satuan, max(tglhistori) as tglhistori, 0 as masuk,0 as keluar, 0 as hpp, sum(masuk -keluar) as sisa,
-round(sum((masuk -keluar)* hpp)/sum(masuk -keluar)) as sisahpp from tblhistoristok inner join tblproduk on tblhistoristok.idproduk = tblproduk.idproduk inner join tblsatuan on tblsatuan.kodesatuan = tblhistoristok.idsatuan
-where tglhistori < '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' GROUP by tblproduk.idproduk, tblsatuan.kodesatuan)
-UNION  
-(select idhistoristok,tblproduk.produk, tblsatuan.satuan,tglhistori , masuk, keluar ,hpp, sum(masuk-keluar) over (PARTITION by tblhistoristok.idproduk, tblhistoristok.idsatuan order by tglhistori,idhistoristok) + COALESCE( T.awal,0)
-as sisa, round((sum((masuk-keluar) * hpp)  over (PARTITION by tblhistoristok.idproduk, tblhistoristok.idsatuan order by tglhistori,idhistoristok) + COALESCE(T.awalhpp,0))/ (sum(masuk-keluar) over (PARTITION by tblhistoristok.idproduk, tblhistoristok.idsatuan order by tglhistori,idhistoristok) + COALESCE( T.awal,0))) as sisahpp from tblhistoristok 
-inner join tblproduk on tblhistoristok.idproduk = tblproduk.idproduk 
-inner join tblsatuan on tblsatuan.kodesatuan = tblhistoristok.idsatuan 
-left join (SELECT sum(masuk-keluar)as awal,sum((masuk-keluar)* hpp) as awalhpp,idproduk,idsatuan from tblhistoristok where tglhistori < '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' GROUP by idproduk,idsatuan) T 
-on T.idsatuan = tblsatuan.kodesatuan and T.idproduk = tblproduk.idproduk
-where tglhistori BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "') order by produk, satuan,tglhistori, idhistoristok;"
-
-
+        sql = "select tblharga.idharga,produk,refrensi,tglhistori, masuk, keluar, sum(masuk -keluar) over (PARTITION by tblhistoristok.idharga order by tblhistoristok.idharga,tblhistoristok, idhistoristok) as sisa,satuan,  tblhistoristok.hpp, sum(masuk -keluar) over (PARTITION by tblhistoristok.idharga order by tblhistoristok.idharga,tblhistoristok, idhistoristok) * tblhistoristok.hpp as nilai from tblhistoristok 
+inner join tblharga on tblharga.idharga = tblhistoristok.idharga
+inner join tblproduk on tblproduk.idproduk = tblharga.idbarang
+inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan
+where produk ILIKE '%" & cari & "%' AND tglhistori BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
+        order by tblhistoristok.idharga, tblhistoristok, idhistoristok"
 
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
-        dv.RowFilter = "produk like '%" & cari & "%'"
         ListSat.DataSource = dv
         Debug.WriteLine("SQL CARI :" & sql)
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).Visible = False
+            ListSat.Columns(1).HeaderText = "Produk"
+            ListSat.Columns(2).HeaderText = "Refrensi"
+            ListSat.Columns(3).HeaderText = "Tanggal"
+            ListSat.Columns(4).HeaderText = "Masuk"
+            ListSat.Columns(5).HeaderText = "Keluar"
+            ListSat.Columns(6).HeaderText = "Sisa"
+            ListSat.Columns(7).HeaderText = "Satuan"
+            ListSat.Columns(8).HeaderText = "HPP"
+            ListSat.Columns(9).HeaderText = "Nilai"
         Catch ex As Exception
 
         End Try
@@ -60,9 +52,10 @@ where tglhistori BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' and '" & 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewStok.dataview = dv
+
+        PreviewStok.Show()
+
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs)

@@ -5,31 +5,28 @@
 
     Public ringkasan As Boolean = False
     Sub getDataLaporan()
-
-
-
         If ringkasan Then
             makeFillDG(ListSat)
             If cbSub.SelectedIndex > 0 Then
-                sql = "SELECT tgljual, kodejual, tblkontak.pelanggan as idkontak,total, totalpajak
-                FROM tbljual
-                INNER join tblkontak
-                on tblkontak.idpelanggan = tbljual.pelanggan
-                WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
-                and kodedepartemen ='" & cbSub.SelectedValue & "' and tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
+                sql = "SELECT tgljual as tglpenawaran,  kodejual as kodepenawaranjual, tblkontak.pelanggan as idkontak,total, totalpajak
+FROM tbljual
+INNER join tblkontak
+on tblkontak.idpelanggan = tbljual.pelanggan
+        WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
+          and kodedepartemen ='" & cbSub.SelectedValue & "' and tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
             Else
-                sql = "SELECT tgljual, kodejual, tblkontak.pelanggan as idkontak,total, totalpajak
-                FROM tbljual
-                INNER join tblkontak
-                on tblkontak.idpelanggan = tbljual.pelanggan
-                WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
-                  and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
-                '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
+                sql = "SELECT tgljual as tglpenawaran,  kodejual as kodepenawaranjual, tblkontak.pelanggan as idkontak,total, totalpajak
+FROM tbljual
+INNER join tblkontak
+on tblkontak.idpelanggan = tbljual.pelanggan
+        WHERE (kodejual ILIKE '%" & eCari.Text & "%' or tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'  )
+          and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
+        '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
             End If
         Else
             If cbSub.SelectedIndex > 0 Then
-                sql = "SELECT tgljual, kodejual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain, bayar,kembali
+                sql = "SELECT tgljual as tglpenawaran, kodejual as kodepenawaranjual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain
 FROM tbljual
 INNER join tbldepartemen
 on tbldepartemen.iddepartemen = tbljual.kodedepartemen
@@ -37,7 +34,7 @@ WHERE (kodejual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & eCari.Tex
           and kodedepartemen ='" & cbSub.SelectedValue & "' and tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy/MM/dd") & "' and 
         '" & dtAkhir.Value.ToString("yyyy/MM/dd") & "'"
             Else
-                sql = "SELECT tgljual, kodejual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain, bayar,kembali
+                sql = "SELECT tgljual as tglpenawaran,  kodejual as kodepenawaranjual, tbldepartemen.departemen as kodedepartemen, COALESCE(kodeprojek,'N\A') as kodeprojek,total, diskonrupiah, diskonpersen, totalpajak, biayalain
 FROM tbljual
 INNER join tbldepartemen
 on tbldepartemen.iddepartemen = tbljual.kodedepartemen
@@ -53,16 +50,33 @@ WHERE (kodejual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & eCari.Tex
         Debug.WriteLine(sql)
         styliseDG(ListSat)
         Try
-            If ringkasan Then
-            Else
 
+            If ringkasan Then
+                ListSat.Columns(0).HeaderText = "Tanggal"
+                ListSat.Columns(1).HeaderText = "Kode Faktur"
+                ListSat.Columns(2).HeaderText = "Pelanggan"
+                ListSat.Columns(3).HeaderText = "Total"
+                ListSat.Columns(4).HeaderText = "Total Pajak"
+            Else
+                ListSat.Columns(0).HeaderText = "Tanggal"
+                ListSat.Columns(1).HeaderText = "Kode Faktur"
+                ListSat.Columns(2).HeaderText = "Departemen"
+                ListSat.Columns(3).HeaderText = "Projek"
+                ListSat.Columns(4).HeaderText = "Total"
+                ListSat.Columns(5).HeaderText = "Diskon Rupiah"
+                ListSat.Columns(6).HeaderText = "Diskon Persen"
+                ListSat.Columns(7).HeaderText = "Total Pajak"
+                ListSat.Columns(8).HeaderText = "Biaya Lain"
+                ListSat.Columns(4).DisplayIndex = 6
             End If
         Catch ex As Exception
 
         End Try
+
+
     End Sub
 
-
+    Public saldoawal As String = "0"
 
     Private Sub getSubKlasifikasi()
         Dim dt As DataTable = getData("select iddepartemen, departemen from tbldepartemen order by iddepartemen")
@@ -78,41 +92,26 @@ WHERE (kodejual ILIKE '%" & eCari.Text & "%' or departemen ILIKE '%" & eCari.Tex
     Private Sub LaporanArusKas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         getSubKlasifikasi()
         getDataLaporan()
-
-
     End Sub
 
-
-
-
-
-    Private Sub cbSub_SelectedIndexChanged(sender As Object, e As EventArgs)
-        getDataLaporan()
-
-    End Sub
 
     Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs) Handles dtAwal.ValueChanged
-
         getDataLaporan()
-
     End Sub
 
     Private Sub dtAkhir_ValueChanged(sender As Object, e As EventArgs) Handles dtAkhir.ValueChanged
         getDataLaporan()
-
     End Sub
 
 
     Private Sub eCari_TextChanged(sender As Object, e As EventArgs) Handles eCari.TextChanged
         getDataLaporan()
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        Previewjual.dataview = dv
+        Previewjual.ringkasan = Me.ringkasan
+        Previewjual.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

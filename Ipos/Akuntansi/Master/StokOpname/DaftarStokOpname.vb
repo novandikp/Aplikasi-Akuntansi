@@ -49,7 +49,7 @@
                 If dialog("Apakah anda yakin untuk menghapus data ini ?") Then
                     Dim sqlhapus = "DELETE FROM tblstokopname where kodestokopname = '" & idselected & "';"
 
-                    exc("update tblstokgudang set stok = stok + (fisik-buku) from ( SELECT kodestokopname, idharga,buku,fisik,kodegudang from tblstokopname ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodestokopname='" & idselected & "'")
+                    exc("update tblstokgudang set stok = stok + (buku-fisik) from ( SELECT kodestokopname, idharga,buku,fisik,kodegudang from tblstokopname ) sub where tblstokgudang.idharga = sub.idharga and tblstokgudang.idgudang= sub.kodegudang and kodestokopname='" & idselected & "'")
                     If exc(sqlhapus) Then
                         exc("DELETE FROM tblhistoristok where refrensi='" & idselected & "';DELETE FROM tbljurnal WHERE koderefrensi='" & idselected & "';")
                         fillData()

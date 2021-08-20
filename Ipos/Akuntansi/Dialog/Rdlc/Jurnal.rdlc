@@ -441,7 +441,6 @@
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -453,10 +452,14 @@
                       <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
                         <PaddingRight>4pt</PaddingRight>
@@ -479,7 +482,6 @@
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -491,10 +493,14 @@
                       <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
                         <PaddingRight>4pt</PaddingRight>
@@ -517,7 +523,6 @@
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -529,10 +534,14 @@
                       <rd:DefaultName>Textbox29</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
                         <PaddingRight>4pt</PaddingRight>
@@ -555,7 +564,6 @@
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -567,10 +575,14 @@
                       <rd:DefaultName>Textbox31</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
                         <PaddingRight>4pt</PaddingRight>
@@ -609,7 +621,7 @@
                       <Style>
                         <Border>
                           <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
@@ -644,7 +656,7 @@
                       <Style>
                         <Border>
                           <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
@@ -680,7 +692,7 @@
                       <Style>
                         <Border>
                           <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
@@ -716,7 +728,7 @@
                       <Style>
                         <Border>
                           <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>4pt</PaddingLeft>
@@ -757,10 +769,12 @@
                       <rd:DefaultName>Textbox34</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -788,10 +802,12 @@
                       <rd:DefaultName>Textbox35</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -826,10 +842,12 @@
                       <rd:DefaultName>Textbox36</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -864,10 +882,12 @@
                       <rd:DefaultName>Textbox37</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightBlue</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -917,7 +937,7 @@
     <Height>2.2955in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.51042in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -935,7 +955,6 @@
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>20pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Color>LightBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -965,9 +984,8 @@
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
-              <Color>LightBlue</Color>
               <Style>Solid</Style>
-              <Width>4pt</Width>
+              <Width>2pt</Width>
             </Border>
           </Style>
         </Line>

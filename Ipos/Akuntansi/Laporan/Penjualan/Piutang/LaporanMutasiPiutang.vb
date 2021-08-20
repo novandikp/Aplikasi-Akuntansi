@@ -7,32 +7,34 @@
 
     Public ringkasan As Boolean = False
     Sub getDataLaporan()
-
+        Dim akunPiutangUsaha As String = "130001"
         If cbSub.SelectedIndex = 0 Then
-            sql = "SELECT tblkontak.pelanggan,COALESCE(
-(SELECT SUM(debit-kredit) from tbljurnal  T where T.kontak = tblkontak.idpelanggan and tgljurnal < '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' GROUP BY kontak),0) as saldoawal
-, SUM(debit) as debit, sum(kredit) as kredit
-from tbljurnal
-inner join tblkontak on 
-tbljurnal.kontak = tblkontak.idpelanggan
-WHERE tblkontak.pelanggan ILIKE '%" & eCari.Text & "%' AND tgljurnal BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'  
-GROUP by tblkontak.idpelanggan"
+            sql = "SELECT tblkontak.pelanggan,SUM(debit) as piutang, sum(kredit) as piutang1, sum(debit-kredit) as piutang2
+            from tbljurnal
+            inner join tblkontak on 
+            tbljurnal.kontak = tblkontak.idpelanggan
+            WHERE tblkontak.pelanggan ILIKE '%" & eCari.Text & "%'   
+            and kodeakun ='" & akunPiutangUsaha & "'
+            GROUP by tblkontak.idpelanggan"
         Else
-            sql = "SELECT tblkontak.pelanggan,COALESCE(
-(SELECT SUM(debit-kredit) from tbljurnal  T where T.kontak = tblkontak.idpelanggan and tgljurnal < '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' GROUP BY kontak),0) as saldoawal
-, SUM(debit) as debit, sum(kredit) as kredit
-from tbljurnal
-inner join tblkontak on 
-tbljurnal.kontak = tblkontak.idpelanggan
-WHERE kodedepartemen = '" & cbSub.SelectedValue.ToString() & "' AND  tblkontak.pelanggan ILIKE '%" & eCari.Text & "%' AND
-tgljurnal BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
-GROUP by tblkontak.idpelanggan"
+            sql = "SELECT tblkontak.pelanggan,SUM(debit) as piutang, sum(kredit) as piutang1, sum(debit-kredit) as piutang2
+            from tbljurnal
+            inner join tblkontak on 
+            tbljurnal.kontak = tblkontak.idpelanggan
+            WHERE kodedepartemen = '" & cbSub.SelectedValue.ToString() & "' AND  tblkontak.pelanggan ILIKE '%" & eCari.Text & "%' 
+            and kodeakun ='" & akunPiutangUsaha & "'
+            GROUP by tblkontak.idpelanggan"
         End If
 
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
         ListSat.DataSource = dv
+        ListSat.Columns(0).HeaderText = "Pelanggan"
+        ListSat.Columns(1).HeaderText = "Jumlah Piutang"
+        ListSat.Columns(2).HeaderText = "Jumlah Bayar"
+        ListSat.Columns(3).HeaderText = "Saldo"
         styliseDG(ListSat)
+        makeFillDG(ListSat)
     End Sub
 
     Public saldoawal As String = "0"
@@ -54,11 +56,11 @@ GROUP by tblkontak.idpelanggan"
     End Sub
 
 
-    Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs) Handles dtAwal.ValueChanged
+    Private Sub dtAwal_ValueChanged(sender As Object, e As EventArgs)
         getDataLaporan()
     End Sub
 
-    Private Sub dtAkhir_ValueChanged(sender As Object, e As EventArgs) Handles dtAkhir.ValueChanged
+    Private Sub dtAkhir_ValueChanged(sender As Object, e As EventArgs)
         getDataLaporan()
     End Sub
 
@@ -67,9 +69,8 @@ GROUP by tblkontak.idpelanggan"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPesananJual.dataview = dv
-        PreviewPesananJual.ringkasan = Me.ringkasan
-        PreviewPesananJual.Show()
+        PreviewMutasiPiutang.dataview = dv
+        PreviewMutasiPiutang.Show()
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

@@ -5,38 +5,60 @@
 
     Public ringkasan As Boolean = False
     Sub getDataLaporan()
-
+        Dim cari As String = eCari.Text
         If cbSub.SelectedIndex > 0 Then
-            sql = "SELECT tblproduk.idproduk,tblproduk.produk, COALESCE(stok,0) as stok, tblsatuan.satuan,hpp,hargajual from tblharga INNER join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan LEFT JOIN (SELECT SUM(stok) as stok,idproduk,idsatuan FROM tblstokgudang where idgudang='" & cbSub.SelectedValue & "' GROUP BY idproduk, idsatuan) T on T.idproduk = tblproduk.idproduk and T.idsatuan = tblharga.idsatuan where produk ilike '%" & eCari.Text & "%'"
+            sql = "select tblharga.idharga,idproduk, produk,   tblstok.stok,nilaidasar, satuan,hargajual, hargabeli,hpp from tblharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan  left join (SELECT idbarang,sum(stok * tblharga.nilaidasar) as stok from tblstokgudang inner join tblharga on tblharga.idharga = tblstokgudang.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang where tblstokgudang.idgudang='" & cbSub.SelectedValue.ToString & "'  group by idbarang) tblstok  on tblstok.idbarang = tblproduk.idproduk where (tblharga.idbarang ILIKE '%" & cari & "%' or produk ILIKE '%" & cari & "%') order by tblharga.idbarang,level"
         Else
-            sql = "SELECT tblproduk.idproduk,tblproduk.produk, COALESCE(stok,0) as stok, tblsatuan.satuan,hpp,hargajual from tblharga INNER join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan LEFT JOIN (SELECT SUM(stok) as stok,idproduk,idsatuan FROM tblstokgudang GROUP BY idproduk, idsatuan) T on T.idproduk = tblproduk.idproduk and T.idsatuan = tblharga.idsatuan where produk ilike '%" & eCari.Text & "%'"
+            sql = "select tblharga.idharga,idproduk, produk,   tblstok.stok,nilaidasar, satuan,hargajual, hargabeli,hpp from tblharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang inner join tblsatuan on tblsatuan.kodesatuan = tblharga.idsatuan  left join (SELECT idbarang,sum(stok * tblharga.nilaidasar) as stok from tblstokgudang inner join tblharga on tblharga.idharga = tblstokgudang.idharga inner join tblproduk on tblproduk.idproduk = tblharga.idbarang  group by idbarang) tblstok  on tblstok.idbarang = tblproduk.idproduk where (tblharga.idbarang ILIKE '%" & cari & "%' or produk ILIKE '%" & cari & "%') order by tblharga.idbarang,level"
         End If
 
 
         dataLaporan = getData(sql)
+        countStok()
         dv = New DataView(dataLaporan)
         ListSat.DataSource = dv
-        Debug.WriteLine(sql)
+
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).Visible = False
+            ListSat.Columns(1).HeaderText = "Kode Produk"
+            ListSat.Columns(2).HeaderText = "Produk"
+            ListSat.Columns(3).HeaderText = "Stok"
+            ListSat.Columns(4).Visible = False
+            ListSat.Columns(5).HeaderText = "Satuan"
+
+            ListSat.Columns(6).HeaderText = "Harga Jual"
+            ListSat.Columns(7).HeaderText = "Harga Beli"
+            ListSat.Columns(8).HeaderText = "HPP"
+
+            ListSat.Columns(6).DefaultCellStyle.Format = "c0"
+            ListSat.Columns(7).DefaultCellStyle.Format = "c0"
+            ListSat.Columns(8).DefaultCellStyle.Format = "c0"
         Catch ex As Exception
 
         End Try
-
+        makeFillDG(ListSat)
 
     End Sub
 
     Public saldoawal As String = "0"
+
+    Sub countStok()
+        If Not IsNothing(dataLaporan) Then
+            For Each row As DataRow In dataLaporan.Rows
+                If Not IsDBNull(row.Item("stok")) And Not IsDBNull(row.Item("nilaidasar")) Then
+                    If row.Item("stok") >= row.Item("nilaidasar") Then
+                        row.Item("stok") = Math.Floor(row.Item("stok") / row.Item("nilaidasar"))
+                    Else
+                        row.Item("stok") = 0
+                    End If
+                Else
+                    row.Item("stok") = 0
+                End If
+
+            Next
+        End If
+    End Sub
 
     Private Sub getSubKlasifikasi()
         Dim dt As DataTable = getData("select idgudang, gudang from tblgudang order by idgudang")
@@ -61,9 +83,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewDaftarProduk.dataview = dv
+        PreviewDaftarProduk.Show()
+
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

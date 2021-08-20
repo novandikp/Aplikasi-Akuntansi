@@ -8,35 +8,38 @@
 
     Public ringkasan As Boolean = False
     Sub getDataLaporan()
-        If cbSub.SelectedIndex = 0 Then
-            sql = "SELECT tblbayarpiutang.tglbayarpiutang, kodebayarpiutang, tblkontak.pelanggan, tbldepartemen.departemen, COALESCE(tblprojek.projek,'N/A') as projek,tblbayarpiutang.deskripsipiutang, tblbayarpiutang.kodejual, tbljual.tgljual, tblbayarpiutang.diskonrupiah, tblbayarpiutang.bayarpiutang from tblbayarpiutang inner join tbljual on tblbayarpiutang.kodejual = tbljual.kodejual inner join tblkontak on tblkontak.idpelanggan = tblbayarpiutang.pelanggan inner join tbldepartemen on tbldepartemen.iddepartemen = tbljual.kodedepartemen left join tblprojek on tbljual.kodeprojek = tblprojek.idprojek
+        sql = "SELECT tglbayarpiutang as tanggal,
+kodebayarpiutang as kode,
+tblbayarpiutang.kodejual as koderefrensi, 
+tblakun.akun,
+tblkontak.pelanggan as kontak, 
+tblbayarpiutang.bayarpiutang as nominal,  
+tblbayarpiutang.biayalain from tblbayarpiutang
+inner join tbljual on tbljual.kodejual = tblbayarpiutang.kodejual
+INNER join tblkontak on tbljual.pelanggan = tblkontak.idpelanggan
+inner join tblakun on tblakun.kodeakun = tblbayarpiutang.akun
 WHERE tblkontak.pelanggan ilike '%" & eCari.Text & "%' AND tglbayarpiutang BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'"
-        Else
-            sql = "SELECT tblbayarpiutang.tglbayarpiutang, kodebayarpiutang, tblkontak.pelanggan, tbldepartemen.departemen, COALESCE(tblprojek.projek,'N/A') as projek,tblbayarpiutang.deskripsipiutang, tblbayarpiutang.kodejual, tbljual.tgljual, tblbayarpiutang.diskonrupiah, tblbayarpiutang.bayarpiutang from tblbayarpiutang inner join tbljual on tblbayarpiutang.kodejual = tbljual.kodejual inner join tblkontak on tblkontak.idpelanggan = tblbayarpiutang.pelanggan inner join tbldepartemen on tbldepartemen.iddepartemen = tbljual.kodedepartemen left join tblprojek on tbljual.kodeprojek = tblprojek.idprojek
-WHERE kodedepartemen = '" & cbSub.SelectedValue & "' and tblkontak.pelanggan ilike '%" & eCari.Text & "%' AND tglbayarpiutang BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'"
-        End If
+        Debug.WriteLine(sql)
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
         ListSat.DataSource = dv
         styliseDG(ListSat)
-
+        makeFillDG(ListSat)
+        ListSat.Columns(0).HeaderText = "Tanggal"
+        ListSat.Columns(1).HeaderText = "Kode Bayar"
+        ListSat.Columns(2).HeaderText = "Kode Refrensi"
+        ListSat.Columns(3).HeaderText = "Akun Penerimaan"
+        ListSat.Columns(4).HeaderText = "Pelanggan"
+        ListSat.Columns(5).HeaderText = "Pembayaran"
+        ListSat.Columns(6).HeaderText = "Biaya Lain"
     End Sub
 
     Public saldoawal As String = "0"
 
-    Private Sub getSubKlasifikasi()
-        Dim dt As DataTable = getData("select iddepartemen, departemen from tbldepartemen order by iddepartemen")
-        Dim dr As DataRow = dt.NewRow
-        dr.Item(0) = 0
-        dr.Item(1) = "Semua"
-        dt.Rows.InsertAt(dr, 0)
-        cbSub.DataSource = dt
-        cbSub.DisplayMember = "departemen"
-        cbSub.ValueMember = "iddepartemen"
-    End Sub
+
 
     Private Sub LaporanArusKas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        getSubKlasifikasi()
+
         getDataLaporan()
     End Sub
 
@@ -55,12 +58,12 @@ WHERE kodedepartemen = '" & cbSub.SelectedValue & "' and tblkontak.pelanggan ili
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPesananJual.dataview = dv
-        PreviewPesananJual.ringkasan = Me.ringkasan
-        PreviewPesananJual.Show()
+        PreviewPembayaranPiutang.dataview = dv
+
+        PreviewPembayaranPiutang.Show()
     End Sub
 
-    Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged
+    Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs)
         getDataLaporan()
     End Sub
 End Class

@@ -189,7 +189,7 @@
 
         Dim akunPersediaan As String = "110004"
         Dim sqlinsert As String = "INSERT INTO public.tblstokopname(
-	kodestokopname, kodegudang, tglstokopname, kodeakun, idharga, kodedepartemen, buku, fisik)
+	kodestokopname, kodegudang, tglstokopname, kodeakun, idharga, kodedepartemen,  fisik,buku)
 	VALUES (?, ?, ?, ?, ?, ?, ?, ?);"
 
         Dim kode As String = generateRefrence("ST")
@@ -205,7 +205,7 @@
                 operationQuery(sqlJurnal, dataKredit)
 
                 Dim sqlHistoriStok As String = "INSERT INTO public.tblhistoristok(masuk, keluar, harga, tglhistori, idharga, refrensi, hpp) VALUES ( ?, ?, ?, ?, ?, ?, ?);"
-                Dim dataHistori As String() = {"0", selisih.ToString.Replace(",", "."), unnumberFormat(hpp.Text), dtTanggal.Value.ToString("yyyy-MM-dd"), kodeproduk, kode, hpp.ToString.Replace(",", ".")}
+                Dim dataHistori As String() = {"0", selisih.ToString.Replace(",", "."), unnumberFormat(hpp.Text), dtTanggal.Value.ToString("yyyy-MM-dd"), kodeproduk, kode, hpp.Text.ToString.Replace(",", ".")}
 
                 operationQuery(sqlHistoriStok, dataHistori)
             Else

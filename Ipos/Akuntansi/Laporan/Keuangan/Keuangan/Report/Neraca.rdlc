@@ -106,7 +106,6 @@
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -116,10 +115,9 @@
                           <rd:DefaultName>Textbox41</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -141,7 +139,6 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -153,10 +150,9 @@
                           <rd:DefaultName>Textbox42</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -178,7 +174,6 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -190,10 +185,9 @@
                           <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -215,7 +209,6 @@
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -227,10 +220,9 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightBlue</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1101,6 +1093,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
+            <Top>0.17639cm</Top>
+            <Left>0.26458cm</Left>
             <Height>5.43499cm</Height>
             <Width>15.47938cm</Width>
             <Style>
@@ -1110,13 +1104,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.27083in</Height>
+        <Height>2.34407in</Height>
         <Style />
       </Body>
       <Width>6.29675in</Width>
       <Page>
         <PageHeader>
-          <Height>3.14854cm</Height>
+          <Height>2.14312cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <ReportItems>
             <Textbox Name="Textbox1">
@@ -1131,7 +1125,6 @@
                         <FontFamily>Times New Roman</FontFamily>
                         <FontSize>20pt</FontSize>
                         <FontWeight>Bold</FontWeight>
-                        <Color>LightBlue</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1159,7 +1152,6 @@
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
-                  <Color>LightBlue</Color>
                   <Style>Solid</Style>
                   <Width>4pt</Width>
                 </Border>

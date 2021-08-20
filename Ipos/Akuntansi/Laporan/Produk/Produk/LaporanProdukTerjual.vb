@@ -8,23 +8,21 @@
 
         Dim cari As String = eCari.Text
         If cbSub.SelectedIndex = 0 Then
-            sql = "SELECT  tblproduk.produk, tblsatuan.satuan,
-SUM(tbldetailjual.jumlahjual) as jumlahjual,
-SUM(tbldetailjual.hargajual* tbldetailjual.jumlahjual)  as nilaipenjualan from tbldetailjual 
-inner join tblproduk on  tblproduk.idproduk = tbldetailjual.idbarang 
-inner join tblsatuan on  tblsatuan.kodesatuan = tbldetailjual.idsatuan
-inner join tbljual on tbljual.kodejual = tbldetailjual.kodejual
-where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "'
-GROUP by tblproduk.idproduk, tblsatuan.kodesatuan"
+            sql = "SELECT  tblproduk.idproduk,tblproduk.produk, tblsatuan.satuan,COALESCE( sum(jumlahjual), 0 ) as jumlah , COALESCE( sum(jumlahjual*tbldetailjual.hargajual), 0 ) as nilai from tblharga 
+inner join tblproduk on  tblproduk.idproduk = tblharga.idbarang 
+inner join tblsatuan on  tblsatuan.kodesatuan = tblharga.idsatuan
+left join tbldetailjual on tblharga.idharga = tbldetailjual.idharga
+inner join tbljual on tbljual.kodejual = tbldetailjual.kodejual 
+where  (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' 
+GROUP by tblharga.idharga, tblproduk.idproduk, tblsatuan.kodesatuan"
         Else
-            sql = "SELECT  tblproduk.produk, tblsatuan.satuan,
-SUM(tbldetailjual.jumlahjual) as jumlahjual,
-SUM(tbldetailjual.hargajual* tbldetailjual.jumlahjual)  as nilaipenjualan from tbldetailjual 
-inner join tblproduk on  tblproduk.idproduk = tbldetailjual.idbarang 
-inner join tblsatuan on  tblsatuan.kodesatuan = tbldetailjual.idsatuan
-inner join tbljual on tbljual.kodejual = tbldetailjual.kodejual
-where (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' and kodegudang = '" & cbSub.SelectedValue & "'
-GROUP by tblproduk.idproduk, tblsatuan.kodesatuan"
+            sql = "SELECT  tblproduk.idproduk, tblproduk.produk, tblsatuan.satuan,COALESCE( sum(jumlahjual), 0 ) as jumlah , COALESCE( sum(jumlahjual*tbldetailjual.hargajual), 0 ) as nilai from tblharga 
+inner join tblproduk on  tblproduk.idproduk = tblharga.idbarang 
+inner join tblsatuan on  tblsatuan.kodesatuan = tblharga.idsatuan
+left join tbldetailjual on tblharga.idharga = tbldetailjual.idharga
+inner join tbljual on tbljual.kodejual = tbldetailjual.kodejual 
+where  (tblproduk.idproduk like '%" & cari & "%' OR tblproduk.produk like '%" & cari & "%') and  tgljual BETWEEN '" & dtAwal.Value.ToString("yyyy-MM-dd") & "' AND  '" & dtAkhir.Value.ToString("yyyy-MM-dd") & "' and kodegudang = '" & cbSub.SelectedValue & "'
+GROUP by tblharga.idharga, tblproduk.idproduk, tblsatuan.kodesatuan"
         End If
 
 
@@ -33,23 +31,18 @@ GROUP by tblproduk.idproduk, tblsatuan.kodesatuan"
         dataLaporan = getData(sql)
         dv = New DataView(dataLaporan)
         ListSat.DataSource = dv
-        Debug.WriteLine("SQL CARI :" & sql)
+
         styliseDG(ListSat)
         Try
-            'ListSat.Columns(0).HeaderText = "Tipe"
-            'ListSat.Columns(1).HeaderText = "Kode Akun"
-            'ListSat.Columns(2).HeaderText = "Akun"
-            'ListSat.Columns(3).HeaderText = "Tanggal"
-            'ListSat.Columns(4).HeaderText = "Deskripsi"
-            'ListSat.Columns(5).HeaderText = "Kode Refrensi"
-            'ListSat.Columns(6).HeaderText = "Kode Departemen"
-            'ListSat.Columns(7).HeaderText = "Debit"
-            'ListSat.Columns(8).HeaderText = "Kredit"
-            'ListSat.Columns(9).HeaderText = "Kode Projek"
+            ListSat.Columns(0).HeaderText = "Kode Produk"
+            ListSat.Columns(1).HeaderText = "Produk"
+            ListSat.Columns(2).HeaderText = "Satuan"
+            ListSat.Columns(3).HeaderText = "Jumlah"
+            ListSat.Columns(4).HeaderText = "Nilai"
         Catch ex As Exception
 
         End Try
-
+        makeFillDG(ListSat)
 
     End Sub
 
@@ -78,9 +71,9 @@ GROUP by tblproduk.idproduk, tblsatuan.kodesatuan"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PreviewPenawaran.dataview = dv
-        PreviewPenawaran.ringkasan = Me.ringkasan
-        PreviewPenawaran.Show()
+        PreviewDaftarProdukTerjual.dataview = dv
+        PreviewDaftarProdukTerjual.Show()
+
     End Sub
 
     Private Sub cbSub_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbSub.SelectedIndexChanged

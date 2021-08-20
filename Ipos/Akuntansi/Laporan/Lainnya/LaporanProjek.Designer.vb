@@ -46,7 +46,7 @@ Partial Class LaporanProjek
         Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.SystemColors.Control
-        Me.Button1.Location = New System.Drawing.Point(358, 495)
+        Me.Button1.Location = New System.Drawing.Point(361, 408)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(144, 32)
         Me.Button1.TabIndex = 173
@@ -67,7 +67,7 @@ Partial Class LaporanProjek
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel5, Me.ToolStripStatusLabel6})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 607)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 459)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(860, 22)
         Me.StatusStrip1.TabIndex = 170
@@ -203,7 +203,7 @@ Partial Class LaporanProjek
         Me.ListSat.EnableHeadersVisualStyles = False
         Me.ListSat.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.ListSat.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ListSat.Location = New System.Drawing.Point(-2, 103)
+        Me.ListSat.Location = New System.Drawing.Point(-2, 64)
         Me.ListSat.MultiSelect = False
         Me.ListSat.Name = "ListSat"
         Me.ListSat.ReadOnly = True
@@ -218,14 +218,15 @@ Partial Class LaporanProjek
         Me.ListSat.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.ListSat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ListSat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListSat.Size = New System.Drawing.Size(864, 362)
+        Me.ListSat.Size = New System.Drawing.Size(864, 328)
         Me.ListSat.TabIndex = 168
         '
         'LaporanProjek
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(860, 629)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(189, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(860, 481)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -233,6 +234,7 @@ Partial Class LaporanProjek
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ListSat)
         Me.Name = "LaporanProjek"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LaporanProjek"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
