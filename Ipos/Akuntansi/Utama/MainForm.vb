@@ -1,7 +1,7 @@
 ﻿Public Class MainForm
 
     Sub DashBoard()
-        isiChartPenjualan()
+
     End Sub
 
     Sub isiChartPenjualan()
@@ -9,9 +9,10 @@
     End Sub
 
 
-    Sub isiData()
-        Dim sqlRekap = ""
-    End Sub
+
+
+
+
 
 
     'Master ======================
@@ -401,5 +402,14 @@
     End Sub
     Private Sub MetroTile26_Click(sender As Object, e As EventArgs) Handles MetroTile26.Click
         showAset()
+    End Sub
+
+    Private Sub MetroTile30_Click(sender As Object, e As EventArgs) Handles MetroTile30.Click
+        MasterHakAkses.ShowDialog()
+        MasterHakAkses.Dispose()
+    End Sub
+
+    Private Sub MetroTile31_Click_1(sender As Object, e As EventArgs) Handles MetroTile31.Click
+        MasterUser.ShowDialog()
     End Sub
 End Class

@@ -971,6 +971,30 @@
     <Compile Include="Akuntansi\Penjualan\Penawaran\DaftarPenawaranJual.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Akuntansi\Setting\MasterHakAkses.Designer.vb">
+      <DependentUpon>MasterHakAkses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Setting\MasterHakAkses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Setting\MasterUser.Designer.vb">
+      <DependentUpon>MasterUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Setting\MasterUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Utama\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Utama\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akuntansi\Utama\MenuUtama.Designer.vb">
+      <DependentUpon>MenuUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Akuntansi\Utama\MenuUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Chat.Designer.vb">
       <DependentUpon>Chat.vb</DependentUpon>
@@ -1025,7 +1049,7 @@
     <Compile Include="KoneksiDatabase.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalModul.vb" />
+    <Compile Include="Util\LocalModul.vb" />
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -1050,7 +1074,7 @@
     <Compile Include="Akuntansi\Master\Kontak\Datagridkontak.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modul.vb" />
+    <Compile Include="Util\Modul.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1067,14 +1091,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="QueryModule.vb" />
+    <Compile Include="Util\mEncrypt.vb" />
+    <Compile Include="Util\QueryModule.vb" />
     <Compile Include="SplashScreen.Designer.vb">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Terbilang.vb" />
+    <Compile Include="Util\Terbilang.vb" />
     <Compile Include="Akuntansi\Dialog\DialogTransaksiTanpaBayar.Designer.vb">
       <DependentUpon>DialogTransaksiTanpaBayar.vb</DependentUpon>
     </Compile>
@@ -1505,6 +1530,15 @@
       <DependentUpon>DaftarPenawaranJual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Akuntansi\Penjualan\Penawaran\Report\DetailPenawaranJual.rdlc" />
+    <EmbeddedResource Include="Akuntansi\Setting\MasterHakAkses.resx">
+      <DependentUpon>MasterHakAkses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Setting\MasterUser.resx">
+      <DependentUpon>MasterUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akuntansi\Utama\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chat.resx">
       <DependentUpon>Chat.vb</DependentUpon>
     </EmbeddedResource>

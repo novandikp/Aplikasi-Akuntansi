@@ -7,6 +7,10 @@
 
     'Focus pada data
     Sub dataFocus()
+        TBKodeAkun.Enabled = True
+        cbSubklasifikasi.Enabled = True
+        cbStatus.Enabled = True
+        Button2.Enabled = True
         gbData.Enabled = True
         panelAksi.Enabled = True
         clearForm(gbForm)
@@ -181,6 +185,10 @@
     End Sub
 
     Sub tambahData()
+        TBKodeAkun.Enabled = True
+        cbSubklasifikasi.Enabled = True
+        cbStatus.Enabled = True
+        Button2.Enabled = True
         formFocus(True)
     End Sub
 

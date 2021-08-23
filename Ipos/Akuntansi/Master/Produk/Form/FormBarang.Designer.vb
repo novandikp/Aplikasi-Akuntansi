@@ -69,6 +69,8 @@ Partial Class FormBarang
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbFormBarang.SuspendLayout()
@@ -571,7 +573,7 @@ Partial Class FormBarang
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel8})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel8})
         Me.StatusStrip1.Location = New System.Drawing.Point(3, 483)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(799, 22)
@@ -583,8 +585,8 @@ Partial Class FormBarang
         Me.ToolStripStatusLabel3.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ToolStripStatusLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(169, 17)
-        Me.ToolStripStatusLabel3.Text = "[Ctrl +Page Down] Selanjutnya"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(108, 17)
+        Me.ToolStripStatusLabel3.Text = "[Del] Hapus Satuan"
         '
         'ToolStripStatusLabel8
         '
@@ -633,6 +635,22 @@ Partial Class FormBarang
         Me.Button7.Text = "Batal"
         Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button7.UseVisualStyleBackColor = False
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(89, 17)
+        Me.ToolStripStatusLabel1.Text = "[F2] Edit Satuan"
+        '
+        'ToolStripStatusLabel2
+        '
+        Me.ToolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(111, 17)
+        Me.ToolStripStatusLabel2.Text = "[F1] Tambah Satuan"
         '
         'FormBarang
         '
@@ -712,4 +730,6 @@ Partial Class FormBarang
     Friend WithEvents Label5 As Label
     Friend WithEvents cbPajakBeli As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 End Class
